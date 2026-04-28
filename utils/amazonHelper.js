@@ -60,12 +60,21 @@ async function searchAndGetFirstProduct(page, searchTerm) {
   await delay(500);
   await page.keyboard.press('Enter');
   await page.waitForLoadState('domcontentloaded', { timeout: 30000 });
-  await delay(3000);
+  await delay(4000);
 
   // --- Click on the first product ---
-  const firstProduct = page.locator('h2 a.a-link-normal').first();
-  await firstProduct.waitFor({ timeout: 10000 });
-  await firstProduct.click();
+  try {
+    const firstProduct = page.locator('div[data-component-type="s-search-result"] h2 a').first();
+    await firstProduct.click({ timeout: 10000 });
+  } catch (e) {
+    // Try alternative selector
+    try {
+      const altProduct = page.locator('a[href*="/dp/"]').first();
+      await altProduct.click({ timeout: 10000 });
+    } catch (e2) {
+      throw new Error('Could not click on first product');
+    }
+  }
   
   await page.waitForLoadState('domcontentloaded', { timeout: 30000 });
   await delay(3000);
@@ -73,9 +82,7 @@ async function searchAndGetFirstProduct(page, searchTerm) {
   // --- Extract title ---
   let title = 'Title not found';
   try {
-    // Wait for productTitle to be in the DOM
     await page.locator('#productTitle').waitFor({ timeout: 10000 });
-    
     const titleElement = page.locator('#productTitle');
     title = (await titleElement.textContent())?.trim() || 'Title not found';
   } catch (e) {
