@@ -99,19 +99,49 @@ async function searchAndGetFirstProduct(page, searchTerm) {
   }
 
   await page.waitForLoadState('domcontentloaded', { timeout: 30000 });
-  await delay(1500);
+  await delay(2000);
 
   // --- Extract title ---
   let title = 'Title not found';
-  for (const sel of ['#productTitle', 'h1.a-size-large', 'h1 span']) {
+  const titleSelectors = [
+    '#productTitle',
+    'h1.a-size-large',
+    'h1 span',
+    '.a-size-large.product-title',
+    '[data-feature-name="title"]',
+    'span.a-size-large',
+    '.a-price-range-quote',
+    'h1.a-size-base-plus',
+    'span[data-feature-name="title"]',
+    '.a-section h1 span',
+  ];
+
+  for (const sel of titleSelectors) {
     const el = page.locator(sel).first();
     try {
-      if (await el.isVisible({ timeout: 5000 }).catch(() => false)) {
-        title = (await el.textContent())?.trim() ?? title;
-        break;
+      if (await el.isVisible({ timeout: 3000 }).catch(() => false)) {
+        const extractedTitle = (await el.textContent())?.trim();
+        if (extractedTitle && extractedTitle !== '' && extractedTitle !== 'Title not found') {
+          title = extractedTitle;
+          console.log(`✅ Found title with selector: ${sel}`);
+          break;
+        }
       }
     } catch (e) {
       // Continue to next selector
+    }
+  }
+
+  // If still not found, try getting from page title
+  if (title === 'Title not found') {
+    try {
+      const pageTitle = await page.title();
+      if (pageTitle && pageTitle.includes('Amazon')) {
+        title = pageTitle.replace(' - Amazon.in', '').replace(' - Amazon', '').trim();
+        console.log(`✅ Found title from page title: ${title}`);
+      }
+    } catch (e) {
+      // Ignore
     }
   }
 
@@ -126,13 +156,21 @@ async function searchAndGetFirstProduct(page, searchTerm) {
     '.a-price-whole',
     '#price_inside_buybox',
     '.a-color-price',
+    '.a-price-range-quote',
+    '[data-a-color="price"]',
+    '.a-span12 .a-price .a-offscreen',
   ];
+
   for (const sel of priceSelectors) {
     const el = page.locator(sel).first();
     try {
       if (await el.isVisible({ timeout: 2000 }).catch(() => false)) {
-        price = (await el.textContent())?.trim() ?? price;
-        if (price && price !== 'Price not found') break;
+        const extractedPrice = (await el.textContent())?.trim();
+        if (extractedPrice && extractedPrice !== 'Price not found') {
+          price = extractedPrice;
+          console.log(`✅ Found price with selector: ${sel}`);
+          break;
+        }
       }
     } catch (e) {
       // Continue to next selector
