@@ -13,7 +13,7 @@ module.exports = defineConfig({
   reporter: [['html', { open: 'never' }], ['list']],
 
   use: {
-    headless: false,          // Run with visible browser — helps avoid bot detection
+    headless: true,           // ✅ Use headless mode for CI/CD
     viewport: { width: 1280, height: 800 },
     actionTimeout: 20000,
     navigationTimeout: 40000,
@@ -42,7 +42,7 @@ module.exports = defineConfig({
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
-        channel: 'chrome', // Use real installed Chrome if available
+        channel: 'chrome',
         launchOptions: {
           args: [
             '--disable-blink-features=AutomationControlled',
