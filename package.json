@@ -1,0 +1,13 @@
+{
+  "name": "amazon-playwright-tests",
+  "version": "1.0.0",
+  "description": "Automated Amazon tests using Playwright",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:report": "npx playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0"
+  }
+}

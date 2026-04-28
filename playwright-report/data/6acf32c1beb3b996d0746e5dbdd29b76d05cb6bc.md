@@ -1,0 +1,2381 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: tc2_galaxy.spec.js >> TC2 - Search Galaxy device, add to cart, print price
+- Location: tests\tc2_galaxy.spec.js:10:1
+
+# Error details
+
+```
+Error: Add to cart button not found
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - navigation "Shortcuts menu" [ref=e3]:
+    - heading "Skip to" [level=2] [ref=e4]
+    - list "Skip to" [ref=e5]:
+      - listitem [ref=e6]:
+        - link "main content" [ref=e7] [cursor=pointer]:
+          - /url: "#skippedLink"
+          - text: Main content
+      - listitem [ref=e8]:
+        - link "Results" [ref=e9] [cursor=pointer]:
+          - /url: .s-asin a:has(h2)
+    - separator [ref=e10]
+    - heading "Keyboard shortcuts" [level=2] [ref=e11]
+    - list "Keyboard shortcuts" [ref=e12]:
+      - listitem [ref=e13]:
+        - link "Search, alt, forward slash" [ref=e14] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=e15]:
+            - generic [ref=e16]: Search
+            - generic [ref=e17]:
+              - generic [ref=e18]: alt
+              - generic [ref=e19]: +
+              - generic [ref=e20]: /
+      - listitem [ref=e21]:
+        - link "Cart, shift, alt, c" [ref=e22] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=e23]:
+            - generic [ref=e24]: Cart
+            - generic [ref=e25]:
+              - generic [ref=e26]: shift
+              - generic [ref=e27]: +
+              - generic [ref=e28]: alt
+              - generic [ref=e29]: +
+              - generic [ref=e30]: C
+      - listitem [ref=e31]:
+        - link "Home, shift, alt, h" [ref=e32] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=e33]:
+            - generic [ref=e34]: Home
+            - generic [ref=e35]:
+              - generic [ref=e36]: shift
+              - generic [ref=e37]: +
+              - generic [ref=e38]: alt
+              - generic [ref=e39]: +
+              - generic [ref=e40]: H
+      - listitem [ref=e41]:
+        - link "Your orders, shift, alt, o" [ref=e42] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=e43]:
+            - generic [ref=e44]: Orders
+            - generic [ref=e45]:
+              - generic [ref=e46]: shift
+              - generic [ref=e47]: +
+              - generic [ref=e48]: alt
+              - generic [ref=e49]: +
+              - generic [ref=e50]: O
+      - listitem [ref=e51]:
+        - button "Show/hide shortcuts, shift, alt, z" [ref=e52] [cursor=pointer]:
+          - generic [ref=e53]:
+            - generic [ref=e54]: Show/Hide shortcuts
+            - generic [ref=e55]:
+              - generic [ref=e56]: shift
+              - generic [ref=e57]: +
+              - generic [ref=e58]: alt
+              - generic [ref=e59]: +
+              - generic [ref=e60]: Z
+    - generic [ref=e66]: To move between items, use your keyboard's up or down arrows.
+  - banner [ref=e67]:
+    - navigation "Primary" [ref=e68]:
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - link "Amazon.in" [ref=e72] [cursor=pointer]:
+            - /url: /ref=nav_logo
+            - generic: .in
+          - button "Delivering to Delhi 110001 Update location" [ref=e75] [cursor=pointer]:
+            - generic [ref=e77]:
+              - generic [ref=e78]: Delivering to Delhi 110001
+              - generic [ref=e79]: Update location
+        - search [ref=e82]:
+          - generic [ref=e85]:
+            - generic [ref=e87]: All
+            - combobox "Select the department you want to search in" [ref=e89] [cursor=pointer]:
+              - option "All Categories" [selected]
+              - option "Alexa Skills"
+              - option "Amazon Devices"
+              - option "Amazon Fashion"
+              - option "Amazon Fresh"
+              - option "Amazon Fresh Meat"
+              - option "Amazon Pharmacy"
+              - option "Appliances"
+              - option "Apps & Games"
+              - option "Audible Audiobooks"
+              - option "Baby"
+              - option "Beauty"
+              - option "Books"
+              - option "Car & Motorbike"
+              - option "Clothing & Accessories"
+              - option "Collectibles"
+              - option "Computers & Accessories"
+              - option "Deals"
+              - option "Electronics"
+              - option "Furniture"
+              - option "Garden & Outdoors"
+              - option "Gift Cards"
+              - option "Grocery & Gourmet Foods"
+              - option "Health & Personal Care"
+              - option "Home & Kitchen"
+              - option "Industrial & Scientific"
+              - option "Jewellery"
+              - option "Kindle Store"
+              - option "Luggage & Bags"
+              - option "Luxury Beauty"
+              - option "Movies & TV Shows"
+              - option "MP3 Music"
+              - option "Music"
+              - option "Musical Instruments"
+              - option "Office Products"
+              - option "Pet Supplies"
+              - option "Prime Video"
+              - option "Shoes & Handbags"
+              - option "Software"
+              - option "Sports, Fitness & Outdoors"
+              - option "Subscribe & Save"
+              - option "Tools & Home Improvement"
+              - option "Toys & Games"
+              - option "Under ₹500"
+              - option "Video Games"
+              - option "Watches"
+          - searchbox "Search Amazon.in" [ref=e92]: Samsung Galaxy phone
+          - generic "Go" [ref=e95] [cursor=pointer]:
+            - button "Go" [ref=e96]
+        - generic [ref=e98]:
+          - generic [ref=e99]:
+            - link "Choose a language for shopping in Amazon India. The current selection is English (EN)." [ref=e100] [cursor=pointer]:
+              - /url: /customer-preferences/edit?ie=UTF8&preferencesReturnUrl=%2F&ref_=topnav_lang
+              - generic [ref=e103]:
+                - img "India" [ref=e104]
+                - generic [ref=e105]: EN
+            - button "Expand to Change Language or Country" [ref=e106] [cursor=pointer]
+          - generic [ref=e107]:
+            - link "Hello, sign in Account & Lists" [ref=e108] [cursor=pointer]:
+              - /url: https://www.amazon.in/ap/signin?openid.return_to=https%3A%2F%2Fwww.amazon.in%2Fs%3Fk%3DSamsung%2BGalaxy%2Bphone%26crid%3D2NUCGL5RS1PRY%26sprefix%3Dsamsung%2Bgalaxy%2Bphone%252Caps%252C1000%26ref%3Dnav_ya_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=inflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0
+              - generic [ref=e110]: Hello, sign in
+              - generic [ref=e111]: Account & Lists
+            - button "Expand Account and Lists" [ref=e112] [cursor=pointer]
+          - link "Returns & Orders" [ref=e113] [cursor=pointer]:
+            - /url: /gp/css/order-history?ref_=nav_orders_first
+            - generic [ref=e114]: Returns
+            - generic [ref=e115]: "& Orders"
+          - link "0 items in cart" [ref=e116] [cursor=pointer]:
+            - /url: /gp/cart/view.html?ref_=nav_cart
+            - generic [ref=e118]: "0"
+            - generic [ref=e121]: Cart
+      - generic [ref=e122]:
+        - button "Open All Categories Menu" [ref=e124] [cursor=pointer]:
+          - generic [ref=e126]: All
+        - list [ref=e130]:
+          - listitem [ref=e131]:
+            - generic [ref=e132]:
+              - link "Fresh" [ref=e133] [cursor=pointer]:
+                - /url: /fresh?ref_=nav_cs_grocery
+              - button "Fresh Details" [ref=e134] [cursor=pointer]
+          - listitem [ref=e135]:
+            - link "MX Player" [ref=e137] [cursor=pointer]:
+              - /url: /minitv?ref_=nav_avod_desktop_topnav
+          - listitem [ref=e138]:
+            - link "Sell" [ref=e140] [cursor=pointer]:
+              - /url: /b/32702023031?node=32702023031&ld=AZINSOANavDesktop_T3&ref_=nav_cs_sell_T3
+          - listitem [ref=e141]:
+            - link "Bestsellers" [ref=e143] [cursor=pointer]:
+              - /url: /gp/bestsellers/?ref_=nav_cs_bestsellers
+          - listitem [ref=e144]:
+            - link "Mobiles" [ref=e146] [cursor=pointer]:
+              - /url: /mobile-phones/b/?ie=UTF8&node=1389401031&ref_=nav_cs_mobiles
+          - listitem [ref=e147]:
+            - link "Today's Deals" [ref=e149] [cursor=pointer]:
+              - /url: /deals?ref_=nav_cs_gb
+          - listitem [ref=e150]:
+            - link "Customer Service" [ref=e152] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=200507590&ref_=nav_cs_help
+          - listitem [ref=e153]:
+            - link "New Releases" [ref=e155] [cursor=pointer]:
+              - /url: /gp/new-releases/?ref_=nav_cs_newreleases
+          - listitem [ref=e156]:
+            - generic [ref=e157]:
+              - link "Prime" [ref=e158] [cursor=pointer]:
+                - /url: /prime?ref_=nav_cs_primelink_nonmember
+              - button "Prime Details" [ref=e159] [cursor=pointer]
+          - listitem [ref=e160]:
+            - link "Amazon Pay" [ref=e162] [cursor=pointer]:
+              - /url: /gp/sva/dashboard?ref_=nav_cs_apay
+          - listitem [ref=e163]:
+            - link "Electronics" [ref=e165] [cursor=pointer]:
+              - /url: /electronics/b/?ie=UTF8&node=976419031&ref_=nav_cs_electronics
+          - listitem [ref=e166]:
+            - link "Fashion" [ref=e168] [cursor=pointer]:
+              - /url: /gp/browse.html?node=6648217031&ref_=nav_cs_fashion
+          - listitem [ref=e169]:
+            - link "Home & Kitchen" [ref=e171] [cursor=pointer]:
+              - /url: /Home-Kitchen/b/?ie=UTF8&node=976442031&ref_=nav_cs_home
+          - listitem [ref=e172]:
+            - link "Computers" [ref=e174] [cursor=pointer]:
+              - /url: /computers-and-accessories/b/?ie=UTF8&node=976392031&ref_=nav_cs_pc
+          - listitem [ref=e175]:
+            - link "Books" [ref=e177] [cursor=pointer]:
+              - /url: /Books/b/?ie=UTF8&node=976389031&ref_=nav_cs_books
+          - listitem [ref=e178]:
+            - link "Toys & Games" [ref=e180] [cursor=pointer]:
+              - /url: /Toys-Games/b/?ie=UTF8&node=1350380031&ref_=nav_cs_toys
+          - listitem [ref=e181]:
+            - link "Gift Cards" [ref=e183] [cursor=pointer]:
+              - /url: /gift-card-store/b/?ie=UTF8&node=3704982031&ref_=nav_cs_gc
+          - listitem [ref=e184]:
+            - link "Beauty & Personal Care" [ref=e186] [cursor=pointer]:
+              - /url: /beauty/b/?ie=UTF8&node=1355016031&ref_=nav_cs_beauty
+          - listitem [ref=e187]:
+            - link "Car & Motorbike" [ref=e189] [cursor=pointer]:
+              - /url: /Car-Motorbike-Store/b/?ie=UTF8&node=4772060031&ref_=nav_cs_automotive
+          - listitem [ref=e190]:
+            - link "Home Improvement" [ref=e192] [cursor=pointer]:
+              - /url: /Home-Improvement/b/?ie=UTF8&node=4286640031&ref_=nav_cs_hi
+          - listitem [ref=e193]:
+            - link "Custom Products" [ref=e195] [cursor=pointer]:
+              - /url: /Amazon-Custom/b/?ie=UTF8&node=32615889031&ref_=nav_cs_custom
+          - listitem [ref=e196]:
+            - link "Sports, Fitness & Outdoors" [ref=e198] [cursor=pointer]:
+              - /url: /Sports/b/?ie=UTF8&node=1984443031&ref_=nav_cs_sports
+          - listitem [ref=e199]:
+            - link "Health, Household & Personal Care" [ref=e201] [cursor=pointer]:
+              - /url: /health-and-personal-care/b/?ie=UTF8&node=1350384031&ref_=nav_cs_hpc
+          - listitem [ref=e202]:
+            - link "Grocery & Gourmet Foods" [ref=e204] [cursor=pointer]:
+              - /url: /Gourmet-Specialty-Foods/b/?ie=UTF8&node=2454178031&ref_=nav_cs_grocery
+          - listitem [ref=e205]:
+            - link "Pet Supplies" [ref=e207] [cursor=pointer]:
+              - /url: /Pet-Supplies/b/?ie=UTF8&node=2454181031&ref_=nav_cs_pets
+          - listitem [ref=e208]:
+            - link "Baby" [ref=e210] [cursor=pointer]:
+              - /url: /Baby/b/?ie=UTF8&node=1571274031&ref_=nav_cs_baby
+          - listitem [ref=e211]:
+            - link "Video Games" [ref=e213] [cursor=pointer]:
+              - /url: /video-games/b/?ie=UTF8&node=976460031&ref_=nav_cs_video_games
+          - listitem [ref=e214]:
+            - link "AmazonBasics" [ref=e216] [cursor=pointer]:
+              - /url: /b/?node=6637738031&ref_=nav_cs_amazonbasics
+          - listitem [ref=e217]:
+            - link "Audible" [ref=e219] [cursor=pointer]:
+              - /url: /Audible-Books-and-Originals/b/?ie=UTF8&node=17941593031&ref_=nav_cs_audible
+          - listitem [ref=e220]:
+            - link "Subscribe & Save" [ref=e222] [cursor=pointer]:
+              - /url: /auto-deliveries/landing?ref_=nav_cs_sns
+          - listitem [ref=e223]:
+            - link "Kindle eBooks" [ref=e225] [cursor=pointer]:
+              - /url: /Kindle-eBooks/b/?ie=UTF8&node=1634753031&ref_=nav_cs_kindle_books
+          - listitem [ref=e226]:
+            - link "Flights" [ref=e228] [cursor=pointer]:
+              - /url: /flights?ref_=nav_cs_apay_desktop_topnav_flights
+      - dialog [ref=e231]
+  - generic [ref=e233]:
+    - 'heading "1-16 of over 70,000 results for \"Samsung Galaxy phone\" Sort by: Featured" [level=1] [ref=e236]':
+      - generic [ref=e237]:
+        - heading "1-16 of over 70,000 results for \"Samsung Galaxy phone\"" [level=2] [ref=e242]
+        - generic [ref=e247]:
+          - generic [ref=e248]: "Sort by:"
+          - combobox "Sort by:" [ref=e249]:
+            - option "Featured" [selected]
+            - 'option "Price: Low to High"'
+            - 'option "Price: High to Low"'
+            - option "Avg. Customer Review"
+            - option "Newest Arrivals"
+            - option "Best Sellers"
+          - generic [ref=e252] [cursor=pointer]: Sort by:Featured
+    - generic [ref=e254]:
+      - generic [ref=e256]:
+        - generic [ref=e258]:
+          - generic [ref=e260]:
+            - generic [ref=e263]:
+              - heading "Results" [level=2] [ref=e264]
+              - generic [ref=e265]: Check each product page for other buying options.
+            - generic:
+              - list:
+                - listitem [ref=e266]:
+                  - generic [ref=e272]:
+                    - generic [ref=e274]:
+                      - generic "Amazon's Choice" [ref=e277]:
+                        - group "Amazon's Choice for \"Samsung Galaxy phone\"" [ref=e280]:
+                          - generic [ref=e282]: Amazon's Choice
+                      - link [ref=e286] [cursor=pointer]:
+                        - /url: /Samsung-Slimmest-Enhanced-Nightography-Processor/dp/B0F43VZ4H1/ref=sr_1_1?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-1
+                        - img [ref=e288]
+                    - generic [ref=e291]:
+                      - generic [ref=e292]:
+                        - heading "Samsung" [level=2] [ref=e295]
+                        - link "Galaxy M56 5G Mobile (Light Green,8GB RAM,128GB Storage)| Segment Slimmest | Gorilla Glass Victus+| 10 Bit HDR Video| 50MP Camera| AI | Vapour Cooling Chamber| Lag-free Gaming| Without Charger" [active] [ref=e296] [cursor=pointer]:
+                          - /url: /Samsung-Slimmest-Enhanced-Nightography-Processor/dp/B0F43VZ4H1/ref=sr_1_1?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-1
+                          - heading "Galaxy M56 5G Mobile (Light Green,8GB RAM,128GB Storage)| Segment Slimmest | Gorilla Glass Victus+| 10 Bit HDR Video| 50MP Camera| AI | Vapour Cooling Chamber| Lag-free Gaming| Without Charger" [level=2] [ref=e297]
+                      - generic [ref=e298]:
+                        - generic [ref=e299]:
+                          - text: "4.3"
+                          - button "4.3 out of 5 stars, rating details" [ref=e301] [cursor=pointer]:
+                            - generic [ref=e303]: 4.3 out of 5 stars
+                          - link "1,400 ratings" [ref=e305] [cursor=pointer]:
+                            - /url: /Samsung-Slimmest-Enhanced-Nightography-Processor/dp/B0F43VZ4H1/ref=sr_1_1?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-1#customerReviews
+                            - text: (1.4K)
+                        - generic [ref=e306]: 3K+ bought in past month
+                      - generic [ref=e309]:
+                        - generic [ref=e310]:
+                          - generic [ref=e312]:
+                            - generic [ref=e313]: Price, product page
+                            - 'link "₹21,999 M.R.P: ₹33,999 M.R.P: ₹33,999" [ref=e314] [cursor=pointer]':
+                              - /url: /Samsung-Slimmest-Enhanced-Nightography-Processor/dp/B0F43VZ4H1/ref=sr_1_1?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-1
+                              - generic [ref=e315]:
+                                - generic [ref=e316]: ₹21,999
+                                - generic [ref=e317]: ₹21,999
+                              - generic [ref=e318]: "M.R.P: ₹33,999"
+                              - generic [ref=e319]:
+                                - text: "M.R.P:"
+                                - generic [ref=e320]:
+                                  - generic [ref=e321]: ₹33,999
+                                  - text: ₹33,999
+                            - text: (35% off)
+                          - generic [ref=e325]:
+                            - generic [ref=e326]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e327]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e330]:
+                          - generic [ref=e332]: FREE delivery Thu, 30 Apr
+                          - generic [ref=e334]: Or fastest delivery Tomorrow 8 am - 12 pm
+                          - generic [ref=e336]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e350] [cursor=pointer]
+                        - group "colours available" [ref=e352]:
+                          - list [ref=e353]:
+                            - generic [ref=e354]:
+                              - listitem:
+                                - link "Light Green":
+                                  - /url: /Samsung-Slimmest-Enhanced-Nightography-Processor/dp/B0F43VZ4H1/ref=cs_sr_dp_1?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-1
+                            - generic [ref=e357]:
+                              - listitem:
+                                - link "Black":
+                                  - /url: /Samsung-Slimmest-Enhanced-Nightography-Processor/dp/B0F43WXC8K/ref=cs_sr_dp_2?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-1
+                - listitem [ref=e362]:
+                  - generic [ref=e368]:
+                    - generic [ref=e370]:
+                      - group "Best sellerin Smartphones" [ref=e376]:
+                        - generic "Best seller" [ref=e378]
+                      - link [ref=e382] [cursor=pointer]:
+                        - /url: /Samsung-Sapphire-Storage-Upgrades-Lag-Free/dp/B0FN7RN9TH/ref=sr_1_2?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-2
+                        - img [ref=e384]
+                    - generic [ref=e387]:
+                      - generic [ref=e388]:
+                        - heading "Samsung" [level=2] [ref=e391]
+                        - link "Galaxy M17 5G Mobile (Sapphire Black, 4GB RAM, 128GB Storage) | 50MP OIS Triple Camera | Gorilla Glass Victus | IP54 | 6 Gen OS Upgrades | AI | Gemini Live | Lag-Free Gaming | Without Charger" [ref=e392] [cursor=pointer]:
+                          - /url: /Samsung-Sapphire-Storage-Upgrades-Lag-Free/dp/B0FN7RN9TH/ref=sr_1_2?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-2
+                          - heading "Galaxy M17 5G Mobile (Sapphire Black, 4GB RAM, 128GB Storage) | 50MP OIS Triple Camera | Gorilla Glass Victus | IP54 | 6 Gen OS Upgrades | AI | Gemini Live | Lag-Free Gaming | Without Charger" [level=2] [ref=e393]
+                      - generic [ref=e394]:
+                        - generic [ref=e395]:
+                          - text: "4.1"
+                          - button "4.1 out of 5 stars, rating details" [ref=e397] [cursor=pointer]:
+                            - generic [ref=e399]: 4.1 out of 5 stars
+                          - link "2,106 ratings" [ref=e401] [cursor=pointer]:
+                            - /url: /Samsung-Sapphire-Storage-Upgrades-Lag-Free/dp/B0FN7RN9TH/ref=sr_1_2?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-2#customerReviews
+                            - text: (2.1K)
+                        - generic [ref=e402]: 3K+ bought in past month
+                      - generic [ref=e405]:
+                        - generic [ref=e406]:
+                          - generic [ref=e408]:
+                            - generic [ref=e409]: Price, product page
+                            - 'link "₹13,999 M.R.P: ₹16,499 M.R.P: ₹16,499" [ref=e410] [cursor=pointer]':
+                              - /url: /Samsung-Sapphire-Storage-Upgrades-Lag-Free/dp/B0FN7RN9TH/ref=sr_1_2?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-2
+                              - generic [ref=e411]:
+                                - generic [ref=e412]: ₹13,999
+                                - generic [ref=e413]: ₹13,999
+                              - generic [ref=e414]: "M.R.P: ₹16,499"
+                              - generic [ref=e415]:
+                                - text: "M.R.P:"
+                                - generic [ref=e416]:
+                                  - generic [ref=e417]: ₹16,499
+                                  - text: ₹16,499
+                            - text: (15% off)
+                          - generic [ref=e421]:
+                            - generic [ref=e422]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e423]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e426]:
+                          - generic [ref=e428]: FREE delivery Thu, 30 Apr
+                          - generic [ref=e430]: Or fastest delivery Today 6 pm - 8 pm
+                          - generic [ref=e432]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e446] [cursor=pointer]
+                        - group "colours available" [ref=e448]:
+                          - list [ref=e449]:
+                            - generic [ref=e450]:
+                              - listitem:
+                                - link "Sapphire Black":
+                                  - /url: /Samsung-Sapphire-Storage-Upgrades-Lag-Free/dp/B0FN7RN9TH/ref=cs_sr_dp_1?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-2
+                            - generic [ref=e453]:
+                              - listitem:
+                                - link "Moonlight Silver":
+                                  - /url: /Samsung-Sapphire-Storage-Upgrades-Lag-Free/dp/B0FN7TJYDK/ref=cs_sr_dp_2?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-2
+                - listitem [ref=e458]:
+                  - generic [ref=e464]:
+                    - link [ref=e470] [cursor=pointer]:
+                      - /url: /Samsung-MediaTek-Dimensity-Charging-Upgrades/dp/B0DX6P3RX9/ref=sr_1_3?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-3
+                      - img [ref=e472]
+                    - generic [ref=e475]:
+                      - generic [ref=e476]:
+                        - heading "Samsung" [level=2] [ref=e479]
+                        - link "Galaxy M06 5G Mobile (Sage Green, 4GB RAM, 128GB Storage) | MediaTek Dimensity 6300 | AnTuTu 623K+ | 12 5G Bands | 25W Fast Charging | 4 Gen OS Upgrades | 50MP Camera | Without Charger" [ref=e480] [cursor=pointer]:
+                          - /url: /Samsung-MediaTek-Dimensity-Charging-Upgrades/dp/B0DX6P3RX9/ref=sr_1_3?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-3
+                          - heading "Galaxy M06 5G Mobile (Sage Green, 4GB RAM, 128GB Storage) | MediaTek Dimensity 6300 | AnTuTu 623K+ | 12 5G Bands | 25W Fast Charging | 4 Gen OS Upgrades | 50MP Camera | Without Charger" [level=2] [ref=e481]
+                      - generic [ref=e482]:
+                        - generic [ref=e483]:
+                          - text: "4.0"
+                          - button "4.0 out of 5 stars, rating details" [ref=e485] [cursor=pointer]:
+                            - generic [ref=e487]: 4.0 out of 5 stars
+                          - link "2,655 ratings" [ref=e489] [cursor=pointer]:
+                            - /url: /Samsung-MediaTek-Dimensity-Charging-Upgrades/dp/B0DX6P3RX9/ref=sr_1_3?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-3#customerReviews
+                            - text: (2.6K)
+                        - generic [ref=e490]: 2K+ bought in past month
+                      - generic [ref=e493]:
+                        - generic [ref=e494]:
+                          - generic [ref=e496]:
+                            - generic [ref=e497]: Price, product page
+                            - 'link "₹11,499 M.R.P: ₹13,999 M.R.P: ₹13,999" [ref=e498] [cursor=pointer]':
+                              - /url: /Samsung-MediaTek-Dimensity-Charging-Upgrades/dp/B0DX6P3RX9/ref=sr_1_3?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-3
+                              - generic [ref=e499]:
+                                - generic [ref=e500]: ₹11,499
+                                - generic [ref=e501]: ₹11,499
+                              - generic [ref=e502]: "M.R.P: ₹13,999"
+                              - generic [ref=e503]:
+                                - text: "M.R.P:"
+                                - generic [ref=e504]:
+                                  - generic [ref=e505]: ₹13,999
+                                  - text: ₹13,999
+                            - text: (18% off)
+                          - generic [ref=e509]:
+                            - generic [ref=e510]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e511]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e514]:
+                          - generic [ref=e516]: FREE delivery Thu, 30 Apr
+                          - generic [ref=e518]: Or fastest delivery Today 6 pm - 8 pm
+                          - generic [ref=e520]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e534] [cursor=pointer]
+                        - group "colours available" [ref=e536]:
+                          - list [ref=e537]:
+                            - generic [ref=e538]:
+                              - listitem:
+                                - link "Sage Green":
+                                  - /url: /Samsung-MediaTek-Dimensity-Charging-Upgrades/dp/B0DX6P3RX9/ref=cs_sr_dp_1?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-3
+                            - generic [ref=e541]:
+                              - listitem:
+                                - link "Blazing Black":
+                                  - /url: /Samsung-MediaTek-Dimensity-Charging-Upgrades/dp/B0DX6S111L/ref=cs_sr_dp_2?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-3
+                - listitem [ref=e546]:
+                  - generic [ref=e552]:
+                    - link [ref=e558] [cursor=pointer]:
+                      - /url: /SAMSUNG-Galaxy-F07-Green-RAM/dp/B0FT7T3GZF/ref=sr_1_4?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-4
+                      - img [ref=e560]
+                    - generic [ref=e563]:
+                      - generic [ref=e564]:
+                        - heading "Samsung" [level=2] [ref=e567]
+                        - link "Galaxy F07 (Green, 64 GB) (4 GB RAM)" [ref=e568] [cursor=pointer]:
+                          - /url: /SAMSUNG-Galaxy-F07-Green-RAM/dp/B0FT7T3GZF/ref=sr_1_4?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-4
+                          - heading "Galaxy F07 (Green, 64 GB) (4 GB RAM)" [level=2] [ref=e569]
+                      - generic [ref=e570]:
+                        - generic [ref=e571]:
+                          - text: "3.6"
+                          - button "3.6 out of 5 stars, rating details" [ref=e573] [cursor=pointer]:
+                            - generic [ref=e575]: 3.6 out of 5 stars
+                          - link "56 ratings" [ref=e577] [cursor=pointer]:
+                            - /url: /SAMSUNG-Galaxy-F07-Green-RAM/dp/B0FT7T3GZF/ref=sr_1_4?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-4#customerReviews
+                            - text: (56)
+                        - generic [ref=e578]: 2K+ bought in past month
+                      - generic [ref=e581]:
+                        - generic [ref=e582]:
+                          - generic [ref=e584]:
+                            - generic [ref=e585]: Price, product page
+                            - 'link "₹9,749 M.R.P: ₹10,999 M.R.P: ₹10,999" [ref=e586] [cursor=pointer]':
+                              - /url: /SAMSUNG-Galaxy-F07-Green-RAM/dp/B0FT7T3GZF/ref=sr_1_4?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-4
+                              - generic [ref=e587]:
+                                - generic [ref=e588]: ₹9,749
+                                - generic [ref=e589]: ₹9,749
+                              - generic [ref=e590]: "M.R.P: ₹10,999"
+                              - generic [ref=e591]:
+                                - text: "M.R.P:"
+                                - generic [ref=e592]:
+                                  - generic [ref=e593]: ₹10,999
+                                  - text: ₹10,999
+                            - text: (11% off)
+                          - generic [ref=e597]:
+                            - generic [ref=e598]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e599]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e602]:
+                          - generic [ref=e604]: FREE delivery Thu, 30 Apr
+                          - generic [ref=e606]: Or fastest delivery Tomorrow 8 am - 12 pm
+                          - generic [ref=e608]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e622] [cursor=pointer]
+                        - generic [ref=e624]:
+                          - text: More Buying Choices
+                          - text: ₹9,739
+                          - link "(13 new offers)" [ref=e626] [cursor=pointer]:
+                            - /url: /gp/offer-listing/B0FT7T3GZF/ref=sr_1_4_olp?keywords=Samsung+Galaxy+phone&crid=2NUCGL5RS1PRY&sprefix=samsung+galaxy+phone%2Caps%2C1000&dib_tag=se&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&qid=1777372353&sr=8-4
+                - listitem [ref=e629]:
+                  - generic [ref=e635]:
+                    - link [ref=e641] [cursor=pointer]:
+                      - /url: /Samsung-Storage-MediaTek-Charging-Upgrades/dp/B0FN7QTRPY/ref=sr_1_5?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-5
+                      - img [ref=e643]
+                    - generic [ref=e646]:
+                      - generic [ref=e647]:
+                        - heading "Samsung" [level=2] [ref=e650]
+                        - link "Galaxy M07 Mobile (Black, 4GB RAM, 64GB Storage) | MediaTek Helio G99 | AnTuTu 624K | IP54| 50MP Camera | 7.6mm Slim | 5000mAh Battery | 25W Fast Charging | 6 Gen OS Upgrades | Without Charger" [ref=e651] [cursor=pointer]:
+                          - /url: /Samsung-Storage-MediaTek-Charging-Upgrades/dp/B0FN7QTRPY/ref=sr_1_5?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-5
+                          - heading "Galaxy M07 Mobile (Black, 4GB RAM, 64GB Storage) | MediaTek Helio G99 | AnTuTu 624K | IP54| 50MP Camera | 7.6mm Slim | 5000mAh Battery | 25W Fast Charging | 6 Gen OS Upgrades | Without Charger" [level=2] [ref=e652]
+                      - generic [ref=e653]:
+                        - generic [ref=e654]:
+                          - text: "4.2"
+                          - button "4.2 out of 5 stars, rating details" [ref=e656] [cursor=pointer]:
+                            - generic [ref=e658]: 4.2 out of 5 stars
+                          - link "1,201 ratings" [ref=e660] [cursor=pointer]:
+                            - /url: /Samsung-Storage-MediaTek-Charging-Upgrades/dp/B0FN7QTRPY/ref=sr_1_5?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-5#customerReviews
+                            - text: (1.2K)
+                        - generic [ref=e661]: 5K+ bought in past month
+                      - generic [ref=e664]:
+                        - generic [ref=e665]:
+                          - generic [ref=e667]:
+                            - generic [ref=e668]: Price, product page
+                            - 'link "₹9,499 M.R.P: ₹10,999 M.R.P: ₹10,999" [ref=e669] [cursor=pointer]':
+                              - /url: /Samsung-Storage-MediaTek-Charging-Upgrades/dp/B0FN7QTRPY/ref=sr_1_5?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-5
+                              - generic [ref=e670]:
+                                - generic [ref=e671]: ₹9,499
+                                - generic [ref=e672]: ₹9,499
+                              - generic [ref=e673]: "M.R.P: ₹10,999"
+                              - generic [ref=e674]:
+                                - text: "M.R.P:"
+                                - generic [ref=e675]:
+                                  - generic [ref=e676]: ₹10,999
+                                  - text: ₹10,999
+                            - text: (14% off)
+                          - generic [ref=e680]:
+                            - generic [ref=e681]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e682]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e685]:
+                          - generic [ref=e687]: FREE delivery Thu, 30 Apr
+                          - generic [ref=e689]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e703] [cursor=pointer]
+                - listitem [ref=e706]:
+                  - generic [ref=e712]:
+                    - link [ref=e718] [cursor=pointer]:
+                      - /url: /Samsung-Storage-Smoothest-Refresh-Upgrades/dp/B0GN1NNYXF/ref=sr_1_6?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-6
+                      - img [ref=e720]
+                    - generic [ref=e723]:
+                      - generic [ref=e724]:
+                        - heading "Samsung" [level=2] [ref=e727]
+                        - link "Galaxy M17e 5G Mobile (Vibe Violet, 6GB RAM, 128GB Storage) | Smoothest 120 Hz Refresh Rate| Monster 6000 mAh Battery | IP54 | 6 Gen OS Upgrades | AI | Gemini Live | Without Charger" [ref=e728] [cursor=pointer]:
+                          - /url: /Samsung-Storage-Smoothest-Refresh-Upgrades/dp/B0GN1NNYXF/ref=sr_1_6?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-6
+                          - heading "Galaxy M17e 5G Mobile (Vibe Violet, 6GB RAM, 128GB Storage) | Smoothest 120 Hz Refresh Rate| Monster 6000 mAh Battery | IP54 | 6 Gen OS Upgrades | AI | Gemini Live | Without Charger" [level=2] [ref=e729]
+                      - generic [ref=e730]:
+                        - generic [ref=e731]:
+                          - text: "3.8"
+                          - button "3.8 out of 5 stars, rating details" [ref=e733] [cursor=pointer]:
+                            - generic [ref=e735]: 3.8 out of 5 stars
+                          - link "116 ratings" [ref=e737] [cursor=pointer]:
+                            - /url: /Samsung-Storage-Smoothest-Refresh-Upgrades/dp/B0GN1NNYXF/ref=sr_1_6?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-6#customerReviews
+                            - text: (116)
+                        - generic [ref=e738]: 2K+ bought in past month
+                      - generic [ref=e741]:
+                        - generic [ref=e742]:
+                          - generic [ref=e744]:
+                            - generic [ref=e745]: Price, product page
+                            - 'link "₹13,999 M.R.P: ₹18,999 M.R.P: ₹18,999" [ref=e746] [cursor=pointer]':
+                              - /url: /Samsung-Storage-Smoothest-Refresh-Upgrades/dp/B0GN1NNYXF/ref=sr_1_6?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-6
+                              - generic [ref=e747]:
+                                - generic [ref=e748]: ₹13,999
+                                - generic [ref=e749]: ₹13,999
+                              - generic [ref=e750]: "M.R.P: ₹18,999"
+                              - generic [ref=e751]:
+                                - text: "M.R.P:"
+                                - generic [ref=e752]:
+                                  - generic [ref=e753]: ₹18,999
+                                  - text: ₹18,999
+                            - text: (26% off)
+                          - generic [ref=e757]:
+                            - generic [ref=e758]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e759]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e762]:
+                          - generic [ref=e764]: FREE delivery Thu, 30 Apr
+                          - generic [ref=e766]: Or fastest delivery Today 6 pm - 8 pm
+                          - generic [ref=e768]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e782] [cursor=pointer]
+                        - group "colours available" [ref=e784]:
+                          - list [ref=e785]:
+                            - generic [ref=e786]:
+                              - listitem:
+                                - link "Vibe Violet":
+                                  - /url: /Samsung-Storage-Smoothest-Refresh-Upgrades/dp/B0GN1NNYXF/ref=cs_sr_dp_1?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-6
+                            - generic [ref=e789]:
+                              - listitem:
+                                - link "Blitz Blue":
+                                  - /url: /Samsung-Storage-Smoothest-Refresh-Upgrades/dp/B0GN1J78Z2/ref=cs_sr_dp_2?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-6
+                - listitem [ref=e794]:
+                  - generic [ref=e800]:
+                    - link [ref=e806] [cursor=pointer]:
+                      - /url: /Samsung-Storage-Smoothest-Refresh-Upgrades/dp/B0GN24SV22/ref=sr_1_7?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-7
+                      - img [ref=e808]
+                    - generic [ref=e811]:
+                      - generic [ref=e812]:
+                        - heading "Samsung" [level=2] [ref=e815]
+                        - link "Galaxy M17e 5G Mobile (Blitz Blue, 4GB RAM, 128GB Storage) | Smoothest 120 Hz Refresh Rate| Monster 6000 mAh Battery | IP54 | 6 Gen OS Upgrades | AI | Gemini Live | Without Charger" [ref=e816] [cursor=pointer]:
+                          - /url: /Samsung-Storage-Smoothest-Refresh-Upgrades/dp/B0GN24SV22/ref=sr_1_7?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-7
+                          - heading "Galaxy M17e 5G Mobile (Blitz Blue, 4GB RAM, 128GB Storage) | Smoothest 120 Hz Refresh Rate| Monster 6000 mAh Battery | IP54 | 6 Gen OS Upgrades | AI | Gemini Live | Without Charger" [level=2] [ref=e817]
+                      - generic [ref=e818]:
+                        - generic [ref=e819]:
+                          - text: "3.7"
+                          - button "3.7 out of 5 stars, rating details" [ref=e821] [cursor=pointer]:
+                            - generic [ref=e823]: 3.7 out of 5 stars
+                          - link "75 ratings" [ref=e825] [cursor=pointer]:
+                            - /url: /Samsung-Storage-Smoothest-Refresh-Upgrades/dp/B0GN24SV22/ref=sr_1_7?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-7#customerReviews
+                            - text: (75)
+                        - generic [ref=e826]: 3K+ bought in past month
+                      - generic [ref=e829]:
+                        - generic [ref=e830]:
+                          - generic [ref=e832]:
+                            - generic [ref=e833]: Price, product page
+                            - 'link "₹12,499 M.R.P: ₹16,999 M.R.P: ₹16,999" [ref=e834] [cursor=pointer]':
+                              - /url: /Samsung-Storage-Smoothest-Refresh-Upgrades/dp/B0GN24SV22/ref=sr_1_7?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-7
+                              - generic [ref=e835]:
+                                - generic [ref=e836]: ₹12,499
+                                - generic [ref=e837]: ₹12,499
+                              - generic [ref=e838]: "M.R.P: ₹16,999"
+                              - generic [ref=e839]:
+                                - text: "M.R.P:"
+                                - generic [ref=e840]:
+                                  - generic [ref=e841]: ₹16,999
+                                  - text: ₹16,999
+                            - text: (26% off)
+                          - generic [ref=e845]:
+                            - generic [ref=e846]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e847]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e850]:
+                          - generic [ref=e852]: FREE delivery Thu, 30 Apr
+                          - generic [ref=e854]: Or fastest delivery Today 6 pm - 8 pm
+                          - generic [ref=e856]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e870] [cursor=pointer]
+                        - group "colours available" [ref=e872]:
+                          - list [ref=e873]:
+                            - generic [ref=e874]:
+                              - listitem:
+                                - link "Blitz Blue":
+                                  - /url: /Samsung-Storage-Smoothest-Refresh-Upgrades/dp/B0GN24SV22/ref=cs_sr_dp_1?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-7
+                            - generic [ref=e877]:
+                              - listitem:
+                                - link "Vibe Violet":
+                                  - /url: /Samsung-Storage-Smoothest-Refresh-Upgrades/dp/B0GN1P5CSY/ref=cs_sr_dp_2?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-7
+                - listitem [ref=e882]:
+                  - generic [ref=e888]:
+                    - link [ref=e894] [cursor=pointer]:
+                      - /url: /Samsung-Storage-Smoothest-Refresh-Upgrades/dp/B0GN1P5CSY/ref=sr_1_8?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-8
+                      - img [ref=e896]
+                    - generic [ref=e899]:
+                      - generic [ref=e900]:
+                        - heading "Samsung" [level=2] [ref=e903]
+                        - link "Galaxy M17e 5G Mobile (Vibe Violet, 4GB RAM, 128GB Storage) | Smoothest 120 Hz Refresh Rate| Monster 6000 mAh Battery | IP54 | 6 Gen OS Upgrades | AI | Gemini Live | Without Charger" [ref=e904] [cursor=pointer]:
+                          - /url: /Samsung-Storage-Smoothest-Refresh-Upgrades/dp/B0GN1P5CSY/ref=sr_1_8?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-8
+                          - heading "Galaxy M17e 5G Mobile (Vibe Violet, 4GB RAM, 128GB Storage) | Smoothest 120 Hz Refresh Rate| Monster 6000 mAh Battery | IP54 | 6 Gen OS Upgrades | AI | Gemini Live | Without Charger" [level=2] [ref=e905]
+                      - generic [ref=e906]:
+                        - generic [ref=e907]:
+                          - text: "3.7"
+                          - button "3.7 out of 5 stars, rating details" [ref=e909] [cursor=pointer]:
+                            - generic [ref=e911]: 3.7 out of 5 stars
+                          - link "75 ratings" [ref=e913] [cursor=pointer]:
+                            - /url: /Samsung-Storage-Smoothest-Refresh-Upgrades/dp/B0GN1P5CSY/ref=sr_1_8?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-8#customerReviews
+                            - text: (75)
+                        - generic [ref=e914]: 300+ bought in past month
+                      - generic [ref=e917]:
+                        - generic [ref=e918]:
+                          - generic [ref=e920]:
+                            - generic [ref=e921]: Price, product page
+                            - 'link "₹12,499 M.R.P: ₹16,999 M.R.P: ₹16,999" [ref=e922] [cursor=pointer]':
+                              - /url: /Samsung-Storage-Smoothest-Refresh-Upgrades/dp/B0GN1P5CSY/ref=sr_1_8?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-8
+                              - generic [ref=e923]:
+                                - generic [ref=e924]: ₹12,499
+                                - generic [ref=e925]: ₹12,499
+                              - generic [ref=e926]: "M.R.P: ₹16,999"
+                              - generic [ref=e927]:
+                                - text: "M.R.P:"
+                                - generic [ref=e928]:
+                                  - generic [ref=e929]: ₹16,999
+                                  - text: ₹16,999
+                            - text: (26% off)
+                          - generic [ref=e933]:
+                            - generic [ref=e934]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e935]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e938]:
+                          - generic [ref=e940]: FREE delivery Thu, 30 Apr
+                          - generic [ref=e942]: Or fastest delivery Today 6 pm - 8 pm
+                          - generic [ref=e944]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e958] [cursor=pointer]
+                        - group "colours available" [ref=e960]:
+                          - list [ref=e961]:
+                            - generic [ref=e962]:
+                              - listitem:
+                                - link "Vibe Violet":
+                                  - /url: /Samsung-Storage-Smoothest-Refresh-Upgrades/dp/B0GN1P5CSY/ref=cs_sr_dp_1?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-8
+                            - generic [ref=e965]:
+                              - listitem:
+                                - link "Blitz Blue":
+                                  - /url: /Samsung-Storage-Smoothest-Refresh-Upgrades/dp/B0GN24SV22/ref=cs_sr_dp_2?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-8
+                - listitem [ref=e970]:
+                  - generic [ref=e976]:
+                    - link [ref=e982] [cursor=pointer]:
+                      - /url: /Samsung-Galaxy-Bahama-Blue-128GB/dp/B0DYP4NYYJ/ref=sr_1_9?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-9
+                      - img [ref=e984]
+                    - generic [ref=e987]:
+                      - generic [ref=e988]:
+                        - heading "Samsung" [level=2] [ref=e991]
+                        - link "Galaxy F06 5G, Bahama Blue (4GB, 128GB)" [ref=e992] [cursor=pointer]:
+                          - /url: /Samsung-Galaxy-Bahama-Blue-128GB/dp/B0DYP4NYYJ/ref=sr_1_9?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-9
+                          - heading "Galaxy F06 5G, Bahama Blue (4GB, 128GB)" [level=2] [ref=e993]
+                      - generic [ref=e994]:
+                        - generic [ref=e995]:
+                          - text: "4.1"
+                          - button "4.1 out of 5 stars, rating details" [ref=e997] [cursor=pointer]:
+                            - generic [ref=e999]: 4.1 out of 5 stars
+                          - link "714 ratings" [ref=e1001] [cursor=pointer]:
+                            - /url: /Samsung-Galaxy-Bahama-Blue-128GB/dp/B0DYP4NYYJ/ref=sr_1_9?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-9#customerReviews
+                            - text: (714)
+                        - generic [ref=e1002]: 1K+ bought in past month
+                      - generic [ref=e1005]:
+                        - generic [ref=e1006]:
+                          - generic [ref=e1008]:
+                            - generic [ref=e1009]: Price, product page
+                            - 'link "₹11,900 M.R.P: ₹14,999 M.R.P: ₹14,999" [ref=e1010] [cursor=pointer]':
+                              - /url: /Samsung-Galaxy-Bahama-Blue-128GB/dp/B0DYP4NYYJ/ref=sr_1_9?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-9
+                              - generic [ref=e1011]:
+                                - generic [ref=e1012]: ₹11,900
+                                - generic [ref=e1013]: ₹11,900
+                              - generic [ref=e1014]: "M.R.P: ₹14,999"
+                              - generic [ref=e1015]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1016]:
+                                  - generic [ref=e1017]: ₹14,999
+                                  - text: ₹14,999
+                            - text: (21% off)
+                          - generic [ref=e1021]:
+                            - generic [ref=e1022]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e1023]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e1026]:
+                          - generic [ref=e1028]: FREE delivery Thu, 30 Apr
+                          - generic [ref=e1030]: Or fastest delivery Tomorrow 8 am - 12 pm
+                          - generic [ref=e1032]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e1046] [cursor=pointer]
+                - listitem [ref=e1049]:
+                  - generic [ref=e1055]:
+                    - link [ref=e1061] [cursor=pointer]:
+                      - /url: /Samsung-Storage-Enhanced-Unmatched-Nightography/dp/B0FDB765TN/ref=sr_1_10?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-10
+                      - img [ref=e1063]
+                    - generic [ref=e1066]:
+                      - generic [ref=e1067]:
+                        - heading "Samsung" [level=2] [ref=e1070]
+                        - link "Galaxy M36 5G Mobile (Orange Haze, 6GB RAM, 128GB Storage) | Google Gemini| Gorilla Glass Victus+ | 7.7mm | AI Enhanced 50MP OIS Triple Camera | Nightography| Lag-free Gaming | Without Charger" [ref=e1071] [cursor=pointer]:
+                          - /url: /Samsung-Storage-Enhanced-Unmatched-Nightography/dp/B0FDB765TN/ref=sr_1_10?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-10
+                          - heading "Galaxy M36 5G Mobile (Orange Haze, 6GB RAM, 128GB Storage) | Google Gemini| Gorilla Glass Victus+ | 7.7mm | AI Enhanced 50MP OIS Triple Camera | Nightography| Lag-free Gaming | Without Charger" [level=2] [ref=e1072]
+                      - generic [ref=e1073]:
+                        - generic [ref=e1074]:
+                          - text: "4.1"
+                          - button "4.1 out of 5 stars, rating details" [ref=e1076] [cursor=pointer]:
+                            - generic [ref=e1078]: 4.1 out of 5 stars
+                          - link "4,752 ratings" [ref=e1080] [cursor=pointer]:
+                            - /url: /Samsung-Storage-Enhanced-Unmatched-Nightography/dp/B0FDB765TN/ref=sr_1_10?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-10#customerReviews
+                            - text: (4.7K)
+                        - generic [ref=e1081]: 500+ bought in past month
+                      - generic [ref=e1084]:
+                        - generic [ref=e1085]:
+                          - generic [ref=e1087]:
+                            - generic [ref=e1088]: Price, product page
+                            - 'link "₹19,999 M.R.P: ₹25,499 M.R.P: ₹25,499" [ref=e1089] [cursor=pointer]':
+                              - /url: /Samsung-Storage-Enhanced-Unmatched-Nightography/dp/B0FDB765TN/ref=sr_1_10?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-10
+                              - generic [ref=e1090]:
+                                - generic [ref=e1091]: ₹19,999
+                                - generic [ref=e1092]: ₹19,999
+                              - generic [ref=e1093]: "M.R.P: ₹25,499"
+                              - generic [ref=e1094]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1095]:
+                                  - generic [ref=e1096]: ₹25,499
+                                  - text: ₹25,499
+                            - text: (22% off)
+                          - generic [ref=e1100]:
+                            - generic [ref=e1101]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e1102]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e1105]:
+                          - generic [ref=e1107]: FREE delivery Sun, 3 May
+                          - generic [ref=e1109]: Or fastest delivery Today 6 pm - 8 pm
+                          - generic [ref=e1111]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e1125] [cursor=pointer]
+                        - group "colours available" [ref=e1127]:
+                          - list [ref=e1128]:
+                            - generic [ref=e1129]:
+                              - listitem:
+                                - link "Orange Haze":
+                                  - /url: /Samsung-Storage-Enhanced-Unmatched-Nightography/dp/B0FDB765TN/ref=cs_sr_dp_1?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-10
+                            - generic [ref=e1132]:
+                              - listitem:
+                                - link "Serene Green":
+                                  - /url: /Samsung-Storage-Enhanced-Unmatched-Nightography/dp/B0FDB9H277/ref=cs_sr_dp_2?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-10
+                            - generic [ref=e1135]:
+                              - listitem:
+                                - link "Velvet Black":
+                                  - /url: /Samsung-Storage-Enhanced-Unmatched-Nightography/dp/B0FDBB2VRC/ref=cs_sr_dp_3?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-10
+                - listitem [ref=e1140]:
+                  - generic [ref=e1148]:
+                    - link [ref=e1154] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MToyNDYwOTU2MDAyODY1ODcwOjE3NzczNzIzNTM6c3BfbXRmOjMwMDk2MTkwMzk0OTYzMjo6MDo6&url=%2FLava-Siachen-Storage-Charging-Phone-Case%2Fdp%2FB0GL1JFK48%2Fref%3Dsr_1_11_sspa%3Fcrid%3D2NUCGL5RS1PRY%26dib%3DeyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0%26dib_tag%3Dse%26keywords%3DSamsung%2BGalaxy%2Bphone%26qid%3D1777372353%26sprefix%3Dsamsung%2Bgalaxy%2Bphone%252Caps%252C1000%26sr%3D8-11-spons%26aref%3Ds2bmN6vbS8%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=s2bmN6vbS8&sp_cr=ZAZ
+                      - img [ref=e1156]
+                    - generic [ref=e1159]:
+                      - generic [ref=e1160]:
+                        - button "View Sponsored information or leave ad feedback" [ref=e1163] [cursor=pointer]:
+                          - generic [ref=e1164]: Sponsored
+                        - heading "Lava" [level=2] [ref=e1168]
+                        - link "Sponsored Ad - Bold N2 (Siachen White, 4 GB RAM, 64 GB Storage) | 13MP AI Dual Rear Camera | Largest 6.75\" HD+ Display | 5000 mAh Battery & 10W Charging | IP64 Water & Dust Proof | Charger & Phone-Case in Box" [ref=e1169] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MToyNDYwOTU2MDAyODY1ODcwOjE3NzczNzIzNTM6c3BfbXRmOjMwMDk2MTkwMzk0OTYzMjo6MDo6&url=%2FLava-Siachen-Storage-Charging-Phone-Case%2Fdp%2FB0GL1JFK48%2Fref%3Dsr_1_11_sspa%3Fcrid%3D2NUCGL5RS1PRY%26dib%3DeyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0%26dib_tag%3Dse%26keywords%3DSamsung%2BGalaxy%2Bphone%26qid%3D1777372353%26sprefix%3Dsamsung%2Bgalaxy%2Bphone%252Caps%252C1000%26sr%3D8-11-spons%26aref%3Ds2bmN6vbS8%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=s2bmN6vbS8&sp_cr=ZAZ
+                          - heading "Sponsored Ad - Bold N2 (Siachen White, 4 GB RAM, 64 GB Storage) | 13MP AI Dual Rear Camera | Largest 6.75\" HD+ Display | 5000 mAh Battery & 10W Charging | IP64 Water & Dust Proof | Charger & Phone-Case in Box" [level=2] [ref=e1170]: Bold N2 (Siachen White, 4 GB RAM, 64 GB Storage) | 13MP AI Dual Rear Camera | Largest 6.75" HD+ Display | 5000 mAh Battery & 10W Charging | IP64 Water & Dust Proof | Charger & Phone-Case in Box
+                      - generic [ref=e1171]:
+                        - generic [ref=e1172]:
+                          - text: "3.6"
+                          - button "3.6 out of 5 stars, rating details" [ref=e1174] [cursor=pointer]:
+                            - generic [ref=e1176]: 3.6 out of 5 stars
+                          - link "63 ratings" [ref=e1178] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MToyNDYwOTU2MDAyODY1ODcwOjE3NzczNzIzNTM6c3BfbXRmOjMwMDk2MTkwMzk0OTYzMjo6MDo6&url=%2FLava-Siachen-Storage-Charging-Phone-Case%2Fdp%2FB0GL1JFK48%2Fref%3Dsr_1_11_sspa%3Fcrid%3D2NUCGL5RS1PRY%26dib%3DeyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0%26dib_tag%3Dse%26keywords%3DSamsung%2BGalaxy%2Bphone%26qid%3D1777372353%26sprefix%3Dsamsung%2Bgalaxy%2Bphone%252Caps%252C1000%26sr%3D8-11-spons%26aref%3Ds2bmN6vbS8%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=s2bmN6vbS8&sp_cr=ZAZ#customerReviews
+                            - text: (63)
+                        - generic [ref=e1179]: 500+ bought in past month
+                      - generic [ref=e1182]:
+                        - generic [ref=e1183]:
+                          - generic [ref=e1185]:
+                            - generic [ref=e1186]: Price, product page
+                            - 'link "₹8,899 M.R.P: ₹9,499 M.R.P: ₹9,499" [ref=e1187] [cursor=pointer]':
+                              - /url: /sspa/click?ie=UTF8&spc=MToyNDYwOTU2MDAyODY1ODcwOjE3NzczNzIzNTM6c3BfbXRmOjMwMDk2MTkwMzk0OTYzMjo6MDo6&url=%2FLava-Siachen-Storage-Charging-Phone-Case%2Fdp%2FB0GL1JFK48%2Fref%3Dsr_1_11_sspa%3Fcrid%3D2NUCGL5RS1PRY%26dib%3DeyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0%26dib_tag%3Dse%26keywords%3DSamsung%2BGalaxy%2Bphone%26qid%3D1777372353%26sprefix%3Dsamsung%2Bgalaxy%2Bphone%252Caps%252C1000%26sr%3D8-11-spons%26aref%3Ds2bmN6vbS8%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=s2bmN6vbS8&sp_cr=ZAZ
+                              - generic [ref=e1188]:
+                                - generic [ref=e1189]: ₹8,899
+                                - generic [ref=e1190]: ₹8,899
+                              - generic [ref=e1191]: "M.R.P: ₹9,499"
+                              - generic [ref=e1192]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1193]:
+                                  - generic [ref=e1194]: ₹9,499
+                                  - text: ₹9,499
+                            - text: (6% off)
+                          - generic [ref=e1198]:
+                            - generic [ref=e1199]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e1200]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e1203]:
+                          - generic [ref=e1205]: FREE delivery Thu, 30 Apr
+                          - generic [ref=e1207]: Or fastest delivery Today 6 pm - 8 pm
+                          - generic [ref=e1209]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e1223] [cursor=pointer]
+                        - group "colours available" [ref=e1225]:
+                          - list
+                          - link "+1 other color/pattern" [ref=e1227] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MToyNDYwOTU2MDAyODY1ODcwOjE3NzczNzIzNTM6c3BfbXRmOjMwMDk2MTkwMzk0OTYzMjo6MDo6&url=%2FLava-Siachen-Storage-Charging-Phone-Case%2Fdp%2FB0GL1JFK48%2Fref%3Dsr_1_11_sspa%3Fcrid%3D2NUCGL5RS1PRY%26dib%3DeyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0%26dib_tag%3Dse%26keywords%3DSamsung%2BGalaxy%2Bphone%26qid%3D1777372353%26sprefix%3Dsamsung%2Bgalaxy%2Bphone%252Caps%252C1000%26sr%3D8-11-spons%26aref%3Ds2bmN6vbS8%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=s2bmN6vbS8&sp_cr=ZAZ
+                - listitem [ref=e1230]:
+                  - generic [ref=e1238]:
+                    - link [ref=e1244] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MToyNDYwOTU2MDAyODY1ODcwOjE3NzczNzIzNTM6c3BfbXRmOjMwMDg5MzU1Mzg3MTQzMjo6MDo6&url=%2FStorage-Snapdragon-Segments-Slimmest-Charging%2Fdp%2FB0G5G25YBQ%2Fref%3Dsr_1_12_sspa%3Fcrid%3D2NUCGL5RS1PRY%26dib%3DeyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0%26dib_tag%3Dse%26keywords%3DSamsung%2BGalaxy%2Bphone%26qid%3D1777372353%26sprefix%3Dsamsung%2Bgalaxy%2Bphone%252Caps%252C1000%26sr%3D8-12-spons%26aref%3DmwHbr23sle%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=mwHbr23sle&sp_cr=ZAZ
+                      - img [ref=e1246]
+                    - generic [ref=e1249]:
+                      - generic [ref=e1250]:
+                        - button "View Sponsored information or leave ad feedback" [ref=e1253] [cursor=pointer]:
+                          - generic [ref=e1254]: Sponsored
+                        - heading "Redmi" [level=2] [ref=e1258]
+                        - link "Sponsored Ad - Note 15 5G (Black, 8GB RAM 256GB Storage) | 108MP OIS Camera | Snapdragon 6 Gen 3 | 17.2cm Tough Curved AMOLED Screen | Segment's Slimmest Phone | 5520mAh Battery | 45W Fast Charging" [ref=e1259] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MToyNDYwOTU2MDAyODY1ODcwOjE3NzczNzIzNTM6c3BfbXRmOjMwMDg5MzU1Mzg3MTQzMjo6MDo6&url=%2FStorage-Snapdragon-Segments-Slimmest-Charging%2Fdp%2FB0G5G25YBQ%2Fref%3Dsr_1_12_sspa%3Fcrid%3D2NUCGL5RS1PRY%26dib%3DeyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0%26dib_tag%3Dse%26keywords%3DSamsung%2BGalaxy%2Bphone%26qid%3D1777372353%26sprefix%3Dsamsung%2Bgalaxy%2Bphone%252Caps%252C1000%26sr%3D8-12-spons%26aref%3DmwHbr23sle%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=mwHbr23sle&sp_cr=ZAZ
+                          - heading "Sponsored Ad - Note 15 5G (Black, 8GB RAM 256GB Storage) | 108MP OIS Camera | Snapdragon 6 Gen 3 | 17.2cm Tough Curved AMOLED Screen | Segment's Slimmest Phone | 5520mAh Battery | 45W Fast Charging" [level=2] [ref=e1260]: Note 15 5G (Black, 8GB RAM 256GB Storage) | 108MP OIS Camera | Snapdragon 6 Gen 3 | 17.2cm Tough Curved AMOLED Screen | Segment's Slimmest Phone | 5520mAh Battery | 45W Fast Charging
+                      - generic [ref=e1261]:
+                        - generic [ref=e1262]:
+                          - text: "4.2"
+                          - button "4.2 out of 5 stars, rating details" [ref=e1264] [cursor=pointer]:
+                            - generic [ref=e1266]: 4.2 out of 5 stars
+                          - link "600 ratings" [ref=e1268] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MToyNDYwOTU2MDAyODY1ODcwOjE3NzczNzIzNTM6c3BfbXRmOjMwMDg5MzU1Mzg3MTQzMjo6MDo6&url=%2FStorage-Snapdragon-Segments-Slimmest-Charging%2Fdp%2FB0G5G25YBQ%2Fref%3Dsr_1_12_sspa%3Fcrid%3D2NUCGL5RS1PRY%26dib%3DeyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0%26dib_tag%3Dse%26keywords%3DSamsung%2BGalaxy%2Bphone%26qid%3D1777372353%26sprefix%3Dsamsung%2Bgalaxy%2Bphone%252Caps%252C1000%26sr%3D8-12-spons%26aref%3DmwHbr23sle%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=mwHbr23sle&sp_cr=ZAZ#customerReviews
+                            - text: (600)
+                        - generic [ref=e1269]: 200+ bought in past month
+                      - generic [ref=e1272]:
+                        - generic [ref=e1273]:
+                          - generic [ref=e1275]:
+                            - generic [ref=e1276]: Price, product page
+                            - 'link "₹27,999 M.R.P: ₹28,999 M.R.P: ₹28,999" [ref=e1277] [cursor=pointer]':
+                              - /url: /sspa/click?ie=UTF8&spc=MToyNDYwOTU2MDAyODY1ODcwOjE3NzczNzIzNTM6c3BfbXRmOjMwMDg5MzU1Mzg3MTQzMjo6MDo6&url=%2FStorage-Snapdragon-Segments-Slimmest-Charging%2Fdp%2FB0G5G25YBQ%2Fref%3Dsr_1_12_sspa%3Fcrid%3D2NUCGL5RS1PRY%26dib%3DeyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0%26dib_tag%3Dse%26keywords%3DSamsung%2BGalaxy%2Bphone%26qid%3D1777372353%26sprefix%3Dsamsung%2Bgalaxy%2Bphone%252Caps%252C1000%26sr%3D8-12-spons%26aref%3DmwHbr23sle%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=mwHbr23sle&sp_cr=ZAZ
+                              - generic [ref=e1278]:
+                                - generic [ref=e1279]: ₹27,999
+                                - generic [ref=e1280]: ₹27,999
+                              - generic [ref=e1281]: "M.R.P: ₹28,999"
+                              - generic [ref=e1282]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1283]:
+                                  - generic [ref=e1284]: ₹28,999
+                                  - text: ₹28,999
+                            - text: (3% off)
+                          - generic [ref=e1288]:
+                            - generic [ref=e1289]: 10% Off on select cards
+                            - generic [ref=e1290]: 10% Off on select cards
+                        - generic [ref=e1293]:
+                          - generic [ref=e1295]: FREE delivery Thu, 30 Apr
+                          - generic [ref=e1297]: Or fastest delivery Today 6 pm - 8 pm
+                          - generic [ref=e1299]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e1313] [cursor=pointer]
+                        - group "colours available" [ref=e1315]:
+                          - list
+                          - link "+2 other colors/patterns" [ref=e1317] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MToyNDYwOTU2MDAyODY1ODcwOjE3NzczNzIzNTM6c3BfbXRmOjMwMDg5MzU1Mzg3MTQzMjo6MDo6&url=%2FStorage-Snapdragon-Segments-Slimmest-Charging%2Fdp%2FB0G5G25YBQ%2Fref%3Dsr_1_12_sspa%3Fcrid%3D2NUCGL5RS1PRY%26dib%3DeyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0%26dib_tag%3Dse%26keywords%3DSamsung%2BGalaxy%2Bphone%26qid%3D1777372353%26sprefix%3Dsamsung%2Bgalaxy%2Bphone%252Caps%252C1000%26sr%3D8-12-spons%26aref%3DmwHbr23sle%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=mwHbr23sle&sp_cr=ZAZ
+                - listitem [ref=e1320]:
+                  - generic [ref=e1326]:
+                    - link [ref=e1332] [cursor=pointer]:
+                      - /url: /Samsung-Galaxy-Smartphone-Black-Storage/dp/B0CS62KYQY/ref=sr_1_13?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-13
+                      - img [ref=e1334]
+                    - generic [ref=e1337]:
+                      - generic [ref=e1338]:
+                        - heading "Samsung" [level=2] [ref=e1341]
+                        - link "Galaxy S24 5G AI Smartphone (Onyx Black, 8GB, 128GB Storage)" [ref=e1342] [cursor=pointer]:
+                          - /url: /Samsung-Galaxy-Smartphone-Black-Storage/dp/B0CS62KYQY/ref=sr_1_13?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-13
+                          - heading "Galaxy S24 5G AI Smartphone (Onyx Black, 8GB, 128GB Storage)" [level=2] [ref=e1343]
+                      - generic [ref=e1344]:
+                        - generic [ref=e1345]:
+                          - text: "4.5"
+                          - button "4.5 out of 5 stars, rating details" [ref=e1347] [cursor=pointer]:
+                            - generic [ref=e1349]: 4.5 out of 5 stars
+                          - link "1,102 ratings" [ref=e1351] [cursor=pointer]:
+                            - /url: /Samsung-Galaxy-Smartphone-Black-Storage/dp/B0CS62KYQY/ref=sr_1_13?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-13#customerReviews
+                            - text: (1.1K)
+                        - generic [ref=e1352]: 400+ bought in past month
+                      - generic [ref=e1355]:
+                        - generic [ref=e1356]:
+                          - generic [ref=e1358]:
+                            - generic [ref=e1359]: Price, product page
+                            - 'link "₹45,999 M.R.P: ₹74,999 M.R.P: ₹74,999" [ref=e1360] [cursor=pointer]':
+                              - /url: /Samsung-Galaxy-Smartphone-Black-Storage/dp/B0CS62KYQY/ref=sr_1_13?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-13
+                              - generic [ref=e1361]:
+                                - generic [ref=e1362]: ₹45,999
+                                - generic [ref=e1363]: ₹45,999
+                              - generic [ref=e1364]: "M.R.P: ₹74,999"
+                              - generic [ref=e1365]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1366]:
+                                  - generic [ref=e1367]: ₹74,999
+                                  - text: ₹74,999
+                            - text: (39% off)
+                          - generic [ref=e1371]:
+                            - generic [ref=e1372]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e1373]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e1376]:
+                          - generic [ref=e1378]: FREE delivery Mon, 4 May
+                          - generic [ref=e1380]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e1394] [cursor=pointer]
+                        - group "colours available" [ref=e1396]:
+                          - list [ref=e1397]:
+                            - generic [ref=e1398]:
+                              - listitem:
+                                - link "Onyx Black":
+                                  - /url: /Samsung-Galaxy-Smartphone-Black-Storage/dp/B0CS62KYQY/ref=cs_sr_dp_1?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-13
+                            - generic [ref=e1401]:
+                              - listitem:
+                                - link "Amber Yellow":
+                                  - /url: /Samsung-Galaxy-Smartphone-Black-Storage/dp/B0CS5ZZMN8/ref=cs_sr_dp_2?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-13
+                            - generic [ref=e1404]:
+                              - listitem:
+                                - link "Black":
+                                  - /url: /Samsung-Galaxy-Smartphone-Black-Storage/dp/B0FT834QNK/ref=cs_sr_dp_3?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-13
+                            - generic [ref=e1407]:
+                              - listitem:
+                                - link "Cobalt Violet":
+                                  - /url: /Samsung-Galaxy-Smartphone-Black-Storage/dp/B0DH6NP7WR/ref=cs_sr_dp_4?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-13
+                            - generic [ref=e1410]:
+                              - listitem:
+                                - link "Gray":
+                                  - /url: /Samsung-Galaxy-Smartphone-Black-Storage/dp/B0CS69N54K/ref=cs_sr_dp_5?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-13
+                            - generic [ref=e1413]:
+                              - listitem:
+                                - link "Marble Gray":
+                                  - /url: /Samsung-Galaxy-Smartphone-Black-Storage/dp/B0DH6TR9MC/ref=cs_sr_dp_6?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-13
+                          - link "+2 other colors/patterns" [ref=e1417] [cursor=pointer]:
+                            - /url: /Samsung-Galaxy-Smartphone-Black-Storage/dp/B0CS62KYQY/ref=cs_sr_dp_n?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-13
+                            - text: "+2"
+                - listitem [ref=e1420]:
+                  - generic [ref=e1426]:
+                    - link [ref=e1432] [cursor=pointer]:
+                      - /url: /Samsung-Awesome-Storage-Premium-Nightography/dp/B0CWPD4QWK/ref=sr_1_14?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-14
+                      - img [ref=e1434]
+                    - generic [ref=e1437]:
+                      - generic [ref=e1438]:
+                        - heading "Samsung" [level=2] [ref=e1441]
+                        - link "Galaxy A35 5G (Awesome Lilac, 8GB RAM, 128GB Storage) | Premium Glass Back | 50 MP Main Camera (OIS) | Nightography | IP67 | Corning Gorilla Glass Victus+ | sAMOLED with Vision Booster" [ref=e1442] [cursor=pointer]:
+                          - /url: /Samsung-Awesome-Storage-Premium-Nightography/dp/B0CWPD4QWK/ref=sr_1_14?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-14
+                          - heading "Galaxy A35 5G (Awesome Lilac, 8GB RAM, 128GB Storage) | Premium Glass Back | 50 MP Main Camera (OIS) | Nightography | IP67 | Corning Gorilla Glass Victus+ | sAMOLED with Vision Booster" [level=2] [ref=e1443]
+                      - generic [ref=e1444]:
+                        - generic [ref=e1445]:
+                          - text: "4.3"
+                          - button "4.3 out of 5 stars, rating details" [ref=e1447] [cursor=pointer]:
+                            - generic [ref=e1449]: 4.3 out of 5 stars
+                          - link "663 ratings" [ref=e1451] [cursor=pointer]:
+                            - /url: /Samsung-Awesome-Storage-Premium-Nightography/dp/B0CWPD4QWK/ref=sr_1_14?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-14#customerReviews
+                            - text: (663)
+                        - generic [ref=e1452]: 300+ bought in past month
+                      - generic [ref=e1455]:
+                        - generic [ref=e1456]:
+                          - generic [ref=e1458]:
+                            - generic [ref=e1459]: Price, product page
+                            - 'link "₹32,999 M.R.P: ₹33,999 M.R.P: ₹33,999" [ref=e1460] [cursor=pointer]':
+                              - /url: /Samsung-Awesome-Storage-Premium-Nightography/dp/B0CWPD4QWK/ref=sr_1_14?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-14
+                              - generic [ref=e1461]:
+                                - generic [ref=e1462]: ₹32,999
+                                - generic [ref=e1463]: ₹32,999
+                              - generic [ref=e1464]: "M.R.P: ₹33,999"
+                              - generic [ref=e1465]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1466]:
+                                  - generic [ref=e1467]: ₹33,999
+                                  - text: ₹33,999
+                            - text: (3% off)
+                          - generic [ref=e1471]:
+                            - generic [ref=e1472]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e1473]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e1476]:
+                          - generic [ref=e1478]: FREE delivery Thu, 30 Apr
+                          - generic [ref=e1480]: Or fastest delivery Tomorrow 8 am - 12 pm
+                          - generic [ref=e1482]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e1496] [cursor=pointer]
+                        - generic [ref=e1498]:
+                          - text: More Buying Choices
+                          - text: ₹28,999
+                          - link "(3 new offers)" [ref=e1500] [cursor=pointer]:
+                            - /url: /gp/offer-listing/B0CWPD4QWK/ref=sr_1_14_olp?keywords=Samsung+Galaxy+phone&crid=2NUCGL5RS1PRY&sprefix=samsung+galaxy+phone%2Caps%2C1000&dib_tag=se&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&qid=1777372353&sr=8-14
+                - listitem [ref=e1503]:
+                  - generic [ref=e1509]:
+                    - link [ref=e1515] [cursor=pointer]:
+                      - /url: /Samsung-Galaxy-Storage-Corning-Gorilla/dp/B0FW3RP8YJ/ref=sr_1_15?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-15
+                      - img [ref=e1517]
+                    - generic [ref=e1520]:
+                      - generic [ref=e1521]:
+                        - heading "Samsung" [level=2] [ref=e1524]
+                        - link "Galaxy A17 5G (Blue, 6GB RAM, 128GB Storage) | 50 MP No Shake Camera | Gemini Live | Circle to Search | Super AMOLED | Corning Gorilla Glass Victus | 7.5mm Sleek | AI" [ref=e1525] [cursor=pointer]:
+                          - /url: /Samsung-Galaxy-Storage-Corning-Gorilla/dp/B0FW3RP8YJ/ref=sr_1_15?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-15
+                          - heading "Galaxy A17 5G (Blue, 6GB RAM, 128GB Storage) | 50 MP No Shake Camera | Gemini Live | Circle to Search | Super AMOLED | Corning Gorilla Glass Victus | 7.5mm Sleek | AI" [level=2] [ref=e1526]
+                      - generic [ref=e1527]:
+                        - generic [ref=e1528]:
+                          - text: "4.2"
+                          - button "4.2 out of 5 stars, rating details" [ref=e1530] [cursor=pointer]:
+                            - generic [ref=e1532]: 4.2 out of 5 stars
+                          - link "64 ratings" [ref=e1534] [cursor=pointer]:
+                            - /url: /Samsung-Galaxy-Storage-Corning-Gorilla/dp/B0FW3RP8YJ/ref=sr_1_15?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-15#customerReviews
+                            - text: (64)
+                        - generic [ref=e1535]: 200+ bought in past month
+                      - generic [ref=e1538]:
+                        - generic [ref=e1539]:
+                          - generic [ref=e1541]:
+                            - generic [ref=e1542]: Price, product page
+                            - 'link "₹19,499 M.R.P: ₹22,999 M.R.P: ₹22,999" [ref=e1543] [cursor=pointer]':
+                              - /url: /Samsung-Galaxy-Storage-Corning-Gorilla/dp/B0FW3RP8YJ/ref=sr_1_15?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-15
+                              - generic [ref=e1544]:
+                                - generic [ref=e1545]: ₹19,499
+                                - generic [ref=e1546]: ₹19,499
+                              - generic [ref=e1547]: "M.R.P: ₹22,999"
+                              - generic [ref=e1548]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1549]:
+                                  - generic [ref=e1550]: ₹22,999
+                                  - text: ₹22,999
+                            - text: (15% off)
+                          - generic [ref=e1554]:
+                            - generic [ref=e1555]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e1556]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e1559]:
+                          - generic [ref=e1561]: FREE delivery Thu, 30 Apr
+                          - generic [ref=e1563]: Or fastest delivery Tomorrow 8 am - 12 pm
+                          - generic [ref=e1565]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e1579] [cursor=pointer]
+                        - group "colours available" [ref=e1581]:
+                          - list [ref=e1582]:
+                            - generic [ref=e1583]:
+                              - listitem:
+                                - link "Blue":
+                                  - /url: /Samsung-Galaxy-Storage-Corning-Gorilla/dp/B0FW3RP8YJ/ref=cs_sr_dp_1?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-15
+                            - generic [ref=e1586]:
+                              - listitem:
+                                - link "Black":
+                                  - /url: /Samsung-Galaxy-Storage-Corning-Gorilla/dp/B0FW3ZSQTD/ref=cs_sr_dp_2?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-15
+                            - generic [ref=e1589]:
+                              - listitem:
+                                - link "Gray":
+                                  - /url: /Samsung-Galaxy-Storage-Corning-Gorilla/dp/B0FW4FYCD3/ref=cs_sr_dp_3?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-15
+                - listitem [ref=e1594]:
+                  - generic [ref=e1600]:
+                    - link [ref=e1606] [cursor=pointer]:
+                      - /url: /samsung-Galaxy-Awesome-Storage-Without/dp/B0CXMD9YX5/ref=sr_1_16?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-16
+                      - img [ref=e1608]
+                    - generic [ref=e1611]:
+                      - generic [ref=e1612]:
+                        - heading "Samsung" [level=2] [ref=e1615]
+                        - link "Galaxy A35 5G (Awesome Navy, 8GB RAM, 128GB Storage) Without Offer" [ref=e1616] [cursor=pointer]:
+                          - /url: /samsung-Galaxy-Awesome-Storage-Without/dp/B0CXMD9YX5/ref=sr_1_16?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-16
+                          - heading "Galaxy A35 5G (Awesome Navy, 8GB RAM, 128GB Storage) Without Offer" [level=2] [ref=e1617]
+                      - generic [ref=e1618]:
+                        - generic [ref=e1619]:
+                          - text: "4.3"
+                          - button "4.3 out of 5 stars, rating details" [ref=e1621] [cursor=pointer]:
+                            - generic [ref=e1623]: 4.3 out of 5 stars
+                          - link "725 ratings" [ref=e1625] [cursor=pointer]:
+                            - /url: /samsung-Galaxy-Awesome-Storage-Without/dp/B0CXMD9YX5/ref=sr_1_16?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-16#customerReviews
+                            - text: (725)
+                        - generic [ref=e1626]: 400+ bought in past month
+                      - generic [ref=e1629]:
+                        - generic [ref=e1630]:
+                          - generic [ref=e1632]:
+                            - generic [ref=e1633]: Price, product page
+                            - 'link "₹29,999 M.R.P: ₹33,999 M.R.P: ₹33,999" [ref=e1634] [cursor=pointer]':
+                              - /url: /samsung-Galaxy-Awesome-Storage-Without/dp/B0CXMD9YX5/ref=sr_1_16?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-16
+                              - generic [ref=e1635]:
+                                - generic [ref=e1636]: ₹29,999
+                                - generic [ref=e1637]: ₹29,999
+                              - generic [ref=e1638]: "M.R.P: ₹33,999"
+                              - generic [ref=e1639]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1640]:
+                                  - generic [ref=e1641]: ₹33,999
+                                  - text: ₹33,999
+                            - text: (12% off)
+                          - generic [ref=e1645]:
+                            - generic [ref=e1646]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e1647]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e1650]:
+                          - generic [ref=e1652]: FREE delivery Thu, 30 Apr
+                          - generic [ref=e1654]: Or fastest delivery Tomorrow 8 am - 12 pm
+                          - generic [ref=e1656]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e1670] [cursor=pointer]
+                - listitem [ref=e1673]:
+                  - generic [ref=e1679]:
+                    - link [ref=e1685] [cursor=pointer]:
+                      - /url: /Samsung-Galaxy-Awesome-Black-Offers/dp/B0DYDS1MYD/ref=sr_1_17?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-17
+                      - img [ref=e1687]
+                    - generic [ref=e1690]:
+                      - generic [ref=e1691]:
+                        - heading "Samsung" [level=2] [ref=e1694]
+                        - link "Galaxy A36 5G (Awesome Black, 8GB, 256GB)_with Other Offers" [ref=e1695] [cursor=pointer]:
+                          - /url: /Samsung-Galaxy-Awesome-Black-Offers/dp/B0DYDS1MYD/ref=sr_1_17?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-17
+                          - heading "Galaxy A36 5G (Awesome Black, 8GB, 256GB)_with Other Offers" [level=2] [ref=e1696]
+                      - generic [ref=e1697]:
+                        - generic [ref=e1698]:
+                          - text: "4.2"
+                          - button "4.2 out of 5 stars, rating details" [ref=e1700] [cursor=pointer]:
+                            - generic [ref=e1702]: 4.2 out of 5 stars
+                          - link "640 ratings" [ref=e1704] [cursor=pointer]:
+                            - /url: /Samsung-Galaxy-Awesome-Black-Offers/dp/B0DYDS1MYD/ref=sr_1_17?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-17#customerReviews
+                            - text: (640)
+                        - generic [ref=e1705]: 50+ bought in past month
+                      - generic [ref=e1708]:
+                        - generic [ref=e1709]:
+                          - generic [ref=e1711]:
+                            - generic [ref=e1712]: Price, product page
+                            - 'link "₹32,990 M.R.P: ₹38,999 M.R.P: ₹38,999" [ref=e1713] [cursor=pointer]':
+                              - /url: /Samsung-Galaxy-Awesome-Black-Offers/dp/B0DYDS1MYD/ref=sr_1_17?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-17
+                              - generic [ref=e1714]:
+                                - generic [ref=e1715]: ₹32,990
+                                - generic [ref=e1716]: ₹32,990
+                              - generic [ref=e1717]: "M.R.P: ₹38,999"
+                              - generic [ref=e1718]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1719]:
+                                  - generic [ref=e1720]: ₹38,999
+                                  - text: ₹38,999
+                            - text: (15% off)
+                          - generic [ref=e1724]:
+                            - generic [ref=e1725]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e1726]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e1729]:
+                          - generic [ref=e1731]: FREE delivery Thu, 30 Apr
+                          - generic [ref=e1733]: Or fastest delivery Tomorrow 8 am - 12 pm
+                          - generic [ref=e1735]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e1749] [cursor=pointer]
+                        - group "colours available" [ref=e1751]:
+                          - list [ref=e1752]:
+                            - generic [ref=e1753]:
+                              - listitem:
+                                - link "Awesome Black":
+                                  - /url: /Samsung-Galaxy-Awesome-Black-Offers/dp/B0DYDS1MYD/ref=cs_sr_dp_1?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-17
+                            - generic [ref=e1756]:
+                              - listitem:
+                                - link "Awesome Lavender":
+                                  - /url: /Samsung-Galaxy-Awesome-Black-Offers/dp/B0DYDR2TYC/ref=cs_sr_dp_2?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-17
+                            - generic [ref=e1759]:
+                              - listitem:
+                                - link "Awesome White":
+                                  - /url: /Samsung-Galaxy-Awesome-Black-Offers/dp/B0DYDSKJJW/ref=cs_sr_dp_3?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-17
+                - listitem [ref=e1764]:
+                  - generic [ref=e1770]:
+                    - link [ref=e1776] [cursor=pointer]:
+                      - /url: /Samsung-Awesome-Lavender-Nightography-Upgrades/dp/B0GS18DH5P/ref=sr_1_18?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-18
+                      - img [ref=e1778]
+                    - generic [ref=e1781]:
+                      - generic [ref=e1782]:
+                        - heading "Samsung" [level=2] [ref=e1785]
+                        - link "Galaxy A37 5G (Awesome Lavender, 8GB RAM, 128GB Storage), Agentic AI, Triple Camera with Nightography Video, 2 Days Battery Life, 6 Gen OS Upgrades, IP68, 7.4mm Sleek, with No Cost EMI" [ref=e1786] [cursor=pointer]:
+                          - /url: /Samsung-Awesome-Lavender-Nightography-Upgrades/dp/B0GS18DH5P/ref=sr_1_18?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-18
+                          - heading "Galaxy A37 5G (Awesome Lavender, 8GB RAM, 128GB Storage), Agentic AI, Triple Camera with Nightography Video, 2 Days Battery Life, 6 Gen OS Upgrades, IP68, 7.4mm Sleek, with No Cost EMI" [level=2] [ref=e1787]
+                      - generic [ref=e1789]: 100+ bought in past month
+                      - generic [ref=e1792]:
+                        - generic [ref=e1793]:
+                          - generic [ref=e1795]:
+                            - generic [ref=e1796]: Price, product page
+                            - 'link "₹34,200 M.R.P: ₹45,999 M.R.P: ₹45,999" [ref=e1797] [cursor=pointer]':
+                              - /url: /Samsung-Awesome-Lavender-Nightography-Upgrades/dp/B0GS18DH5P/ref=sr_1_18?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-18
+                              - generic [ref=e1798]:
+                                - generic [ref=e1799]: ₹34,200
+                                - generic [ref=e1800]: ₹34,200
+                              - generic [ref=e1801]: "M.R.P: ₹45,999"
+                              - generic [ref=e1802]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1803]:
+                                  - generic [ref=e1804]: ₹45,999
+                                  - text: ₹45,999
+                            - text: (26% off)
+                          - generic [ref=e1808]:
+                            - generic [ref=e1809]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e1810]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e1813]:
+                          - generic [ref=e1815]: FREE delivery Sat, 2 May
+                          - generic [ref=e1817]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e1831] [cursor=pointer]
+                        - group "colours available" [ref=e1833]:
+                          - list [ref=e1834]:
+                            - generic [ref=e1835]:
+                              - listitem:
+                                - link "Awesome Lavender":
+                                  - /url: /Samsung-Awesome-Lavender-Nightography-Upgrades/dp/B0GS18DH5P/ref=cs_sr_dp_1?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-18
+                            - generic [ref=e1838]:
+                              - listitem:
+                                - link "Awesome Charcoal":
+                                  - /url: /Samsung-Awesome-Lavender-Nightography-Upgrades/dp/B0GS1FKBS9/ref=cs_sr_dp_2?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-18
+                            - generic [ref=e1841]:
+                              - listitem:
+                                - link "Awesome Graygreen":
+                                  - /url: /Samsung-Awesome-Lavender-Nightography-Upgrades/dp/B0GS1DDQXH/ref=cs_sr_dp_3?crid=2NUCGL5RS1PRY&dib=eyJ2IjoiMSJ9.SYQjA0dDbhY6Q_JkciSrVh310ZmZtC0SEbF6tx8U2QqNkgpduxjtT3h-wlrFpOb0pZv5mahlJMA9XNdm9HSfbbTbpvugO9KEgUy7RHE47RnwzLY_qL_mS9BiPbdzCHktC7wPMktYtRWIqMmL8sbJrmiSkFR180csoGzOTimol0a3tRLX1jIWtBz_UKUK8x45YB6VuyLnfsLu6NqfocrGqn36FN91zampny6ZMW8EGek.13xf-r4KPMYnISgFL6iwaKqgmFsoC-quGjsYJFu0OG0&dib_tag=se&keywords=Samsung+Galaxy+phone&qid=1777372353&sprefix=samsung+galaxy+phone%2Caps%2C1000&sr=8-18
+          - generic [ref=e1851]:
+            - generic "Related searches in Samsung Galaxy phone" [ref=e1852]:
+              - heading "Related searches" [level=2] [ref=e1855]
+            - list [ref=e1857]:
+              - generic [ref=e1858]:
+                - listitem [ref=e1859]:
+                  - link "samsung galaxy phone 5g" [ref=e1861] [cursor=pointer]:
+                    - /url: /s?k=samsung+galaxy+phone+5g&ref=rsl_sug_0_0&pd_rd_w=TKPOc&content-id=amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01:amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_p=c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_r=QT27JJX187C0SGFWFNG1&pd_rd_wg=OBB0Y&pd_rd_r=54d5ee4e-3535-42e1-be32-a86b9c7a4622&qid=1777372353
+                    - generic [ref=e1866]: samsung galaxy phone 5g
+                - listitem [ref=e1867]:
+                  - link "phone" [ref=e1869] [cursor=pointer]:
+                    - /url: /s?k=phone&ref=rsl_sug_0_3&pd_rd_w=TKPOc&content-id=amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01:amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_p=c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_r=QT27JJX187C0SGFWFNG1&pd_rd_wg=OBB0Y&pd_rd_r=54d5ee4e-3535-42e1-be32-a86b9c7a4622&qid=1777372353
+                    - generic [ref=e1874]: phone
+              - generic [ref=e1875]:
+                - listitem [ref=e1876]:
+                  - link "samsung galaxy fold" [ref=e1878] [cursor=pointer]:
+                    - /url: /s?k=samsung+galaxy+fold&ref=rsl_sug_0_1&pd_rd_w=TKPOc&content-id=amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01:amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_p=c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_r=QT27JJX187C0SGFWFNG1&pd_rd_wg=OBB0Y&pd_rd_r=54d5ee4e-3535-42e1-be32-a86b9c7a4622&qid=1777372353
+                    - generic [ref=e1883]: samsung galaxy fold
+                - listitem [ref=e1884]:
+                  - link "iphone" [ref=e1886] [cursor=pointer]:
+                    - /url: /s?k=iphone&ref=rsl_sug_0_4&pd_rd_w=TKPOc&content-id=amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01:amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_p=c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_r=QT27JJX187C0SGFWFNG1&pd_rd_wg=OBB0Y&pd_rd_r=54d5ee4e-3535-42e1-be32-a86b9c7a4622&qid=1777372353
+                    - generic [ref=e1891]: iphone
+              - generic [ref=e1892]:
+                - listitem [ref=e1893]:
+                  - link "samsung galaxy s23" [ref=e1895] [cursor=pointer]:
+                    - /url: /s?k=samsung+galaxy+s23&ref=rsl_sug_0_2&pd_rd_w=TKPOc&content-id=amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01:amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_p=c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_r=QT27JJX187C0SGFWFNG1&pd_rd_wg=OBB0Y&pd_rd_r=54d5ee4e-3535-42e1-be32-a86b9c7a4622&qid=1777372353
+                    - generic [ref=e1900]: samsung galaxy s23
+                - listitem [ref=e1901]:
+                  - link "samsung galaxy s22" [ref=e1903] [cursor=pointer]:
+                    - /url: /s?k=samsung+galaxy+s22&ref=rsl_sug_0_5&pd_rd_w=TKPOc&content-id=amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01:amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_p=c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_r=QT27JJX187C0SGFWFNG1&pd_rd_wg=OBB0Y&pd_rd_r=54d5ee4e-3535-42e1-be32-a86b9c7a4622&qid=1777372353
+                    - generic [ref=e1908]: samsung galaxy s22
+          - navigation "pagination" [ref=e1911]:
+            - list [ref=e1913]:
+              - listitem [ref=e1914]:
+                - button "Previous" [disabled] [ref=e1916]:
+                  - img [ref=e1917]
+                  - text: Previous
+              - listitem [ref=e1919]:
+                - button "Page 1" [ref=e1921]: "1"
+              - listitem [ref=e1922]:
+                - button "Go to page 2" [ref=e1924] [cursor=pointer]: "2"
+              - listitem [ref=e1925]:
+                - button "Go to page 3" [ref=e1927] [cursor=pointer]: "3"
+              - button [disabled] [ref=e1928]:
+                - img [ref=e1929]: ...
+              - button "20" [disabled] [ref=e1931]
+              - listitem [ref=e1932]:
+                - button "Go to next page, page 2" [ref=e1934] [cursor=pointer]:
+                  - text: Next
+                  - img [ref=e1935]
+          - generic [ref=e1939]:
+            - separator [ref=e1940]
+            - generic [ref=e1941]:
+              - heading "Brands related to your search" [ref=e1942]
+              - button "Leave feedback on Sponsored ad" [ref=e1947] [cursor=pointer]: Sponsored
+              - generic [ref=e1951]:
+                - generic [ref=e1953]:
+                  - generic:
+                    - generic:
+                      - link:
+                        - /url: https://aax-eu-zaz.amazon.in/x/c/JF_705vTf1ADrzpTi6cMhboAAAGd06XVWQoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICAgws3Y/clv1c_ek-wBPHXUsbW3nymJtYb8xPAyU13fwsZAfyq_c-qzl8SKt7KHEF1-OK1kYWPVCif2E8v8upsloT9Y8c7MvzpTYsn_aNn94-0MWuxp5P-v0hxSFI0OX-MJRz45PpiynBFAUg-5xpojwG1J4raWbVa9NqbIN6ZsnXHpswATnet2KgjgfybFVSXazP8op-yomJcTWMM6kxJY1-oh4X_up_Q9iOfHFJyJl6h2TrWzKKoBiLgAPv72fU9pdhwOG5vR5ZVVDJ2r5BtZwCfPF07IVm60Fuh0KN0oMh01tzsKRRDU-i8drNAv8o82RWHxqtf9TyLnhW2gl6MtPvPkQn11PePU-ZMiS6_vnKjX_Dd_ezKyDgePdsFt2fKJ0oQ69rrW4nUOPmrGMVeYQ08CM5Cie5Ojsca3qyPMtAulzZZiFE0joHYiOlbIFwAgBG7yFXUBjvmddWWEvcv5pXRpADU8SHh9nEiqr4_sQEOSXqPUUGAcCWjU30ioVoPTuZZnNy12SHz6tNDNgJ5Fzk30rzg0I70EIQo3FZaHj1wmUPsJsKe25o-imYeGA_jyzbpEj5ehA73b7sAKYR6u1BXWsXwbYg0Gl0wwkpT_6Nn36ZqmolVX0n0JY6NBa7vpeZAWq3BSqa7y2Ssr6LVCfhbueLyRYmu2LHrVlFvTurmqdvvMoXLUZR54qMd838au-BN79cW_HS0owKGx3aPjBmfM6aN5CHgG_LQdjKfjGJDajk0YBpX1DuDLVhvXrq_sLUcL9na9FGjhag0CzYU38anGhaFMDIIUKUCZ0NocT6uHaQ4pvUVPXu7NJycauoUuR09Hp_8SiPHOpMaSnMgNq8gEbRe3SnmbidmpglIs8h8vaUMpa_0tBIo-30suae-IFDMrnfAqsHZFOF7ZshypuySrvM9LsJJ42vaGVP2NPzJb5WNC6KLGbXhLYcm5ristti0tAQ-NipiI_lb1_uBas9rnoMeido4G2UIu7uRDpvNCgxh6FlvdT8UPU4lLFEFeuN0hIRRQAAErw217gR6-VOw88gY3Upant4Kgqtjd3DKWz5NRnqZy9dCUzeR3GT9k64PF-8-eDiBTyRy-DpaCoQWAIadHBaAS2uNeNLVVZqT3Ppr0WFY4RGNBb_WO2_U2JnG6-F5OpVVFj8yoIGewHke6LzEDdSO0gEv_cPo3Ejv_Z9LwCLE3NPvOEwu_7GTdRLyjQumD7uJfHKRYWVjXglESsf79UYJQSaih0PDHm4Embx_kspTlpxfO6ZdgVKzV4guma-xQR8KhQBaH8680-Xfxhz8b3kU7RMhxR082GiDuyBAYh7roa7J8_CIpUskYzFyqjjwfbgC2e83EhtwiMcGyehXqUw5s0g52rRwt6aSjGSMBSXw-2a2U_11HOX49xm3Ms1_t-Ucp2WtJi7-T5LA9DpkAs7-xm4-DKtK4u8grG_9TwciLgO84CqRfkkDiPnYzfDaDkIMCJeLJRO33jZfMemFnvlToQzarQs3ZAjscL0gVTDHjKt0gYDisJNCx43sGrlwUQvqyQDPAVeDOYWznVtvAUwobKZWlKrT8gZzbd_dTLeKlT1wwBPG7zcipTMkKXvy2Iv7Qh5vL_ZdHVaA1dIvAUBydtBJZX2wlDTs-f9RQM94MBsIPMVnmHQu1mBGKuxxMemKEtj6oE9_9T15hTNDzOO8CaE/https://www.amazon.in/stores/page/4D4D801C-BE70-48F5-A9BC-B397C988C5DC/?_encoding=UTF8&store_ref=SB_A04271051KQXVI97E0J1T-A05987279IFGC5XM6Y8L&pd_rd_plhdr=t&aaxitk=6dfdfa46ca5ff0bea75c23ca97afe63f&hsa_cr_id=5116256370902&lp_query=Samsung%20Galaxy%20phone&lp_slot=desktop-hsa-3psl&aref=vv9dlOkuRD&ref_=sbx_be_s_3psl_mbd_mb0_bkgd&pd_rd_w=ee73B&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=QT27JJX187C0SGFWFNG1&pd_rd_wg=ddP9j&pd_rd_r=ab212c26-2aa5-43d4-9bb7-ed089ed33061
+                      - link "Pikkme" [ref=e1954] [cursor=pointer]:
+                        - /url: https://aax-eu-zaz.amazon.in/x/c/JF_705vTf1ADrzpTi6cMhboAAAGd06XVWQoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICAgws3Y/clv1c_ek-wBPHXUsbW3nymJtYb8xPAyU13fwsZAfyq_c-qzl8SKt7KHEF1-OK1kYWPVCif2E8v8upsloT9Y8c7MvzpTYsn_aNn94-0MWuxp5P-v0hxSFI0OX-MJRz45PpiynBFAUg-5xpojwG1J4raWbVa9NqbIN6ZsnXHpswATnet2KgjgfybFVSXazP8op-yomJcTWMM6kxJY1-oh4X_up_Q9iOfHFJyJl6h2TrWzKKoBiLgAPv72fU9pdhwOG5vR5ZVVDJ2r5BtZwCfPF07IVm60Fuh0KN0oMh01tzsKRRDU-i8drNAv8o82RWHxqtf9TyLnhW2gl6MtPvPkQn11PePU-ZMiS6_vnKjX_Dd_ezKyDgePdsFt2fKJ0oQ69rrW4nUOPmrGMVeYQ08CM5Cie5Ojsca3qyPMtAulzZZiFE0joHYiOlbIFwAgBG7yFXUBjvmddWWEvcv5pXRpADU8SHh9nEiqr4_sQEOSXqPUUGAcCWjU30ioVoPTuZZnNy12SHz6tNDNgJ5Fzk30rzg0I70EIQo3FZaHj1wmUPsJsKe25o-imYeGA_jyzbpEj5ehA73b7sAKYR6u1BXWsXwbYg0Gl0wwkpT_6Nn36ZqmolVX0n0JY6NBa7vpeZAWq3BSqa7y2Ssr6LVCfhbueLyRYmu2LHrVlFvTurmqdvvMoXLUZR54qMd838au-BN79cW_HS0owKGx3aPjBmfM6aN5CHgG_LQdjKfjGJDajk0YBpX1DuDLVhvXrq_sLUcL9na9FGjhag0CzYU38anGhaFMDIIUKUCZ0NocT6uHaQ4pvUVPXu7NJycauoUuR09Hp_8SiPHOpMaSnMgNq8gEbRe3SnmbidmpglIs8h8vaUMpa_0tBIo-30suae-IFDMrnfAqsHZFOF7ZshypuySrvM9LsJJ42vaGVP2NPzJb5WNC6KLGbXhLYcm5ristti0tAQ-NipiI_lb1_uBas9rnoMeido4G2UIu7uRDpvNCgxh6FlvdT8UPU4lLFEFeuN0hIRRQAAErw217gR6-VOw88gY3Upant4Kgqtjd3DKWz5NRnqZy9dCUzeR3GT9k64PF-8-eDiBTyRy-DpaCoQWAIadHBaAS2uNeNLVVZqT3Ppr0WFY4RGNBb_WO2_U2JnG6-F5OpVVFj8yoIGewHke6LzEDdSO0gEv_cPo3Ejv_Z9LwCLE3NPvOEwu_7GTdRLyjQumD7uJfHKRYWVjXglESsf79UYJQSaih0PDHm4Embx_kspTlpxfO6ZdgVKzV4guma-xQR8KhQBaH8680-Xfxhz8b3kU7RMhxR082GiDuyBAYh7roa7J8_CIpUskYzFyqjjwfbgC2e83EhtwiMcGyehXqUw5s0g52rRwt6aSjGSMBSXw-2a2U_11HOX49xm3Ms1_t-Ucp2WtJi7-T5LA9DpkAs7-xm4-DKtK4u8grG_9TwciLgO84CqRfkkDiPnYzfDaDkIMCJeLJRO33jZfMemFnvlToQzarQs3ZAjscL0gVTDHjKt0gYDisJNCx43sGrlwUQvqyQDPAVeDOYWznVtvAUwobKZWlKrT8gZzbd_dTLeKlT1wwBPG7zcipTMkKXvy2Iv7Qh5vL_ZdHVaA1dIvAUBydtBJZX2wlDTs-f9RQM94MBsIPMVnmHQu1mBGKuxxMemKEtj6oE9_9T15hTNDzOO8CaE/https://www.amazon.in/stores/page/4D4D801C-BE70-48F5-A9BC-B397C988C5DC/?_encoding=UTF8&store_ref=SB_A04271051KQXVI97E0J1T-A05987279IFGC5XM6Y8L&pd_rd_plhdr=t&aaxitk=6dfdfa46ca5ff0bea75c23ca97afe63f&hsa_cr_id=5116256370902&lp_query=Samsung%20Galaxy%20phone&lp_slot=desktop-hsa-3psl&aref=vv9dlOkuRD&ref_=sbx_be_s_3psl_mbd_mb0_ls&pd_rd_w=ee73B&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=QT27JJX187C0SGFWFNG1&pd_rd_wg=ddP9j&pd_rd_r=ab212c26-2aa5-43d4-9bb7-ed089ed33061
+                        - img "Pikkme" [ref=e1955]
+                      - generic [ref=e1957]:
+                        - generic [ref=e1958]:
+                          - link [ref=e1959] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JF_705vTf1ADrzpTi6cMhboAAAGd06XVWQoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICAgws3Y/clv1c_ek-wBPHXUsbW3nymJtYb8xPAyU13fwsZAfyq_c-qzl8SKt7KHEF1-OK1kYWPVCif2E8v8upsloT9Y8c7MvzpTYsn_aNn94-0MWuxp5P-v0hxSFI0OX-MJRz45PpiynBFAUg-5xpojwG1J4raWbVa9NqbIN6ZsnXHpswATnet2KgjgfybFVSXazP8op-yomJcTWMM6kxJY1-oh4X_up_Q9iOfHFJyJl6h2TrWzKKoBiLgAPv72fU9pdhwOG5vR5ZVVDJ2r5BtZwCfPF07IVm60Fuh0KN0oMh01tzsKRRDU-i8drNAv8o82RWHxqtf9TyLnhW2gl6MtPvPkQn11PePU-ZMiS6_vnKjX_Dd_ezKyDgePdsFt2fKJ0oQ69rrW4nUOPmrGMVeYQ08CM5Cie5Ojsca3qyPMtAulzZZiFE0joHYiOlbIFwAgBG7yFXUBjvmddWWEvcv5pXRpADU8SHh9nEiqr4_sQEOSXqPUUGAcCWjU30ioVoPTuZZnNy12SHz6tNDNgJ5Fzk30rzg0I70EIQo3FZaHj1wmUPsJsKe25o-imYeGA_jyzbpEj5ehA73b7sAKYR6u1BXWsXwbYg0Gl0wwkpT_6Nn36ZqmolVX0n0JY6NBa7vpeZAWq3BSqa7y2Ssr6LVCfhbueLyRYmu2LHrVlFvTurmqdvvMoXLUZR54qMd838au-BN79cW_HS0owKGx3aPjBmfM6aN5CHgG_LQdjKfjGJDajk0YBpX1DuDLVhvXrq_sLUcL9na9FGjhag0CzYU38anGhaFMDIIUKUCZ0NocT6uHaQ4pvUVPXu7NJycauoUuR09Hp_8SiPHOpMaSnMgNq8gEbRe3SnmbidmpglIs8h8vaUMpa_0tBIo-30suae-IFDMrnfAqsHZFOF7ZshypuySrvM9LsJJ42vaGVP2NPzJb5WNC6KLGbXhLYcm5ristti0tAQ-NipiI_lb1_uBas9rnoMeido4G2UIu7uRDpvNCgxh6FlvdT8UPU4lLFEFeuN0hIRRQAAErw217gR6-VOw88gY3Upant4Kgqtjd3DKWz5NRnqZy9dCUzeR3GT9k64PF-8-eDiBTyRy-DpaCoQWAIadHBaAS2uNeNLVVZqT3Ppr0WFY4RGNBb_WO2_U2JnG6-F5OpVVFj8yoIGewHke6LzEDdSO0gEv_cPo3Ejv_Z9LwCLE3NPvOEwu_7GTdRLyjQumD7uJfHKRYWVjXglESsf79UYJQSaih0PDHm4Embx_kspTlpxfO6ZdgVKzV4guma-xQR8KhQBaH8680-Xfxhz8b3kU7RMhxR082GiDuyBAYh7roa7J8_CIpUskYzFyqjjwfbgC2e83EhtwiMcGyehXqUw5s0g52rRwt6aSjGSMBSXw-2a2U_11HOX49xm3Ms1_t-Ucp2WtJi7-T5LA9DpkAs7-xm4-DKtK4u8grG_9TwciLgO84CqRfkkDiPnYzfDaDkIMCJeLJRO33jZfMemFnvlToQzarQs3ZAjscL0gVTDHjKt0gYDisJNCx43sGrlwUQvqyQDPAVeDOYWznVtvAUwobKZWlKrT8gZzbd_dTLeKlT1wwBPG7zcipTMkKXvy2Iv7Qh5vL_ZdHVaA1dIvAUBydtBJZX2wlDTs-f9RQM94MBsIPMVnmHQu1mBGKuxxMemKEtj6oE9_9T15hTNDzOO8CaE/https://www.amazon.in/stores/page/4D4D801C-BE70-48F5-A9BC-B397C988C5DC/?_encoding=UTF8&store_ref=SB_A04271051KQXVI97E0J1T-A05987279IFGC5XM6Y8L&pd_rd_plhdr=t&aaxitk=6dfdfa46ca5ff0bea75c23ca97afe63f&hsa_cr_id=5116256370902&lp_query=Samsung%20Galaxy%20phone&lp_slot=desktop-hsa-3psl&aref=vv9dlOkuRD&ref_=sbx_be_s_3psl_mbd_mb0_bkgd&pd_rd_w=ee73B&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=QT27JJX187C0SGFWFNG1&pd_rd_wg=ddP9j&pd_rd_r=ab212c26-2aa5-43d4-9bb7-ed089ed33061
+                          - link "Pikkme" [ref=e1960] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JF_705vTf1ADrzpTi6cMhboAAAGd06XVWQoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICAgws3Y/clv1c_ek-wBPHXUsbW3nymJtYb8xPAyU13fwsZAfyq_c-qzl8SKt7KHEF1-OK1kYWPVCif2E8v8upsloT9Y8c7MvzpTYsn_aNn94-0MWuxp5P-v0hxSFI0OX-MJRz45PpiynBFAUg-5xpojwG1J4raWbVa9NqbIN6ZsnXHpswATnet2KgjgfybFVSXazP8op-yomJcTWMM6kxJY1-oh4X_up_Q9iOfHFJyJl6h2TrWzKKoBiLgAPv72fU9pdhwOG5vR5ZVVDJ2r5BtZwCfPF07IVm60Fuh0KN0oMh01tzsKRRDU-i8drNAv8o82RWHxqtf9TyLnhW2gl6MtPvPkQn11PePU-ZMiS6_vnKjX_Dd_ezKyDgePdsFt2fKJ0oQ69rrW4nUOPmrGMVeYQ08CM5Cie5Ojsca3qyPMtAulzZZiFE0joHYiOlbIFwAgBG7yFXUBjvmddWWEvcv5pXRpADU8SHh9nEiqr4_sQEOSXqPUUGAcCWjU30ioVoPTuZZnNy12SHz6tNDNgJ5Fzk30rzg0I70EIQo3FZaHj1wmUPsJsKe25o-imYeGA_jyzbpEj5ehA73b7sAKYR6u1BXWsXwbYg0Gl0wwkpT_6Nn36ZqmolVX0n0JY6NBa7vpeZAWq3BSqa7y2Ssr6LVCfhbueLyRYmu2LHrVlFvTurmqdvvMoXLUZR54qMd838au-BN79cW_HS0owKGx3aPjBmfM6aN5CHgG_LQdjKfjGJDajk0YBpX1DuDLVhvXrq_sLUcL9na9FGjhag0CzYU38anGhaFMDIIUKUCZ0NocT6uHaQ4pvUVPXu7NJycauoUuR09Hp_8SiPHOpMaSnMgNq8gEbRe3SnmbidmpglIs8h8vaUMpa_0tBIo-30suae-IFDMrnfAqsHZFOF7ZshypuySrvM9LsJJ42vaGVP2NPzJb5WNC6KLGbXhLYcm5ristti0tAQ-NipiI_lb1_uBas9rnoMeido4G2UIu7uRDpvNCgxh6FlvdT8UPU4lLFEFeuN0hIRRQAAErw217gR6-VOw88gY3Upant4Kgqtjd3DKWz5NRnqZy9dCUzeR3GT9k64PF-8-eDiBTyRy-DpaCoQWAIadHBaAS2uNeNLVVZqT3Ppr0WFY4RGNBb_WO2_U2JnG6-F5OpVVFj8yoIGewHke6LzEDdSO0gEv_cPo3Ejv_Z9LwCLE3NPvOEwu_7GTdRLyjQumD7uJfHKRYWVjXglESsf79UYJQSaih0PDHm4Embx_kspTlpxfO6ZdgVKzV4guma-xQR8KhQBaH8680-Xfxhz8b3kU7RMhxR082GiDuyBAYh7roa7J8_CIpUskYzFyqjjwfbgC2e83EhtwiMcGyehXqUw5s0g52rRwt6aSjGSMBSXw-2a2U_11HOX49xm3Ms1_t-Ucp2WtJi7-T5LA9DpkAs7-xm4-DKtK4u8grG_9TwciLgO84CqRfkkDiPnYzfDaDkIMCJeLJRO33jZfMemFnvlToQzarQs3ZAjscL0gVTDHjKt0gYDisJNCx43sGrlwUQvqyQDPAVeDOYWznVtvAUwobKZWlKrT8gZzbd_dTLeKlT1wwBPG7zcipTMkKXvy2Iv7Qh5vL_ZdHVaA1dIvAUBydtBJZX2wlDTs-f9RQM94MBsIPMVnmHQu1mBGKuxxMemKEtj6oE9_9T15hTNDzOO8CaE/https://www.amazon.in/stores/page/4D4D801C-BE70-48F5-A9BC-B397C988C5DC/?_encoding=UTF8&store_ref=SB_A04271051KQXVI97E0J1T-A05987279IFGC5XM6Y8L&pd_rd_plhdr=t&aaxitk=6dfdfa46ca5ff0bea75c23ca97afe63f&hsa_cr_id=5116256370902&lp_query=Samsung%20Galaxy%20phone&lp_slot=desktop-hsa-3psl&aref=vv9dlOkuRD&ref_=sbx_be_s_3psl_mbd_mb0_logo&pd_rd_w=ee73B&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=QT27JJX187C0SGFWFNG1&pd_rd_wg=ddP9j&pd_rd_r=ab212c26-2aa5-43d4-9bb7-ed089ed33061
+                            - img "Pikkme" [ref=e1962]
+                        - generic [ref=e1963]:
+                          - link [ref=e1964] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JF_705vTf1ADrzpTi6cMhboAAAGd06XVWQoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICAgws3Y/clv1c_ek-wBPHXUsbW3nymJtYb8xPAyU13fwsZAfyq_c-qzl8SKt7KHEF1-OK1kYWPVCif2E8v8upsloT9Y8c7MvzpTYsn_aNn94-0MWuxp5P-v0hxSFI0OX-MJRz45PpiynBFAUg-5xpojwG1J4raWbVa9NqbIN6ZsnXHpswATnet2KgjgfybFVSXazP8op-yomJcTWMM6kxJY1-oh4X_up_Q9iOfHFJyJl6h2TrWzKKoBiLgAPv72fU9pdhwOG5vR5ZVVDJ2r5BtZwCfPF07IVm60Fuh0KN0oMh01tzsKRRDU-i8drNAv8o82RWHxqtf9TyLnhW2gl6MtPvPkQn11PePU-ZMiS6_vnKjX_Dd_ezKyDgePdsFt2fKJ0oQ69rrW4nUOPmrGMVeYQ08CM5Cie5Ojsca3qyPMtAulzZZiFE0joHYiOlbIFwAgBG7yFXUBjvmddWWEvcv5pXRpADU8SHh9nEiqr4_sQEOSXqPUUGAcCWjU30ioVoPTuZZnNy12SHz6tNDNgJ5Fzk30rzg0I70EIQo3FZaHj1wmUPsJsKe25o-imYeGA_jyzbpEj5ehA73b7sAKYR6u1BXWsXwbYg0Gl0wwkpT_6Nn36ZqmolVX0n0JY6NBa7vpeZAWq3BSqa7y2Ssr6LVCfhbueLyRYmu2LHrVlFvTurmqdvvMoXLUZR54qMd838au-BN79cW_HS0owKGx3aPjBmfM6aN5CHgG_LQdjKfjGJDajk0YBpX1DuDLVhvXrq_sLUcL9na9FGjhag0CzYU38anGhaFMDIIUKUCZ0NocT6uHaQ4pvUVPXu7NJycauoUuR09Hp_8SiPHOpMaSnMgNq8gEbRe3SnmbidmpglIs8h8vaUMpa_0tBIo-30suae-IFDMrnfAqsHZFOF7ZshypuySrvM9LsJJ42vaGVP2NPzJb5WNC6KLGbXhLYcm5ristti0tAQ-NipiI_lb1_uBas9rnoMeido4G2UIu7uRDpvNCgxh6FlvdT8UPU4lLFEFeuN0hIRRQAAErw217gR6-VOw88gY3Upant4Kgqtjd3DKWz5NRnqZy9dCUzeR3GT9k64PF-8-eDiBTyRy-DpaCoQWAIadHBaAS2uNeNLVVZqT3Ppr0WFY4RGNBb_WO2_U2JnG6-F5OpVVFj8yoIGewHke6LzEDdSO0gEv_cPo3Ejv_Z9LwCLE3NPvOEwu_7GTdRLyjQumD7uJfHKRYWVjXglESsf79UYJQSaih0PDHm4Embx_kspTlpxfO6ZdgVKzV4guma-xQR8KhQBaH8680-Xfxhz8b3kU7RMhxR082GiDuyBAYh7roa7J8_CIpUskYzFyqjjwfbgC2e83EhtwiMcGyehXqUw5s0g52rRwt6aSjGSMBSXw-2a2U_11HOX49xm3Ms1_t-Ucp2WtJi7-T5LA9DpkAs7-xm4-DKtK4u8grG_9TwciLgO84CqRfkkDiPnYzfDaDkIMCJeLJRO33jZfMemFnvlToQzarQs3ZAjscL0gVTDHjKt0gYDisJNCx43sGrlwUQvqyQDPAVeDOYWznVtvAUwobKZWlKrT8gZzbd_dTLeKlT1wwBPG7zcipTMkKXvy2Iv7Qh5vL_ZdHVaA1dIvAUBydtBJZX2wlDTs-f9RQM94MBsIPMVnmHQu1mBGKuxxMemKEtj6oE9_9T15hTNDzOO8CaE/https://www.amazon.in/stores/page/4D4D801C-BE70-48F5-A9BC-B397C988C5DC/?_encoding=UTF8&store_ref=SB_A04271051KQXVI97E0J1T-A05987279IFGC5XM6Y8L&pd_rd_plhdr=t&aaxitk=6dfdfa46ca5ff0bea75c23ca97afe63f&hsa_cr_id=5116256370902&lp_query=Samsung%20Galaxy%20phone&lp_slot=desktop-hsa-3psl&aref=vv9dlOkuRD&ref_=sbx_be_s_3psl_mbd_mb0_bkgd&pd_rd_w=ee73B&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=QT27JJX187C0SGFWFNG1&pd_rd_wg=ddP9j&pd_rd_r=ab212c26-2aa5-43d4-9bb7-ed089ed33061
+                          - link "Stylish Back Cover For Samsung J7 Prime" [ref=e1965] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JF_705vTf1ADrzpTi6cMhboAAAGd06XVWQoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICAgws3Y/clv1c_ek-wBPHXUsbW3nymJtYb8xPAyU13fwsZAfyq_c-qzl8SKt7KHEF1-OK1kYWPVCif2E8v8upsloT9Y8c7MvzpTYsn_aNn94-0MWuxp5P-v0hxSFI0OX-MJRz45PpiynBFAUg-5xpojwG1J4raWbVa9NqbIN6ZsnXHpswATnet2KgjgfybFVSXazP8op-yomJcTWMM6kxJY1-oh4X_up_Q9iOfHFJyJl6h2TrWzKKoBiLgAPv72fU9pdhwOG5vR5ZVVDJ2r5BtZwCfPF07IVm60Fuh0KN0oMh01tzsKRRDU-i8drNAv8o82RWHxqtf9TyLnhW2gl6MtPvPkQn11PePU-ZMiS6_vnKjX_Dd_ezKyDgePdsFt2fKJ0oQ69rrW4nUOPmrGMVeYQ08CM5Cie5Ojsca3qyPMtAulzZZiFE0joHYiOlbIFwAgBG7yFXUBjvmddWWEvcv5pXRpADU8SHh9nEiqr4_sQEOSXqPUUGAcCWjU30ioVoPTuZZnNy12SHz6tNDNgJ5Fzk30rzg0I70EIQo3FZaHj1wmUPsJsKe25o-imYeGA_jyzbpEj5ehA73b7sAKYR6u1BXWsXwbYg0Gl0wwkpT_6Nn36ZqmolVX0n0JY6NBa7vpeZAWq3BSqa7y2Ssr6LVCfhbueLyRYmu2LHrVlFvTurmqdvvMoXLUZR54qMd838au-BN79cW_HS0owKGx3aPjBmfM6aN5CHgG_LQdjKfjGJDajk0YBpX1DuDLVhvXrq_sLUcL9na9FGjhag0CzYU38anGhaFMDIIUKUCZ0NocT6uHaQ4pvUVPXu7NJycauoUuR09Hp_8SiPHOpMaSnMgNq8gEbRe3SnmbidmpglIs8h8vaUMpa_0tBIo-30suae-IFDMrnfAqsHZFOF7ZshypuySrvM9LsJJ42vaGVP2NPzJb5WNC6KLGbXhLYcm5ristti0tAQ-NipiI_lb1_uBas9rnoMeido4G2UIu7uRDpvNCgxh6FlvdT8UPU4lLFEFeuN0hIRRQAAErw217gR6-VOw88gY3Upant4Kgqtjd3DKWz5NRnqZy9dCUzeR3GT9k64PF-8-eDiBTyRy-DpaCoQWAIadHBaAS2uNeNLVVZqT3Ppr0WFY4RGNBb_WO2_U2JnG6-F5OpVVFj8yoIGewHke6LzEDdSO0gEv_cPo3Ejv_Z9LwCLE3NPvOEwu_7GTdRLyjQumD7uJfHKRYWVjXglESsf79UYJQSaih0PDHm4Embx_kspTlpxfO6ZdgVKzV4guma-xQR8KhQBaH8680-Xfxhz8b3kU7RMhxR082GiDuyBAYh7roa7J8_CIpUskYzFyqjjwfbgC2e83EhtwiMcGyehXqUw5s0g52rRwt6aSjGSMBSXw-2a2U_11HOX49xm3Ms1_t-Ucp2WtJi7-T5LA9DpkAs7-xm4-DKtK4u8grG_9TwciLgO84CqRfkkDiPnYzfDaDkIMCJeLJRO33jZfMemFnvlToQzarQs3ZAjscL0gVTDHjKt0gYDisJNCx43sGrlwUQvqyQDPAVeDOYWznVtvAUwobKZWlKrT8gZzbd_dTLeKlT1wwBPG7zcipTMkKXvy2Iv7Qh5vL_ZdHVaA1dIvAUBydtBJZX2wlDTs-f9RQM94MBsIPMVnmHQu1mBGKuxxMemKEtj6oE9_9T15hTNDzOO8CaE/https://www.amazon.in/stores/page/4D4D801C-BE70-48F5-A9BC-B397C988C5DC/?_encoding=UTF8&store_ref=SB_A04271051KQXVI97E0J1T-A05987279IFGC5XM6Y8L&pd_rd_plhdr=t&aaxitk=6dfdfa46ca5ff0bea75c23ca97afe63f&hsa_cr_id=5116256370902&lp_query=Samsung%20Galaxy%20phone&lp_slot=desktop-hsa-3psl&aref=vv9dlOkuRD&ref_=sbx_be_s_3psl_mbd_mb0_hl&pd_rd_w=ee73B&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=QT27JJX187C0SGFWFNG1&pd_rd_wg=ddP9j&pd_rd_r=ab212c26-2aa5-43d4-9bb7-ed089ed33061
+                            - generic [ref=e1967]:
+                              - generic [ref=e1968]: Stylish Back Cover For Samsung J7 Prime
+                              - generic [ref=e1969]: Stylish Back Cover For Samsung J7 Prime
+                - generic [ref=e1971]:
+                  - generic:
+                    - generic:
+                      - link:
+                        - /url: https://aax-eu-zaz.amazon.in/x/c/JCKImER06tEqf0ASCGjPwv4AAAGd06XVWgoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICBTyM4Y/clv1c_ek-wxAXWFbbaTfHXD5sELer7rlRWaqZ0MGyLTgm-P6Nxec2PJGt5I4aUuGl-hqxbe9UYAtDAcAOID-6SOhv7CAn5cnOMVsZE3lZjDDMHndw6ShKFryHbN8Licll3oERlvxxfZrZfqvmPEzbCdHMNy-iD-duBxvVqkcKA4VNafAZZXGkbUqgypjM5OwTPAFMCDBE0cbs5AQ8YFCd_vdPN9zKDq_1XLoaevJTHQMtrCkq1eEcG4ANt1brlFKrs2AKBGkBeUC8Wz-9j9Vho0fYo40elq78ZwXPVBcT1Ifx1yivxQpP8WP2CcPCQNAQ7bqOdcRqywIpyDxCkfVRRsE8scEfzLBTHnIxsroaFkZdFZQiRIHSB5U1bKKVgseNuqbHj-R12FBLjIswgB4GisM22cpXKqMZ51A4Vd2MYJ8mxv4KusqPQONl7bzjZ2zwfo3II7rG1BM8Ctw9fkj57MQxKYk91uAmhX8dNDa1DyvIMomK0pubckqqmNB7acR9IoqmMJCc8i7ZqeEPLf1qz61Kx9SaXessBxnwL0PXLfY-f33tFuZdF5evXHH31OuGcOtGBtv-WXC1a6E7bfHl-GkR-IgtnvvS2Zm29tgKAt3UbRgFrXH-ZLdHAB3H8gFuQhFUHR2C5TyBREKKHV817R7di11TUW4oULPdalB7NByLZBFBMnnB5zAuxHwiCin3rJbLFfSMyShnzhoLv7LPpsN3V79JkbRWjBno3DuXbOHtJRbjKUDlIx8-HngeVxnKSUnLfMHJAXhkCTOwnL9Q1grCJI0A3kULrVIoQcwrOT8E9hJTyd0hgSww35E8IKeATWNpXmHYAC0H_cntHRfRGOuGnfF8uzzxas8Fjy57MX6DG5RPBlnwFDJUt-ty-gYyOSlEnf7xsUfAzVc2WZJRfY2K7jEHDfobfrJxIYNl0QwWz0BIEoxQrDOlUW_NmnKW9ZgqgnLKKUzlwrAzu5DX4JOltK0GoDkIWMWLTWqqhRl3Zwgu79XyBo6YcDh-SF6E72DIpLtxxHmgpGYYMXwkL0DbwSlBDO-bvbbw10x6oRolG5C9B7113Wl5U5VE_e8ZCirfYPYi1JfuZk6WqIHVJAEIkZe50v8YnX9zNVo1yRrMxpRtxqm9UhhNtD7tCRq3Ta-asJWcn53oLK8eVwxzBF0mOC0K37lZ807ld6gUfJ0XDb2vjblaGQaORJVFxyLkGgBqm58H3AyIDUYAnisZGfdoeiLdubmRPAYC24tune8YfnPU2IqheUQu8Mv5Z3a7clJnoj83ADIgzw69KZexWhqUki9HQQate0NM3JsjcC4LKQ6MMJ5qCLhpi_G2AZF8YFr8Ln-2H7z3hrlcYRTSYowO4lBGyQ294jDk_4_sv_0AIxd_7Be5kfo3vXTZCyUfCtXUAZnsfs5sB2FkQgSOyHo6A7Mw3FS1W-cwQ3coSeOSbHrZTWkTUhvz1Bme4P0kb8HHWsAUI_WVV5XYRqoSwaJuEnuy400dgoAId7iB6XmRLFyOZsSHuQaP0LN6vP8apNiRoiUo9-kPkN7YVs0R4BTUWcDETDPKRONScCQq-IGyt1cESm0-hlApgSl8ytXQqM8L45_9QnK4sSYCErcvYzMrOhbDk_bNjrlJBOXD3LntQYKwCtNJ1CvBIR0CRfeSKg0AyxPqEDeRn3k30iPuChTefe4DZcz944M-nMY3nyU_sX5dEVp656a7nx1kE1wgRj4XN/https://www.amazon.in/stores/page/AABCDEF3-97A0-4BF9-B3AA-6F9277AB62B0/?_encoding=UTF8&store_ref=SB_A089153126MVPWY6OZ2DT-A01972213KCQBM9EZRZDI&pd_rd_plhdr=t&aaxitk=c99b60a6535402198eafabf77b3a8a1a&hsa_cr_id=0&lp_query=Samsung%20Galaxy%20phone&lp_slot=desktop-hsa-3psl&aref=T3wXA1RRWI&ref_=sbx_be_s_3psl_mbd_mb1_bkgd&pd_rd_w=ee73B&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=QT27JJX187C0SGFWFNG1&pd_rd_wg=ddP9j&pd_rd_r=ab212c26-2aa5-43d4-9bb7-ed089ed33061
+                      - link "Ringke" [ref=e1972] [cursor=pointer]:
+                        - /url: https://aax-eu-zaz.amazon.in/x/c/JCKImER06tEqf0ASCGjPwv4AAAGd06XVWgoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICBTyM4Y/clv1c_ek-wxAXWFbbaTfHXD5sELer7rlRWaqZ0MGyLTgm-P6Nxec2PJGt5I4aUuGl-hqxbe9UYAtDAcAOID-6SOhv7CAn5cnOMVsZE3lZjDDMHndw6ShKFryHbN8Licll3oERlvxxfZrZfqvmPEzbCdHMNy-iD-duBxvVqkcKA4VNafAZZXGkbUqgypjM5OwTPAFMCDBE0cbs5AQ8YFCd_vdPN9zKDq_1XLoaevJTHQMtrCkq1eEcG4ANt1brlFKrs2AKBGkBeUC8Wz-9j9Vho0fYo40elq78ZwXPVBcT1Ifx1yivxQpP8WP2CcPCQNAQ7bqOdcRqywIpyDxCkfVRRsE8scEfzLBTHnIxsroaFkZdFZQiRIHSB5U1bKKVgseNuqbHj-R12FBLjIswgB4GisM22cpXKqMZ51A4Vd2MYJ8mxv4KusqPQONl7bzjZ2zwfo3II7rG1BM8Ctw9fkj57MQxKYk91uAmhX8dNDa1DyvIMomK0pubckqqmNB7acR9IoqmMJCc8i7ZqeEPLf1qz61Kx9SaXessBxnwL0PXLfY-f33tFuZdF5evXHH31OuGcOtGBtv-WXC1a6E7bfHl-GkR-IgtnvvS2Zm29tgKAt3UbRgFrXH-ZLdHAB3H8gFuQhFUHR2C5TyBREKKHV817R7di11TUW4oULPdalB7NByLZBFBMnnB5zAuxHwiCin3rJbLFfSMyShnzhoLv7LPpsN3V79JkbRWjBno3DuXbOHtJRbjKUDlIx8-HngeVxnKSUnLfMHJAXhkCTOwnL9Q1grCJI0A3kULrVIoQcwrOT8E9hJTyd0hgSww35E8IKeATWNpXmHYAC0H_cntHRfRGOuGnfF8uzzxas8Fjy57MX6DG5RPBlnwFDJUt-ty-gYyOSlEnf7xsUfAzVc2WZJRfY2K7jEHDfobfrJxIYNl0QwWz0BIEoxQrDOlUW_NmnKW9ZgqgnLKKUzlwrAzu5DX4JOltK0GoDkIWMWLTWqqhRl3Zwgu79XyBo6YcDh-SF6E72DIpLtxxHmgpGYYMXwkL0DbwSlBDO-bvbbw10x6oRolG5C9B7113Wl5U5VE_e8ZCirfYPYi1JfuZk6WqIHVJAEIkZe50v8YnX9zNVo1yRrMxpRtxqm9UhhNtD7tCRq3Ta-asJWcn53oLK8eVwxzBF0mOC0K37lZ807ld6gUfJ0XDb2vjblaGQaORJVFxyLkGgBqm58H3AyIDUYAnisZGfdoeiLdubmRPAYC24tune8YfnPU2IqheUQu8Mv5Z3a7clJnoj83ADIgzw69KZexWhqUki9HQQate0NM3JsjcC4LKQ6MMJ5qCLhpi_G2AZF8YFr8Ln-2H7z3hrlcYRTSYowO4lBGyQ294jDk_4_sv_0AIxd_7Be5kfo3vXTZCyUfCtXUAZnsfs5sB2FkQgSOyHo6A7Mw3FS1W-cwQ3coSeOSbHrZTWkTUhvz1Bme4P0kb8HHWsAUI_WVV5XYRqoSwaJuEnuy400dgoAId7iB6XmRLFyOZsSHuQaP0LN6vP8apNiRoiUo9-kPkN7YVs0R4BTUWcDETDPKRONScCQq-IGyt1cESm0-hlApgSl8ytXQqM8L45_9QnK4sSYCErcvYzMrOhbDk_bNjrlJBOXD3LntQYKwCtNJ1CvBIR0CRfeSKg0AyxPqEDeRn3k30iPuChTefe4DZcz944M-nMY3nyU_sX5dEVp656a7nx1kE1wgRj4XN/https://www.amazon.in/stores/page/AABCDEF3-97A0-4BF9-B3AA-6F9277AB62B0/?_encoding=UTF8&store_ref=SB_A089153126MVPWY6OZ2DT-A01972213KCQBM9EZRZDI&pd_rd_plhdr=t&aaxitk=c99b60a6535402198eafabf77b3a8a1a&hsa_cr_id=0&lp_query=Samsung%20Galaxy%20phone&lp_slot=desktop-hsa-3psl&aref=T3wXA1RRWI&ref_=sbx_be_s_3psl_mbd_mb1_ls&pd_rd_w=ee73B&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=QT27JJX187C0SGFWFNG1&pd_rd_wg=ddP9j&pd_rd_r=ab212c26-2aa5-43d4-9bb7-ed089ed33061
+                        - img "Ringke" [ref=e1973]
+                      - generic [ref=e1975]:
+                        - generic [ref=e1976]:
+                          - link [ref=e1977] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JCKImER06tEqf0ASCGjPwv4AAAGd06XVWgoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICBTyM4Y/clv1c_ek-wxAXWFbbaTfHXD5sELer7rlRWaqZ0MGyLTgm-P6Nxec2PJGt5I4aUuGl-hqxbe9UYAtDAcAOID-6SOhv7CAn5cnOMVsZE3lZjDDMHndw6ShKFryHbN8Licll3oERlvxxfZrZfqvmPEzbCdHMNy-iD-duBxvVqkcKA4VNafAZZXGkbUqgypjM5OwTPAFMCDBE0cbs5AQ8YFCd_vdPN9zKDq_1XLoaevJTHQMtrCkq1eEcG4ANt1brlFKrs2AKBGkBeUC8Wz-9j9Vho0fYo40elq78ZwXPVBcT1Ifx1yivxQpP8WP2CcPCQNAQ7bqOdcRqywIpyDxCkfVRRsE8scEfzLBTHnIxsroaFkZdFZQiRIHSB5U1bKKVgseNuqbHj-R12FBLjIswgB4GisM22cpXKqMZ51A4Vd2MYJ8mxv4KusqPQONl7bzjZ2zwfo3II7rG1BM8Ctw9fkj57MQxKYk91uAmhX8dNDa1DyvIMomK0pubckqqmNB7acR9IoqmMJCc8i7ZqeEPLf1qz61Kx9SaXessBxnwL0PXLfY-f33tFuZdF5evXHH31OuGcOtGBtv-WXC1a6E7bfHl-GkR-IgtnvvS2Zm29tgKAt3UbRgFrXH-ZLdHAB3H8gFuQhFUHR2C5TyBREKKHV817R7di11TUW4oULPdalB7NByLZBFBMnnB5zAuxHwiCin3rJbLFfSMyShnzhoLv7LPpsN3V79JkbRWjBno3DuXbOHtJRbjKUDlIx8-HngeVxnKSUnLfMHJAXhkCTOwnL9Q1grCJI0A3kULrVIoQcwrOT8E9hJTyd0hgSww35E8IKeATWNpXmHYAC0H_cntHRfRGOuGnfF8uzzxas8Fjy57MX6DG5RPBlnwFDJUt-ty-gYyOSlEnf7xsUfAzVc2WZJRfY2K7jEHDfobfrJxIYNl0QwWz0BIEoxQrDOlUW_NmnKW9ZgqgnLKKUzlwrAzu5DX4JOltK0GoDkIWMWLTWqqhRl3Zwgu79XyBo6YcDh-SF6E72DIpLtxxHmgpGYYMXwkL0DbwSlBDO-bvbbw10x6oRolG5C9B7113Wl5U5VE_e8ZCirfYPYi1JfuZk6WqIHVJAEIkZe50v8YnX9zNVo1yRrMxpRtxqm9UhhNtD7tCRq3Ta-asJWcn53oLK8eVwxzBF0mOC0K37lZ807ld6gUfJ0XDb2vjblaGQaORJVFxyLkGgBqm58H3AyIDUYAnisZGfdoeiLdubmRPAYC24tune8YfnPU2IqheUQu8Mv5Z3a7clJnoj83ADIgzw69KZexWhqUki9HQQate0NM3JsjcC4LKQ6MMJ5qCLhpi_G2AZF8YFr8Ln-2H7z3hrlcYRTSYowO4lBGyQ294jDk_4_sv_0AIxd_7Be5kfo3vXTZCyUfCtXUAZnsfs5sB2FkQgSOyHo6A7Mw3FS1W-cwQ3coSeOSbHrZTWkTUhvz1Bme4P0kb8HHWsAUI_WVV5XYRqoSwaJuEnuy400dgoAId7iB6XmRLFyOZsSHuQaP0LN6vP8apNiRoiUo9-kPkN7YVs0R4BTUWcDETDPKRONScCQq-IGyt1cESm0-hlApgSl8ytXQqM8L45_9QnK4sSYCErcvYzMrOhbDk_bNjrlJBOXD3LntQYKwCtNJ1CvBIR0CRfeSKg0AyxPqEDeRn3k30iPuChTefe4DZcz944M-nMY3nyU_sX5dEVp656a7nx1kE1wgRj4XN/https://www.amazon.in/stores/page/AABCDEF3-97A0-4BF9-B3AA-6F9277AB62B0/?_encoding=UTF8&store_ref=SB_A089153126MVPWY6OZ2DT-A01972213KCQBM9EZRZDI&pd_rd_plhdr=t&aaxitk=c99b60a6535402198eafabf77b3a8a1a&hsa_cr_id=0&lp_query=Samsung%20Galaxy%20phone&lp_slot=desktop-hsa-3psl&aref=T3wXA1RRWI&ref_=sbx_be_s_3psl_mbd_mb1_bkgd&pd_rd_w=ee73B&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=QT27JJX187C0SGFWFNG1&pd_rd_wg=ddP9j&pd_rd_r=ab212c26-2aa5-43d4-9bb7-ed089ed33061
+                          - link "Ringke" [ref=e1978] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JCKImER06tEqf0ASCGjPwv4AAAGd06XVWgoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICBTyM4Y/clv1c_ek-wxAXWFbbaTfHXD5sELer7rlRWaqZ0MGyLTgm-P6Nxec2PJGt5I4aUuGl-hqxbe9UYAtDAcAOID-6SOhv7CAn5cnOMVsZE3lZjDDMHndw6ShKFryHbN8Licll3oERlvxxfZrZfqvmPEzbCdHMNy-iD-duBxvVqkcKA4VNafAZZXGkbUqgypjM5OwTPAFMCDBE0cbs5AQ8YFCd_vdPN9zKDq_1XLoaevJTHQMtrCkq1eEcG4ANt1brlFKrs2AKBGkBeUC8Wz-9j9Vho0fYo40elq78ZwXPVBcT1Ifx1yivxQpP8WP2CcPCQNAQ7bqOdcRqywIpyDxCkfVRRsE8scEfzLBTHnIxsroaFkZdFZQiRIHSB5U1bKKVgseNuqbHj-R12FBLjIswgB4GisM22cpXKqMZ51A4Vd2MYJ8mxv4KusqPQONl7bzjZ2zwfo3II7rG1BM8Ctw9fkj57MQxKYk91uAmhX8dNDa1DyvIMomK0pubckqqmNB7acR9IoqmMJCc8i7ZqeEPLf1qz61Kx9SaXessBxnwL0PXLfY-f33tFuZdF5evXHH31OuGcOtGBtv-WXC1a6E7bfHl-GkR-IgtnvvS2Zm29tgKAt3UbRgFrXH-ZLdHAB3H8gFuQhFUHR2C5TyBREKKHV817R7di11TUW4oULPdalB7NByLZBFBMnnB5zAuxHwiCin3rJbLFfSMyShnzhoLv7LPpsN3V79JkbRWjBno3DuXbOHtJRbjKUDlIx8-HngeVxnKSUnLfMHJAXhkCTOwnL9Q1grCJI0A3kULrVIoQcwrOT8E9hJTyd0hgSww35E8IKeATWNpXmHYAC0H_cntHRfRGOuGnfF8uzzxas8Fjy57MX6DG5RPBlnwFDJUt-ty-gYyOSlEnf7xsUfAzVc2WZJRfY2K7jEHDfobfrJxIYNl0QwWz0BIEoxQrDOlUW_NmnKW9ZgqgnLKKUzlwrAzu5DX4JOltK0GoDkIWMWLTWqqhRl3Zwgu79XyBo6YcDh-SF6E72DIpLtxxHmgpGYYMXwkL0DbwSlBDO-bvbbw10x6oRolG5C9B7113Wl5U5VE_e8ZCirfYPYi1JfuZk6WqIHVJAEIkZe50v8YnX9zNVo1yRrMxpRtxqm9UhhNtD7tCRq3Ta-asJWcn53oLK8eVwxzBF0mOC0K37lZ807ld6gUfJ0XDb2vjblaGQaORJVFxyLkGgBqm58H3AyIDUYAnisZGfdoeiLdubmRPAYC24tune8YfnPU2IqheUQu8Mv5Z3a7clJnoj83ADIgzw69KZexWhqUki9HQQate0NM3JsjcC4LKQ6MMJ5qCLhpi_G2AZF8YFr8Ln-2H7z3hrlcYRTSYowO4lBGyQ294jDk_4_sv_0AIxd_7Be5kfo3vXTZCyUfCtXUAZnsfs5sB2FkQgSOyHo6A7Mw3FS1W-cwQ3coSeOSbHrZTWkTUhvz1Bme4P0kb8HHWsAUI_WVV5XYRqoSwaJuEnuy400dgoAId7iB6XmRLFyOZsSHuQaP0LN6vP8apNiRoiUo9-kPkN7YVs0R4BTUWcDETDPKRONScCQq-IGyt1cESm0-hlApgSl8ytXQqM8L45_9QnK4sSYCErcvYzMrOhbDk_bNjrlJBOXD3LntQYKwCtNJ1CvBIR0CRfeSKg0AyxPqEDeRn3k30iPuChTefe4DZcz944M-nMY3nyU_sX5dEVp656a7nx1kE1wgRj4XN/https://www.amazon.in/stores/page/AABCDEF3-97A0-4BF9-B3AA-6F9277AB62B0/?_encoding=UTF8&store_ref=SB_A089153126MVPWY6OZ2DT-A01972213KCQBM9EZRZDI&pd_rd_plhdr=t&aaxitk=c99b60a6535402198eafabf77b3a8a1a&hsa_cr_id=0&lp_query=Samsung%20Galaxy%20phone&lp_slot=desktop-hsa-3psl&aref=T3wXA1RRWI&ref_=sbx_be_s_3psl_mbd_mb1_logo&pd_rd_w=ee73B&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=QT27JJX187C0SGFWFNG1&pd_rd_wg=ddP9j&pd_rd_r=ab212c26-2aa5-43d4-9bb7-ed089ed33061
+                            - img "Ringke" [ref=e1980]
+                        - generic [ref=e1981]:
+                          - link [ref=e1982] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JCKImER06tEqf0ASCGjPwv4AAAGd06XVWgoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICBTyM4Y/clv1c_ek-wxAXWFbbaTfHXD5sELer7rlRWaqZ0MGyLTgm-P6Nxec2PJGt5I4aUuGl-hqxbe9UYAtDAcAOID-6SOhv7CAn5cnOMVsZE3lZjDDMHndw6ShKFryHbN8Licll3oERlvxxfZrZfqvmPEzbCdHMNy-iD-duBxvVqkcKA4VNafAZZXGkbUqgypjM5OwTPAFMCDBE0cbs5AQ8YFCd_vdPN9zKDq_1XLoaevJTHQMtrCkq1eEcG4ANt1brlFKrs2AKBGkBeUC8Wz-9j9Vho0fYo40elq78ZwXPVBcT1Ifx1yivxQpP8WP2CcPCQNAQ7bqOdcRqywIpyDxCkfVRRsE8scEfzLBTHnIxsroaFkZdFZQiRIHSB5U1bKKVgseNuqbHj-R12FBLjIswgB4GisM22cpXKqMZ51A4Vd2MYJ8mxv4KusqPQONl7bzjZ2zwfo3II7rG1BM8Ctw9fkj57MQxKYk91uAmhX8dNDa1DyvIMomK0pubckqqmNB7acR9IoqmMJCc8i7ZqeEPLf1qz61Kx9SaXessBxnwL0PXLfY-f33tFuZdF5evXHH31OuGcOtGBtv-WXC1a6E7bfHl-GkR-IgtnvvS2Zm29tgKAt3UbRgFrXH-ZLdHAB3H8gFuQhFUHR2C5TyBREKKHV817R7di11TUW4oULPdalB7NByLZBFBMnnB5zAuxHwiCin3rJbLFfSMyShnzhoLv7LPpsN3V79JkbRWjBno3DuXbOHtJRbjKUDlIx8-HngeVxnKSUnLfMHJAXhkCTOwnL9Q1grCJI0A3kULrVIoQcwrOT8E9hJTyd0hgSww35E8IKeATWNpXmHYAC0H_cntHRfRGOuGnfF8uzzxas8Fjy57MX6DG5RPBlnwFDJUt-ty-gYyOSlEnf7xsUfAzVc2WZJRfY2K7jEHDfobfrJxIYNl0QwWz0BIEoxQrDOlUW_NmnKW9ZgqgnLKKUzlwrAzu5DX4JOltK0GoDkIWMWLTWqqhRl3Zwgu79XyBo6YcDh-SF6E72DIpLtxxHmgpGYYMXwkL0DbwSlBDO-bvbbw10x6oRolG5C9B7113Wl5U5VE_e8ZCirfYPYi1JfuZk6WqIHVJAEIkZe50v8YnX9zNVo1yRrMxpRtxqm9UhhNtD7tCRq3Ta-asJWcn53oLK8eVwxzBF0mOC0K37lZ807ld6gUfJ0XDb2vjblaGQaORJVFxyLkGgBqm58H3AyIDUYAnisZGfdoeiLdubmRPAYC24tune8YfnPU2IqheUQu8Mv5Z3a7clJnoj83ADIgzw69KZexWhqUki9HQQate0NM3JsjcC4LKQ6MMJ5qCLhpi_G2AZF8YFr8Ln-2H7z3hrlcYRTSYowO4lBGyQ294jDk_4_sv_0AIxd_7Be5kfo3vXTZCyUfCtXUAZnsfs5sB2FkQgSOyHo6A7Mw3FS1W-cwQ3coSeOSbHrZTWkTUhvz1Bme4P0kb8HHWsAUI_WVV5XYRqoSwaJuEnuy400dgoAId7iB6XmRLFyOZsSHuQaP0LN6vP8apNiRoiUo9-kPkN7YVs0R4BTUWcDETDPKRONScCQq-IGyt1cESm0-hlApgSl8ytXQqM8L45_9QnK4sSYCErcvYzMrOhbDk_bNjrlJBOXD3LntQYKwCtNJ1CvBIR0CRfeSKg0AyxPqEDeRn3k30iPuChTefe4DZcz944M-nMY3nyU_sX5dEVp656a7nx1kE1wgRj4XN/https://www.amazon.in/stores/page/AABCDEF3-97A0-4BF9-B3AA-6F9277AB62B0/?_encoding=UTF8&store_ref=SB_A089153126MVPWY6OZ2DT-A01972213KCQBM9EZRZDI&pd_rd_plhdr=t&aaxitk=c99b60a6535402198eafabf77b3a8a1a&hsa_cr_id=0&lp_query=Samsung%20Galaxy%20phone&lp_slot=desktop-hsa-3psl&aref=T3wXA1RRWI&ref_=sbx_be_s_3psl_mbd_mb1_bkgd&pd_rd_w=ee73B&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=QT27JJX187C0SGFWFNG1&pd_rd_wg=ddP9j&pd_rd_r=ab212c26-2aa5-43d4-9bb7-ed089ed33061
+                          - link "Ringke Cases And Accessories For Samsung S25 Ultra" [ref=e1983] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JCKImER06tEqf0ASCGjPwv4AAAGd06XVWgoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICBTyM4Y/clv1c_ek-wxAXWFbbaTfHXD5sELer7rlRWaqZ0MGyLTgm-P6Nxec2PJGt5I4aUuGl-hqxbe9UYAtDAcAOID-6SOhv7CAn5cnOMVsZE3lZjDDMHndw6ShKFryHbN8Licll3oERlvxxfZrZfqvmPEzbCdHMNy-iD-duBxvVqkcKA4VNafAZZXGkbUqgypjM5OwTPAFMCDBE0cbs5AQ8YFCd_vdPN9zKDq_1XLoaevJTHQMtrCkq1eEcG4ANt1brlFKrs2AKBGkBeUC8Wz-9j9Vho0fYo40elq78ZwXPVBcT1Ifx1yivxQpP8WP2CcPCQNAQ7bqOdcRqywIpyDxCkfVRRsE8scEfzLBTHnIxsroaFkZdFZQiRIHSB5U1bKKVgseNuqbHj-R12FBLjIswgB4GisM22cpXKqMZ51A4Vd2MYJ8mxv4KusqPQONl7bzjZ2zwfo3II7rG1BM8Ctw9fkj57MQxKYk91uAmhX8dNDa1DyvIMomK0pubckqqmNB7acR9IoqmMJCc8i7ZqeEPLf1qz61Kx9SaXessBxnwL0PXLfY-f33tFuZdF5evXHH31OuGcOtGBtv-WXC1a6E7bfHl-GkR-IgtnvvS2Zm29tgKAt3UbRgFrXH-ZLdHAB3H8gFuQhFUHR2C5TyBREKKHV817R7di11TUW4oULPdalB7NByLZBFBMnnB5zAuxHwiCin3rJbLFfSMyShnzhoLv7LPpsN3V79JkbRWjBno3DuXbOHtJRbjKUDlIx8-HngeVxnKSUnLfMHJAXhkCTOwnL9Q1grCJI0A3kULrVIoQcwrOT8E9hJTyd0hgSww35E8IKeATWNpXmHYAC0H_cntHRfRGOuGnfF8uzzxas8Fjy57MX6DG5RPBlnwFDJUt-ty-gYyOSlEnf7xsUfAzVc2WZJRfY2K7jEHDfobfrJxIYNl0QwWz0BIEoxQrDOlUW_NmnKW9ZgqgnLKKUzlwrAzu5DX4JOltK0GoDkIWMWLTWqqhRl3Zwgu79XyBo6YcDh-SF6E72DIpLtxxHmgpGYYMXwkL0DbwSlBDO-bvbbw10x6oRolG5C9B7113Wl5U5VE_e8ZCirfYPYi1JfuZk6WqIHVJAEIkZe50v8YnX9zNVo1yRrMxpRtxqm9UhhNtD7tCRq3Ta-asJWcn53oLK8eVwxzBF0mOC0K37lZ807ld6gUfJ0XDb2vjblaGQaORJVFxyLkGgBqm58H3AyIDUYAnisZGfdoeiLdubmRPAYC24tune8YfnPU2IqheUQu8Mv5Z3a7clJnoj83ADIgzw69KZexWhqUki9HQQate0NM3JsjcC4LKQ6MMJ5qCLhpi_G2AZF8YFr8Ln-2H7z3hrlcYRTSYowO4lBGyQ294jDk_4_sv_0AIxd_7Be5kfo3vXTZCyUfCtXUAZnsfs5sB2FkQgSOyHo6A7Mw3FS1W-cwQ3coSeOSbHrZTWkTUhvz1Bme4P0kb8HHWsAUI_WVV5XYRqoSwaJuEnuy400dgoAId7iB6XmRLFyOZsSHuQaP0LN6vP8apNiRoiUo9-kPkN7YVs0R4BTUWcDETDPKRONScCQq-IGyt1cESm0-hlApgSl8ytXQqM8L45_9QnK4sSYCErcvYzMrOhbDk_bNjrlJBOXD3LntQYKwCtNJ1CvBIR0CRfeSKg0AyxPqEDeRn3k30iPuChTefe4DZcz944M-nMY3nyU_sX5dEVp656a7nx1kE1wgRj4XN/https://www.amazon.in/stores/page/AABCDEF3-97A0-4BF9-B3AA-6F9277AB62B0/?_encoding=UTF8&store_ref=SB_A089153126MVPWY6OZ2DT-A01972213KCQBM9EZRZDI&pd_rd_plhdr=t&aaxitk=c99b60a6535402198eafabf77b3a8a1a&hsa_cr_id=0&lp_query=Samsung%20Galaxy%20phone&lp_slot=desktop-hsa-3psl&aref=T3wXA1RRWI&ref_=sbx_be_s_3psl_mbd_mb1_hl&pd_rd_w=ee73B&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=QT27JJX187C0SGFWFNG1&pd_rd_wg=ddP9j&pd_rd_r=ab212c26-2aa5-43d4-9bb7-ed089ed33061
+                            - generic [ref=e1985]:
+                              - generic [ref=e1986]: Ringke Cases And Accessories For Samsung S25 Ultra
+                              - generic [ref=e1987]: Ringke Cases And Accessories For Samsung S25 Ultra
+          - generic [ref=e1993]:
+            - heading "Need help?" [level=2] [ref=e1996]
+            - generic [ref=e1997]:
+              - link "Visit the help section" [ref=e1998] [cursor=pointer]:
+                - /url: /gp/help/customer/display.html?nodeId=201889520
+              - text: or
+              - link "contact us" [ref=e1999] [cursor=pointer]:
+                - /url: /gp/help/customer/contact-us
+          - generic [ref=e2002]:
+            - iframe [ref=e2003]:
+              - generic [ref=f2e4]:
+                - generic [ref=f2e5]: Sponsored Ad. Brand logo. Product image. Destinio Waterproof Padded Gadget Organizer - Tech Pouch for USB Cable, Travel Adapter, Laptop Mobile Charger, Power Bank, Ear Phones,Hard Disk, Digital Electronic Accessories Organiser Bag (Black) 1799 Shop now
+                - link "Click to navigate to product detail page" [ref=f2e8] [cursor=pointer]:
+                  - /url: https://aax-eu-zaz.amazon.in/x/c/RAkzE78OK7GJiAnNW_VXfNAAAAGd06XVHwoAAAH_AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICBq1btR/clv1c_ek-ggwfWLcTejRDeOV40fqAyA0qyKZAVtG3jutrRuBZN_kMpWS7TGCPFSIRECO-tAzg2iGJRvtA3f0rAvywsVR4GUkRmf3MZ-Wfn9NbxjNRYCsEulHF-sj34o-w1yyZbmieQjMwyOO52D0-sWpIey9Hcppl8F-1KM7bM2W-he6LCSbEbstj1fmtrwy47dIoCPcRpxnm2CBtqEgVO5kiD56v_Xl4rGIyujurH6EjY9OXfiV8iGZ3GhqnGAKoE5ylhzqnCHoWXSqVPQvSJp5OTQ8M6glaDr7Llxo06SDjcOwMZ6JVVSZ2w_Moi8VYxR-QcQea9rIT05jc03Ebc08vCu_OjYxJehV4ISrDWy-KMUpexDzY87Vpkxz_5C_A9nsYkkXkUp0qs8VZeV9GQE0iuYkwqFJseZto4UO_wMY_VBpaOOrsR3eOTTIxBljlLCJOi7ZrjdIu0ZvfmuCIHRDAiMeTJSQUYUJnMvfbcNeR5pgPyav2s5WA8mnDyOQ8JFQBHmbeqZVKcDENq2vz6RrxQtu6iLm-HUhOrfzm3MFR8Ezbu3cXfokouk4C1IWhyu2Vpm1Mi6eMiOhf_9irgfAWHk0F14jcAcjBlpdDkUcaFlmY0iFPoGOf1B4F4LGvpMqFwfBkZKyV8xvLf52rlRH-OxgnBVbXgkjE_nNQrCNcUHgF6l8OsUINjxPQ3qEjztaIt9mk2c1wBJcG4ATKZKWiJ_p75IWepR-47h-iADLZ9RIehL9l06lJbp85VM7euCfLgYjv89cJCjQwZlirVLwWfx3Wn1XlZ0R_HxI8EW3n_TuVdvPw0-qHT3Brhr-SPpx57XY8IyLIRjR9dLtCF_nhSQYozunlzxJ1Neuvk0gI36xrwOWhhI0fqX-xH0dyGnblrQqYuX35F7Q3xQDiI36CMnXQlm4bBWYEBi3l-zbr33aiWXuaRXUh_uZanT-2bYKNQHgwxeUTWe0ZBcyqCrJUfeFvn6mLsD-3cZwEapm1lTZleGjI4UTqRxn3o9J-NFg/http://www.amazon.in/dp/B0CS36581R/ref=syn_sd_onsite_desktop_0?ie=UTF8&psc=1&pd_rd_plhdr=t&aref=DRuhIeKPDZ
+                - generic [ref=f2e9]:
+                  - img "Brand logo" [ref=f2e13]
+                  - img "Product image" [ref=f2e17]
+                  - generic [ref=f2e21]: Stylish , Functional, Destinio all the way
+            - button "Leave feedback on Sponsored advertisement" [ref=e2005] [cursor=pointer]:
+              - generic [ref=e2006]: Sponsored
+        - link "Go back to filtering menu" [ref=e2008] [cursor=pointer]:
+          - /url: "#s-skipLinkTargetForFilterOptions"
+      - dialog "Filters" [ref=e2009]:
+        - generic [ref=e2010]:
+          - link "Skip to main search results" [ref=e2011] [cursor=pointer]:
+            - /url: "#s-skipLinkTargetForMainSearchResults"
+          - generic [ref=e2013]:
+            - generic [ref=e2017]:
+              - group [ref=e2018]:
+                - heading "Popular Shopping Ideas" [level=2] [ref=e2019]
+                - list [ref=e2020]:
+                  - listitem [ref=e2021]:
+                    - link "S Series" [ref=e2023] [cursor=pointer]:
+                      - /url: /s?k=samsung+galaxy+s&ref=sr_nr_p_rag_integrated_qb_0
+                  - listitem [ref=e2024]:
+                    - link "M Series" [ref=e2026] [cursor=pointer]:
+                      - /url: /s?k=samsung+galaxy+m55&ref=sr_nr_p_rag_integrated_qb_1
+                  - listitem [ref=e2027]:
+                    - link "Waterproof" [ref=e2029] [cursor=pointer]:
+                      - /url: /s?k=samsung+galaxy+phone+waterproof&ref=sr_nr_p_rag_integrated_qb_2
+                  - listitem [ref=e2030]:
+                    - link "A Series" [ref=e2032] [cursor=pointer]:
+                      - /url: /s?k=samsung+galaxy+a51+phone&ref=sr_nr_p_rag_integrated_qb_3
+                  - listitem [ref=e2033]:
+                    - button "See more" [ref=e2036] [cursor=pointer]: See more
+              - separator [ref=e2038]
+              - group "Eligible for Free Delivery" [ref=e2039]:
+                - heading "Eligible for Free Delivery" [level=2] [ref=e2040]
+                - list "Eligible for Free Delivery" [ref=e2041]:
+                  - listitem "Popular Shopping Ideas" [ref=e2042]:
+                    - link "Apply the filter Free Shipping to narrow results" [ref=e2044] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_free_shipping_eligible%3A205563695031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=205563694031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_free_shipping_eligible_1&ds=v1%3AjYivwt0cgTw%2BZ27Xg3iwDJsd0a62wjZo5DBvQHRR7VM
+                      - checkbox [ref=e2047]
+                      - text: Free Shipping
+                      - generic [ref=e2049]: Get FREE Shipping on eligible orders shipped by Amazon
+              - group [ref=e2050]:
+                - generic [ref=e2051]:
+                  - generic [ref=e2052]: Price
+                  - generic [ref=e2055]:
+                    - generic [ref=e2056]:
+                      - generic [ref=e2057]: ₹135
+                      - generic [ref=e2058]: –
+                      - generic [ref=e2059]: ₹95,000+
+                    - generic [ref=e2061]:
+                      - generic:
+                        - slider "Minimum price": "0"
+                      - generic [ref=e2062]:
+                        - slider "Maximum price": "188"
+                - heading "Deals & Discounts" [level=2] [ref=e2063]
+                - list "Deals & Discounts" [ref=e2064]:
+                  - listitem [ref=e2065]:
+                    - link "All Discounts" [ref=e2067] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_deal_type%3A26921226031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=26921223031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_deal_type_1&ds=v1%3AzclTy9sbYz5N3fDqUgm4Fam2AhKR5YEcHJIKY%2F2oGZE
+                  - listitem [ref=e2068]:
+                    - link "Buy More, Save More" [ref=e2070] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_deal_type%3A210770213031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=26921223031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_deal_type_2&ds=v1%3Az3PhGmn3R4FcNWSkLhCrUXNVPDlq5j%2BxyOf6vLnmpmw
+                  - listitem [ref=e2071]:
+                    - link "Coupons" [ref=e2073] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_deal_type%3A210770212031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=26921223031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_deal_type_3&ds=v1%3AXDEUzdf%2BP1RmtHKdnkzY%2FyGCrZLY53cRIcpUO45h6A8
+                  - listitem [ref=e2074]:
+                    - link "Today's Deals" [ref=e2076] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_deal_type%3A26921224031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=26921223031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_deal_type_4&ds=v1%3AOsnTSyfnAw7VHo%2FJ8BPYVNHoHDT9dWAh5CkNjcD6AcY
+              - group "Brands" [ref=e2077]:
+                - heading "Brands" [level=2] [ref=e2078]
+                - list "Brands" [ref=e2079]:
+                  - listitem "Popular Shopping Ideas" [ref=e2080]:
+                    - link "Apply the filter Samsung to narrow results" [ref=e2082] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_123%3A46655&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=91049095031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_123_1&ds=v1%3A4ypEnyNvYZKxqxBEGziLQATpNZjby6CNQEZptVhN%2FPk
+                      - checkbox [ref=e2085]
+                      - text: Samsung
+              - group "Customer Reviews" [ref=e2087]:
+                - heading "Customer Reviews" [level=2] [ref=e2088]
+                - list "Customer Reviews" [ref=e2089]:
+                  - listitem [ref=e2090]:
+                    - link "Apply the filter 4 Stars & Up to narrow results" [ref=e2093] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_72%3A1318476031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=1318475031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_72_1&ds=v1%3Av0cBgQnmIOhfT7aMAZ4KpccyLY%2B1TFVxz6ikXKqhYDw
+                      - generic [ref=e2095]: 4 Stars
+                      - text: "& Up"
+              - group "Storage Capacity" [ref=e2096]:
+                - heading "Storage Capacity" [level=2] [ref=e2097]
+                - list "Storage Capacity" [ref=e2098]:
+                  - listitem "Popular Shopping Ideas" [ref=e2099]:
+                    - link "Apply the filter 8 GB to narrow results" [ref=e2101] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1003492455111%3A44349047031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=44349045031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1003492455111_1&ds=v1%3AaGlIBYqoj90GNc0pNyghtthyasROr47wgfrylvFO39M
+                      - checkbox [ref=e2104]
+                      - text: 8 GB
+                  - listitem "Popular Shopping Ideas" [ref=e2106]:
+                    - link "Apply the filter 128 GB to narrow results" [ref=e2108] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1003492455111%3A81332994031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=44349045031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1003492455111_2&ds=v1%3AgqRFaU19jXaCl3dZwnPbfnV6r8voyE%2B7mXo3IBulXv4
+                      - checkbox [ref=e2111]
+                      - text: 128 GB
+                  - listitem "Popular Shopping Ideas" [ref=e2113]:
+                    - link "Apply the filter 256 GB to narrow results" [ref=e2115] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1003492455111%3A81332996031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=44349045031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1003492455111_3&ds=v1%3ARp25la3dgZb81i1C7lWTlosc5m3cQAciTPc3RRxqvRg
+                      - checkbox [ref=e2118]
+                      - text: 256 GB
+                  - listitem "Popular Shopping Ideas" [ref=e2120]:
+                    - link "Apply the filter 512 GB & above to narrow results" [ref=e2122] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1003492455111%3A92070749031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=44349045031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1003492455111_4&ds=v1%3AI%2F4j986kTeqqst8ARQHz3IUoN0ZbTY7EHzL13Hpe8cQ
+                      - checkbox [ref=e2125]
+                      - text: 512 GB & above
+              - group "RAM Size" [ref=e2127]:
+                - heading "RAM Size" [level=2] [ref=e2128]
+                - list "RAM Size" [ref=e2129]:
+                  - listitem "Popular Shopping Ideas" [ref=e2130]:
+                    - link "Apply the filter 4 to 5.9 GB to narrow results" [ref=e2132] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1003495121111%3A44897296031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=44897277031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1003495121111_1&ds=v1%3AZY3pJRdiPofY%2Bs2A%2BcKusmIMZrMw6pu0zmKY9XNM7jw
+                      - checkbox [ref=e2135]
+                      - text: 4 to 5.9 GB
+                  - listitem "Popular Shopping Ideas" [ref=e2137]:
+                    - link "Apply the filter 6 to 7.9 GB to narrow results" [ref=e2139] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1003495121111%3A44897287031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=44897277031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1003495121111_2&ds=v1%3Aq23vNmUJgay2rubnQkpl5esmxxZU1sPXxA5UvN894fk
+                      - checkbox [ref=e2142]
+                      - text: 6 to 7.9 GB
+                  - listitem "Popular Shopping Ideas" [ref=e2144]:
+                    - link "Apply the filter 8 to 9.9 GB to narrow results" [ref=e2146] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1003495121111%3A44897288031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=44897277031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1003495121111_3&ds=v1%3AtvIhg%2FB4FLJv7bbRy7LEuHFQoAQzUwcNRqhQSvRKNdg
+                      - checkbox [ref=e2149]
+                      - text: 8 to 9.9 GB
+                  - listitem "Popular Shopping Ideas" [ref=e2151]:
+                    - link "Apply the filter 10 GB & Above to narrow results" [ref=e2153] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1003495121111%3A44897292031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=44897277031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1003495121111_4&ds=v1%3AfhuufryMYm%2FhnMfHvwwrtY0PtFrtcLqJCMISWR%2ByO3c
+                      - checkbox [ref=e2156]
+                      - text: 10 GB & Above
+              - group "Item Condition" [ref=e2158]:
+                - heading "Item Condition" [level=2] [ref=e2159]
+                - list "Item Condition" [ref=e2160]:
+                  - listitem "Popular Shopping Ideas" [ref=e2161]:
+                    - link "Apply the filter New to narrow results" [ref=e2163] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_condition-type%3A8609960031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=8609959031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_condition-type_1&ds=v1%3AwkFYqii35v7oxoimA0D%2BKyTvCndeYmzD1opApPQtyOw
+                      - checkbox [ref=e2166]
+                      - text: New
+              - group "Battery Capacity" [ref=e2168]:
+                - heading "Battery Capacity" [level=2] [ref=e2169]
+                - list "Battery Capacity" [ref=e2170]:
+                  - listitem "Popular Shopping Ideas" [ref=e2171]:
+                    - link "Apply the filter 3,000 to 3,999 mAh to narrow results" [ref=e2173] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-101015098008111%3A91805327031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=91805324031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-101015098008111_1&ds=v1%3AzKytSz2GK%2Bos7CXUGu8EsuJn2jNzYpugqDHWRdc0uu4
+                      - checkbox [ref=e2176]
+                      - text: 3,000 to 3,999 mAh
+                  - listitem "Popular Shopping Ideas" [ref=e2178]:
+                    - link "Apply the filter 4,000 to 4,999 mAh to narrow results" [ref=e2180] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-101015098008111%3A91805325031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=91805324031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-101015098008111_2&ds=v1%3A%2Fuw5EVgABM4if5F4sIvnFoqIbFJV7B46gC6fmVnQZ2o
+                      - checkbox [ref=e2183]
+                      - text: 4,000 to 4,999 mAh
+                  - listitem "Popular Shopping Ideas" [ref=e2185]:
+                    - link "Apply the filter 5,000 to 5,999 mAh to narrow results" [ref=e2187] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-101015098008111%3A91805326031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=91805324031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-101015098008111_3&ds=v1%3A44f6gpotBIIYAcJ0gafqW9NsUGlqAjBT0a9Yf6Ei3PA
+                      - checkbox [ref=e2190]
+                      - text: 5,000 to 5,999 mAh
+                  - listitem "Popular Shopping Ideas" [ref=e2192]:
+                    - link "Apply the filter 6,000 mAh & Above to narrow results" [ref=e2194] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-101015098008111%3A92071917031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=91805324031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-101015098008111_4&ds=v1%3A9WURy%2B8Rt7VPxJiMmJ7yu4WRxudkk9M%2FiAEBr9RKjvw
+                      - checkbox [ref=e2197]
+                      - text: 6,000 mAh & Above
+              - group "Cellular Technology" [ref=e2199]:
+                - heading "Cellular Technology" [level=2] [ref=e2200]
+                - list "Cellular Technology" [ref=e2201]:
+                  - listitem "Popular Shopping Ideas" [ref=e2202]:
+                    - link "Apply the filter 4G to narrow results" [ref=e2204] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1003469290111%3A33962379031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=33962288031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1003469290111_1&ds=v1%3ATRhU3BvW4ON5WDLY6Y2hP8lPh37b05NFt92tdRSEt9Y
+                      - checkbox [ref=e2207]
+                      - text: 4G
+                  - listitem "Popular Shopping Ideas" [ref=e2209]:
+                    - link "Apply the filter 5G to narrow results" [ref=e2211] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1003469290111%3A33962382031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=33962288031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1003469290111_2&ds=v1%3AOKsOetm6aId4bNgJKhrh5NNRC12wO9q%2Bwuoc1cvw%2BQg
+                      - checkbox [ref=e2214]
+                      - text: 5G
+              - group "Discount" [ref=e2216]:
+                - heading "Discount" [level=2] [ref=e2217]
+                - list "Discount" [ref=e2218]:
+                  - listitem [ref=e2219]:
+                    - link "10% Off or more" [ref=e2221] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_pct-off-with-tax%3A2665399031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=2665398031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_pct-off-with-tax_1&ds=v1%3AUq%2FjrrjjZL4kjq0JsormHNT7yk1IGQr%2FD6%2F8bJLDEm0
+                  - listitem [ref=e2222]:
+                    - link "25% Off or more" [ref=e2224] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_pct-off-with-tax%3A2665400031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=2665398031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_pct-off-with-tax_2&ds=v1%3AD5usnYlsb%2B1v6Yrf5V1eH9pIPh80RL52ZhYTn1X1%2B4A
+                  - listitem [ref=e2225]:
+                    - link "35% Off or more" [ref=e2227] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_pct-off-with-tax%3A2665402031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=2665398031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_pct-off-with-tax_3&ds=v1%3AKEfpsIASvYmLkLhhYxKQruE9nw7rRVnV51gBvu%2BhkhU
+                  - listitem [ref=e2228]:
+                    - link "50% Off or more" [ref=e2230] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_pct-off-with-tax%3A2665401031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=2665398031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_pct-off-with-tax_4&ds=v1%3Ac866QEF4ehxkASUnHIZ8qV4fQPypoLhRkcSaSOBiaVQ
+                  - listitem [ref=e2231]:
+                    - link "60% Off or more" [ref=e2233] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_pct-off-with-tax%3A27060456031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=2665398031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_pct-off-with-tax_5&ds=v1%3AaUJZf48D66Pj2ZwuELPkFSP8r8W1LFXRUJG9ZIcVo8M
+                  - listitem [ref=e2234]:
+                    - link "70% Off or more" [ref=e2236] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_pct-off-with-tax%3A27060457031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=2665398031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_pct-off-with-tax_6&ds=v1%3AQYy7iZPnxIZEVnRuHwCnKHqsYnA4MDqYNPQtRvpPjnU
+              - group "Display Type" [ref=e2237]:
+                - heading "Display Type" [level=2] [ref=e2238]
+                - list "Display Type" [ref=e2239]:
+                  - listitem "Popular Shopping Ideas" [ref=e2240]:
+                    - link "Apply the filter AMOLED to narrow results" [ref=e2242] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-101013595158111%3A66009619031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=66009617031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-101013595158111_1&ds=v1%3AHMibz9sJSRfogdcxVOjxY4LEZY%2ByBAXHhFtQFyrcWkE
+                      - checkbox [ref=e2245]
+                      - text: AMOLED
+                  - listitem "Popular Shopping Ideas" [ref=e2247]:
+                    - link "Apply the filter LCD to narrow results" [ref=e2249] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-101013595158111%3A66009618031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=66009617031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-101013595158111_2&ds=v1%3AtKr0t1sq4jDNTxS2NgA2fQGpMuJk8gYom%2B3WkAk7Lb8
+                      - checkbox [ref=e2252]
+                      - text: LCD
+              - group "Camera Resolution" [ref=e2254]:
+                - heading "Camera Resolution" [level=2] [ref=e2255]
+                - list "Camera Resolution" [ref=e2256]:
+                  - listitem "Popular Shopping Ideas" [ref=e2257]:
+                    - link "Apply the filter 20 MP & above to narrow results" [ref=e2259] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1004151207091%3A1898707031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=1898694031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1004151207091_1&ds=v1%3AAR1KHEvvgTmgaFthOtAr%2B02v8ot%2FMTJZZttgZmQO8bc
+                      - checkbox [ref=e2262]
+                      - text: 20 MP & above
+              - group "Processor Speed" [ref=e2264]:
+                - heading "Processor Speed" [level=2] [ref=e2265]
+                - list "Processor Speed" [ref=e2266]:
+                  - listitem "Popular Shopping Ideas" [ref=e2267]:
+                    - link "Apply the filter 1.5 - 1.99 GHz to narrow results" [ref=e2269] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_feature_nine_browse-bin%3A8561125031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=8561123031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_feature_nine_browse-bin_1&ds=v1%3A5Xrff1PqZHMs1G98fqM0C6pu7EDrfZkb1GD%2Bf3WiuvY
+                      - checkbox [ref=e2272]
+                      - text: 1.5 - 1.99 GHz
+                  - listitem "Popular Shopping Ideas" [ref=e2274]:
+                    - link "Apply the filter 2 - 2.4 GHz to narrow results" [ref=e2276] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_feature_nine_browse-bin%3A8561126031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=8561123031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_feature_nine_browse-bin_2&ds=v1%3AlJOV94ID8pVE0K8VSSdfKzBueKj4XIDsSs0RblF87vo
+                      - checkbox [ref=e2279]
+                      - text: 2 - 2.4 GHz
+                  - listitem "Popular Shopping Ideas" [ref=e2281]:
+                    - link "Apply the filter 2.5 GHz & Above to narrow results" [ref=e2283] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_feature_nine_browse-bin%3A8561127031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=8561123031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_feature_nine_browse-bin_3&ds=v1%3AkoL3BUpp0v9MexKQRweBQP3eO3RR97VG6%2BQy%2FO%2Fp7jo
+                      - checkbox [ref=e2286]
+                      - text: 2.5 GHz & Above
+              - group "Screen Size" [ref=e2288]:
+                - heading "Screen Size" [level=2] [ref=e2289]
+                - list "Screen Size" [ref=e2290]:
+                  - listitem "Popular Shopping Ideas" [ref=e2291]:
+                    - link "Apply the filter Up to 12.9 cm to narrow results" [ref=e2293] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_feature_browse-bin%3A212266965031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=212266959031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_feature_browse-bin_1&ds=v1%3A9NffooX1gLu2RHDsgJS6ida5bZ%2BMJGRBe5rMZZMH0pY
+                      - checkbox [ref=e2296]
+                      - text: Up to 12.9 cm
+                  - listitem "Popular Shopping Ideas" [ref=e2298]:
+                    - link "Apply the filter 15 to 17.9 cm to narrow results" [ref=e2300] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_feature_browse-bin%3A212266964031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=212266959031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_feature_browse-bin_2&ds=v1%3AdtXqAtHblCgTM8aFUYDFv0utftyUCLUQ6sVkQEbWDzI
+                      - checkbox [ref=e2303]
+                      - text: 15 to 17.9 cm
+              - group "Cell Phone Brands" [ref=e2305]:
+                - heading "Cell Phone Brands" [level=2] [ref=e2306]
+                - list "Cell Phone Brands" [ref=e2307]:
+                  - listitem "Popular Shopping Ideas" [ref=e2308]:
+                    - link "Apply the filter Top Brands to narrow results" [ref=e2310] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_format_browse-bin%3A30678580031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=30678573031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_format_browse-bin_1&ds=v1%3Ak3aIa8A9au%2Fm%2FHldi4rwGE5XsGhOFb6FqqGj3kfZvn4
+                      - checkbox [ref=e2313]
+                      - text: Top Brands
+              - group "Operating System" [ref=e2315]:
+                - heading "Operating System" [level=2] [ref=e2316]
+                - list "Operating System" [ref=e2317]:
+                  - listitem "Popular Shopping Ideas" [ref=e2318]:
+                    - link "Apply the filter Android 14 to narrow results" [ref=e2320] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1003517064111%3A206818075031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=51258619031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1003517064111_1&ds=v1%3A3iKe3jC2MfrN90Mlt8%2BbCgNBChIpPG1L5cN9zx%2FLYHU
+                      - checkbox [ref=e2323]
+                      - text: Android 14
+                  - listitem "Popular Shopping Ideas" [ref=e2325]:
+                    - link "Apply the filter Android 13.0 to narrow results" [ref=e2327] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1003517064111%3A51258698031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=51258619031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1003517064111_2&ds=v1%3AaB5NI%2F%2BWZDMOtWDux4JZg52C59X%2FliV5qc1FpD%2FuUOs
+                      - checkbox [ref=e2330]
+                      - text: Android 13.0
+              - group "Mobile Phone Primary Camera Resolution" [ref=e2332]:
+                - heading "Mobile Phone Primary Camera Resolution" [level=2] [ref=e2333]
+                - list "Mobile Phone Primary Camera Resolution" [ref=e2334]:
+                  - listitem "Popular Shopping Ideas" [ref=e2335]:
+                    - link "Apply the filter 12 - 15.9 MP to narrow results" [ref=e2337] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_feature_fourteen_browse-bin%3A21329554031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=21345983031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_feature_fourteen_browse-bin_1&ds=v1%3A9uWgB9R0yygqYlr93paO9iSTfyqAf7OwnJsaw1Z5BOw
+                      - checkbox [ref=e2340]
+                      - text: 12 - 15.9 MP
+                  - listitem "Popular Shopping Ideas" [ref=e2342]:
+                    - link "Apply the filter 32 MP & Above to narrow results" [ref=e2344] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_feature_fourteen_browse-bin%3A21329559031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=21345983031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_feature_fourteen_browse-bin_2&ds=v1%3Af7sCF8fChoMR%2BzC4oSFLcpJdJ67L2nzkL%2BIg0rCaFGA
+                      - checkbox [ref=e2347]
+                      - text: 32 MP & Above
+              - group "New Arrivals" [ref=e2349]:
+                - heading "New Arrivals" [level=2] [ref=e2350]
+                - list "New Arrivals" [ref=e2351]:
+                  - listitem [ref=e2352]:
+                    - link "Last 90 days" [ref=e2354] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_date_first_available_absolute%3A1318488031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=1318486031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_date_first_available_absolute_1&ds=v1%3AlmYW7zEKVcO3ih9ph80pUkHfW9TgzoPxZmCo%2BgoIv3s
+              - group "SIM Card Slot Count" [ref=e2355]:
+                - heading "SIM Card Slot Count" [level=2] [ref=e2356]
+                - list "SIM Card Slot Count" [ref=e2357]:
+                  - listitem "Popular Shopping Ideas" [ref=e2358]:
+                    - link "Apply the filter Single SIM to narrow results" [ref=e2360] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1002989427111%3A27179458031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=27179439031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1002989427111_1&ds=v1%3ALhiU9iwRXyaq7dlJL%2FpQQexMt%2FeQBrGn%2B1s0LuyCB3M
+                      - checkbox [ref=e2363]
+                      - text: Single SIM
+                  - listitem "Popular Shopping Ideas" [ref=e2365]:
+                    - link "Apply the filter Dual SIM to narrow results" [ref=e2367] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1002989427111%3A27179459031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=27179439031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1002989427111_2&ds=v1%3AhB33uvm6a1wP7VGue%2FeRGwmxweiBMchB9OqVlit5mbc
+                      - checkbox [ref=e2370]
+                      - text: Dual SIM
+              - group "Connector Type" [ref=e2372]:
+                - heading "Connector Type" [level=2] [ref=e2373]
+                - list "Connector Type" [ref=e2374]:
+                  - listitem "Popular Shopping Ideas" [ref=e2375]:
+                    - link "Apply the filter 3.5mm Jack to narrow results" [ref=e2377] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1002085485111%3A27403492031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=27403487031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1002085485111_1&ds=v1%3AnySPl0nPff%2F3Z1qvocxcNLWnVHTzEKzUnwbvEaoJJ1g
+                      - checkbox [ref=e2380]
+                      - text: 3.5mm Jack
+                  - listitem "Popular Shopping Ideas" [ref=e2382]:
+                    - link "Apply the filter USB Type C to narrow results" [ref=e2384] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1002085485111%3A27403491031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=27403487031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1002085485111_2&ds=v1%3A5QHQD3lT%2FjZEWpca2pgKLUDSZMmZVvBTMAnyWtsXGIM
+                      - checkbox [ref=e2387]
+                      - text: USB Type C
+              - group "Pay On Delivery" [ref=e2389]:
+                - heading "Pay On Delivery" [level=2] [ref=e2390]
+                - list "Pay On Delivery" [ref=e2391]:
+                  - listitem "Popular Shopping Ideas" [ref=e2392]:
+                    - link "Apply the filter Eligible for Pay On Delivery to narrow results" [ref=e2394] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_is_cod_eligible%3A4931671031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=4931670031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_is_cod_eligible_1&ds=v1%3AB%2BTvjs7KGYJEA5Jijni2umZh1tUVx0QBGfNiC%2BsCtaM
+                      - checkbox [ref=e2397]
+                      - text: Eligible for Pay On Delivery
+              - group "Connectivity" [ref=e2399]:
+                - heading "Connectivity" [level=2] [ref=e2400]
+                - list "Connectivity" [ref=e2401]:
+                  - listitem "Popular Shopping Ideas" [ref=e2402]:
+                    - link "Apply the filter Bluetooth to narrow results" [ref=e2404] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1002112230111%3A27363277031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=27363274031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1002112230111_1&ds=v1%3A266%2FpX2MDfbk3cXAEoj8MQP3Y3S99f2oXxNiEHY2S5A
+                      - checkbox [ref=e2407]
+                      - text: Bluetooth
+                  - listitem "Popular Shopping Ideas" [ref=e2409]:
+                    - link "Apply the filter NFC to narrow results" [ref=e2411] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1002112230111%3A27363279031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=27363274031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1002112230111_2&ds=v1%3AnqT5UEP7entYIWrP2KE8DSHMftk%2Fo%2FmyUzdU76jyBEU
+                      - checkbox [ref=e2414]
+                      - text: NFC
+                  - listitem "Popular Shopping Ideas" [ref=e2416]:
+                    - link "Apply the filter USB to narrow results" [ref=e2418] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1002112230111%3A27363276031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=27363274031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1002112230111_3&ds=v1%3ABCCzWqHgdDdO%2BdowYDRkaVfbM8AOKdQH5eEDPCNXPcs
+                      - checkbox [ref=e2421]
+                      - text: USB
+                  - listitem "Popular Shopping Ideas" [ref=e2423]:
+                    - link "Apply the filter Wi-Fi to narrow results" [ref=e2425] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1002112230111%3A27363278031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=27363274031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1002112230111_4&ds=v1%3AeNPspPPLiKTHrNOtd6dFVv%2BXS9jnKaOo%2Fv%2FfvVvtajs
+                      - checkbox [ref=e2428]
+                      - text: Wi-Fi
+              - group "Security Feature" [ref=e2430]:
+                - heading "Security Feature" [level=2] [ref=e2431]
+                - list "Security Feature" [ref=e2432]:
+                  - listitem "Popular Shopping Ideas" [ref=e2433]:
+                    - link "Apply the filter Fingerprint Recognition to narrow results" [ref=e2435] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1002085472111%3A27355812031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=27355796031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1002085472111_1&ds=v1%3AIpxUN3CtMHMFtGmZB0SZJ1S%2BeLn26z1V4kc6sQWkeJc
+                      - checkbox [ref=e2438]
+                      - text: Fingerprint Recognition
+                  - listitem "Popular Shopping Ideas" [ref=e2440]:
+                    - link "Apply the filter Face Recognition to narrow results" [ref=e2442] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1002085472111%3A27355807031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=27355796031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1002085472111_2&ds=v1%3A9zCNo3x4xqF3GcApY6qM20ZcPkCgsr%2FL8iVJaYGXPm8
+                      - checkbox [ref=e2445]
+                      - text: Face Recognition
+              - group "Front Camera Resolution" [ref=e2447]:
+                - heading "Front Camera Resolution" [level=2] [ref=e2448]
+                - list "Front Camera Resolution" [ref=e2449]:
+                  - listitem "Popular Shopping Ideas" [ref=e2450]:
+                    - link "Apply the filter 7.0 to 9.9 MP to narrow results" [ref=e2452] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1003565058111%3A61505201031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=61505195031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1003565058111_1&ds=v1%3AcCevOXLTSXqTO9JDfx%2BtMZ%2Fzvi9N3mU9%2Be5gKfRXH5I
+                      - checkbox [ref=e2455]
+                      - text: 7.0 to 9.9 MP
+                  - listitem "Popular Shopping Ideas" [ref=e2457]:
+                    - link "Apply the filter 10.0 to 12.9 MP to narrow results" [ref=e2459] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1003565058111%3A61505199031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=61505195031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1003565058111_2&ds=v1%3AwaWZ6iyeo6fwvQ8YmXYlSeBHE5aITdueyrldzoU5l8o
+                      - checkbox [ref=e2462]
+                      - text: 10.0 to 12.9 MP
+                  - listitem "Popular Shopping Ideas" [ref=e2464]:
+                    - link "Apply the filter 13.0 MP & above to narrow results" [ref=e2466] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1003565058111%3A61505197031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=61505195031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1003565058111_3&ds=v1%3AfHusPBxUl7H3%2F9zfFaL0R0D2DsFGUEWTOCdRHo4gv3E
+                      - checkbox [ref=e2469]
+                      - text: 13.0 MP & above
+              - group "Colour" [ref=e2471]:
+                - heading "Colour" [level=2] [ref=e2472]
+                - list "Colour" [ref=e2473]:
+                  - listitem [ref=e2474]:
+                    - generic:
+                      - link "Apply the filter Black to narrow results":
+                        - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_size_two_browse-vebin%3A15563995031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=15563994031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_size_two_browse-vebin_1&ds=v1%3AbTQy9vcfTSrXag513L4VhMnbcq1dTCss1tpi%2Bsb%2FFw8
+                  - listitem [ref=e2476]:
+                    - generic:
+                      - link "Apply the filter Transparent to narrow results":
+                        - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_size_two_browse-vebin%3A15564012031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=15563994031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_size_two_browse-vebin_2&ds=v1%3AIoTGnR3qgnWwyxnO%2B5u0SzLgJPSQPDjzoNPH72qP7vk
+                  - listitem [ref=e2478]:
+                    - generic:
+                      - link "Apply the filter Blue to narrow results":
+                        - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_size_two_browse-vebin%3A15564007031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=15563994031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_size_two_browse-vebin_3&ds=v1%3APqZyqjrunwosfcwifC8kPqW7sVjZG1T7E4bCYXak%2FOs
+                  - listitem [ref=e2480]:
+                    - generic:
+                      - link "Apply the filter White to narrow results":
+                        - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_size_two_browse-vebin%3A15563997031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=15563994031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_size_two_browse-vebin_4&ds=v1%3A2SWWbHhPqxjHs6pZc7bxr7VhMX1R48fkk5NkGDGYR9I
+                  - listitem [ref=e2482]:
+                    - generic:
+                      - link "Apply the filter Red to narrow results":
+                        - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_size_two_browse-vebin%3A15564000031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=15563994031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_size_two_browse-vebin_5&ds=v1%3A4Fef6Qf99fs3AZg0T4M%2BOJxUJuSN5mwkX1LMpLS8OoI
+                  - listitem [ref=e2484]:
+                    - generic:
+                      - link "Apply the filter Pink to narrow results":
+                        - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_size_two_browse-vebin%3A15564001031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=15563994031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_size_two_browse-vebin_6&ds=v1%3A284nzOBWikooXzcY%2FGou39M3GU8IGjEAe34cq3BdZ3U
+                  - listitem [ref=e2486]:
+                    - generic:
+                      - link "Apply the filter Orange to narrow results":
+                        - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_size_two_browse-vebin%3A15564002031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=15563994031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_size_two_browse-vebin_7&ds=v1%3AcFgkU0bxNOl8TGqvytdd60yVEt%2FMmeCR7KCRvaMi9BU
+                  - listitem [ref=e2488]:
+                    - generic:
+                      - link "Apply the filter Green to narrow results":
+                        - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_size_two_browse-vebin%3A15564005031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=15563994031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_size_two_browse-vebin_8&ds=v1%3AIl39C0pVxIx6o37Zk0DATddNt1cB15aCiBVXgSPWkxk
+                  - listitem [ref=e2490]:
+                    - generic:
+                      - link "Apply the filter Purple to narrow results":
+                        - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_size_two_browse-vebin%3A15564008031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=15563994031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_size_two_browse-vebin_9&ds=v1%3APKKAVSLRgCFfnjkvUTRlT4AGp5WWawAefWYYV%2FH9d5k
+                  - listitem [ref=e2492]:
+                    - generic:
+                      - link "Apply the filter Multicoloured to narrow results":
+                        - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_size_two_browse-vebin%3A15564011031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=15563994031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_size_two_browse-vebin_10&ds=v1%3A0SBmpVK0IG6Vbm%2BGzK%2B7QsDPHAjUzbk0R83qyDKOpu8
+              - group "Input" [ref=e2494]:
+                - heading "Input" [level=2] [ref=e2495]
+                - list "Input" [ref=e2496]:
+                  - listitem "Popular Shopping Ideas" [ref=e2497]:
+                    - link "Apply the filter Touchscreen to narrow results" [ref=e2499] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1002097072111%3A27362061031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=27362059031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1002097072111_1&ds=v1%3AehQbBl4OOvjkHtLZfcFmhJliJKgcnoCuGFu9tIGJa08
+                      - checkbox [ref=e2502]
+                      - text: Touchscreen
+              - group "Display Resolution" [ref=e2504]:
+                - heading "Display Resolution" [level=2] [ref=e2505]
+                - list "Display Resolution" [ref=e2506]:
+                  - listitem "Popular Shopping Ideas" [ref=e2507]:
+                    - link "Apply the filter 1080 x 2340 to narrow results" [ref=e2509] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1002090229111%3A27345227031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=27345181031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1002090229111_1&ds=v1%3A4fWp5M%2B4xVOey%2B71uBNg%2FPAh4kMNGGwZfMWyA%2FA0MYk
+                      - checkbox [ref=e2512]
+                      - text: 1080 x 2340
+                  - listitem "Popular Shopping Ideas" [ref=e2514]:
+                    - link "Apply the filter 2340 x 1080 to narrow results" [ref=e2516] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1002090229111%3A27345192031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=27345181031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1002090229111_2&ds=v1%3AF5n%2FEpo%2Ba5ddCIJgOlyjqEuiPYdviy3IIUyk6xtRDng
+                      - checkbox [ref=e2519]
+                      - text: 2340 x 1080
+                  - listitem "Popular Shopping Ideas" [ref=e2521]:
+                    - link "Apply the filter 2400 x 1080 to narrow results" [ref=e2523] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1002090229111%3A27345223031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=27345181031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1002090229111_3&ds=v1%3AzM3k%2Bh7u1BUCucCvkQfr7oQlrhzzWKkHQNZX1L2Zsko
+                      - checkbox [ref=e2526]
+                      - text: 2400 x 1080
+                  - listitem "Popular Shopping Ideas" [ref=e2528]:
+                    - link "Apply the filter 2640 x 1080 to narrow results" [ref=e2530] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1002090229111%3A96594206031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=27345181031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1002090229111_4&ds=v1%3A9o5e67Z3ChCXoVWEpnPg4BDIV1VpgTBYJ1EznDVXiqg
+                      - checkbox [ref=e2533]
+                      - text: 2640 x 1080
+                  - listitem "Popular Shopping Ideas" [ref=e2535]:
+                    - link "Apply the filter 720 x 1600 to narrow results" [ref=e2537] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1002090229111%3A56611001031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=27345181031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1002090229111_5&ds=v1%3AtJSMpJMJ7FnNKqEQZ5hLqIF4dh36BnSL1yeOasCkBFQ
+                      - checkbox [ref=e2540]
+                      - text: 720 x 1600
+              - group "Rear Camera Photo Sensor Resolution" [ref=e2542]:
+                - heading "Rear Camera Photo Sensor Resolution" [level=2] [ref=e2543]
+                - list "Rear Camera Photo Sensor Resolution" [ref=e2544]:
+                  - listitem "Popular Shopping Ideas" [ref=e2545]:
+                    - link "Apply the filter Up to 9.9 MP to narrow results" [ref=e2547] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1003477899111%3A42253779031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=42253749031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1003477899111_1&ds=v1%3ABI2Vg6Ot7wVbnym8y3zrsTj2yz9ogaq9pTvK9sdwXUw
+                      - checkbox [ref=e2550]
+                      - text: Up to 9.9 MP
+                  - listitem "Popular Shopping Ideas" [ref=e2552]:
+                    - link "Apply the filter 10 to 12.9 MP to narrow results" [ref=e2554] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1003477899111%3A42253777031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=42253749031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1003477899111_2&ds=v1%3AWjWlskKe%2FuKQSEadOQ%2FYYcq4irSUNF99vy1DcqsVVvc
+                      - checkbox [ref=e2557]
+                      - text: 10 to 12.9 MP
+                  - listitem "Popular Shopping Ideas" [ref=e2559]:
+                    - link "Apply the filter 16 MP & Above to narrow results" [ref=e2561] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1003477899111%3A42253778031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=42253749031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1003477899111_3&ds=v1%3AIuvz1SW66zm%2FOqvoZR5ir084ZwTih4pl6QSI4sq72oQ
+                      - checkbox [ref=e2564]
+                      - text: 16 MP & Above
+              - group "Availability" [ref=e2566]:
+                - heading "Availability" [level=2] [ref=e2567]
+                - list "Availability" [ref=e2568]:
+                  - listitem "Popular Shopping Ideas" [ref=e2569]:
+                    - link "Apply the filter Include Out of Stock to narrow results" [ref=e2571] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_availability%3A1318485031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=1318483031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_availability_2&ds=v1%3ARIUq7K%2BSg8lU2zhnWc1%2FB92IKPa7o%2F6cuS8TBeiDtA8
+                      - checkbox [ref=e2574]
+                      - text: Include Out of Stock
+              - group "Video Capture Resolution" [ref=e2576]:
+                - heading "Video Capture Resolution" [level=2] [ref=e2577]
+                - list "Video Capture Resolution" [ref=e2578]:
+                  - listitem "Popular Shopping Ideas" [ref=e2579]:
+                    - link "Apply the filter 1080p to narrow results" [ref=e2581] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1003305462111%3A28430295031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=28430291031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1003305462111_1&ds=v1%3Ao6Fj7Col4zpF9h3SwptddAjcOvJq6V5YhUILOZAhkv4
+                      - checkbox [ref=e2584]
+                      - text: 1080p
+                  - listitem "Popular Shopping Ideas" [ref=e2586]:
+                    - link "Apply the filter 4k to narrow results" [ref=e2588] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1003305462111%3A28430294031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=28430291031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1003305462111_2&ds=v1%3Ad9LMeed%2BeFwwFle%2BINGFSbGVTaL1nm7hIq7sqyDYVm4
+                      - checkbox [ref=e2591]
+                      - text: 4k
+                  - listitem "Popular Shopping Ideas" [ref=e2593]:
+                    - link "Apply the filter 720p to narrow results" [ref=e2595] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1003305462111%3A28430293031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=28430291031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1003305462111_3&ds=v1%3AgsR6FniefxEZCoXf5XqEGgUrnaspADDf0HzuTJoaQ7o
+                      - checkbox [ref=e2598]
+                      - text: 720p
+                  - listitem "Popular Shopping Ideas" [ref=e2600]:
+                    - link "Apply the filter 8k to narrow results" [ref=e2602] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1003305462111%3A28430296031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=28430291031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1003305462111_4&ds=v1%3ArceJmPnq9%2BT1nKpnOy8vLcecWytxZ4gDHVkUTd9ieS4
+                      - checkbox [ref=e2605]
+                      - text: 8k
+              - group "Battery Life" [ref=e2607]:
+                - heading "Battery Life" [level=2] [ref=e2608]
+                - list "Battery Life" [ref=e2609]:
+                  - listitem "Popular Shopping Ideas" [ref=e2610]:
+                    - link "Apply the filter 7 to 12.9 h to narrow results" [ref=e2612] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1003486052111%3A42062131031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=42062008031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1003486052111_1&ds=v1%3ANYBZnNT%2BRFxMj%2FPqcb19PjwUuhVtkeMtxEghw%2Fg3ZZ8
+                      - checkbox [ref=e2615]
+                      - text: 7 to 12.9 h
+                  - listitem "Popular Shopping Ideas" [ref=e2617]:
+                    - link "Apply the filter 19 h & above to narrow results" [ref=e2619] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1003486052111%3A42062130031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=42062008031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1003486052111_2&ds=v1%3Ao57KmcPwKWNz7aqbyDu%2FFya1UU9NEl9X37Wo6hD3Bok
+                      - checkbox [ref=e2622]
+                      - text: 19 h & above
+              - group "Weight" [ref=e2624]:
+                - heading "Weight" [level=2] [ref=e2625]
+                - list "Weight" [ref=e2626]:
+                  - listitem "Popular Shopping Ideas" [ref=e2627]:
+                    - link "Apply the filter Up to 141.9 g to narrow results" [ref=e2629] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1003491669111%3A42659590031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=42659587031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1003491669111_1&ds=v1%3AtTxDZDiHyG8W7yl9%2Fvu1jF1LkxDYqrqhRngXvyw32gM
+                      - checkbox [ref=e2632]
+                      - text: Up to 141.9 g
+                  - listitem "Popular Shopping Ideas" [ref=e2634]:
+                    - link "Apply the filter 142 to 197.9 g to narrow results" [ref=e2636] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1003491669111%3A42659588031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=42659587031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1003491669111_2&ds=v1%3AFY8pGHDCS8npl38uBi9MYM5jUJBIVefLJe8YIsPRVyo
+                      - checkbox [ref=e2639]
+                      - text: 142 to 197.9 g
+                  - listitem "Popular Shopping Ideas" [ref=e2641]:
+                    - link "Apply the filter 198 to 254.9 g to narrow results" [ref=e2643] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1003491669111%3A42659589031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=42659587031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1003491669111_3&ds=v1%3AQcTKLEDU0CCeoP%2BJguKaPChVNkNtj6nIj1Cr1eYasMQ
+                      - checkbox [ref=e2646]
+                      - text: 198 to 254.9 g
+              - group "Flash" [ref=e2648]:
+                - heading "Flash" [level=2] [ref=e2649]
+                - list "Flash" [ref=e2650]:
+                  - listitem "Popular Shopping Ideas" [ref=e2651]:
+                    - link "Apply the filter LED to narrow results" [ref=e2653] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-101015500208111%3A100427321031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=100427311031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-101015500208111_1&ds=v1%3AhDT3u1Wkyo3SP9lENkA6AbXoDM8mORjF0ucEyvtLUHE
+                      - checkbox [ref=e2656]
+                      - text: LED
+              - group "Sim Card Size" [ref=e2658]:
+                - heading "Sim Card Size" [level=2] [ref=e2659]
+                - list "Sim Card Size" [ref=e2660]:
+                  - listitem "Popular Shopping Ideas" [ref=e2661]:
+                    - link "Apply the filter Nano to narrow results" [ref=e2663] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1002989370111%3A27179455031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=27179438031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1002989370111_1&ds=v1%3Act5Cce6%2B2zYE85yxFMLGDQ5Kl9co7rAinogEjbh52H4
+                      - checkbox [ref=e2666]
+                      - text: Nano
+              - group "Supported Satellite Navigation System" [ref=e2668]:
+                - heading "Supported Satellite Navigation System" [level=2] [ref=e2669]
+                - list "Supported Satellite Navigation System" [ref=e2670]:
+                  - listitem "Popular Shopping Ideas" [ref=e2671]:
+                    - link "Apply the filter BeiDou to narrow results" [ref=e2673] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-101015498432111%3A100424900031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=100424895031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-101015498432111_1&ds=v1%3ADLX7XOmWp8Uw0WYY4VSo8%2FJPIK9xci%2BrwpyjcAp5duM
+                      - checkbox [ref=e2676]
+                      - text: BeiDou
+                  - listitem "Popular Shopping Ideas" [ref=e2678]:
+                    - link "Apply the filter Galileo to narrow results" [ref=e2680] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-101015498432111%3A100424904031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=100424895031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-101015498432111_2&ds=v1%3A1th%2Fgw%2Bjj4rVtP9krjbNK4giDcmni1X%2FByTaRbB3kT4
+                      - checkbox [ref=e2683]
+                      - text: Galileo
+                  - listitem "Popular Shopping Ideas" [ref=e2685]:
+                    - link "Apply the filter GLONASS to narrow results" [ref=e2687] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-101015498432111%3A100424903031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=100424895031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-101015498432111_3&ds=v1%3AlcUIs8At3jgHAJmPDI9%2F0bi7VqGIPqnU6KZDAWnLGTE
+                      - checkbox [ref=e2690]
+                      - text: GLONASS
+                  - listitem "Popular Shopping Ideas" [ref=e2692]:
+                    - link "Apply the filter GPS to narrow results" [ref=e2694] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-101015498432111%3A100424905031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=100424895031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-101015498432111_4&ds=v1%3A%2BObhFaTPcRvN4ybhujISyhet2WzNBad4pG75tmZkzmU
+                      - checkbox [ref=e2697]
+                      - text: GPS
+              - group "Display Refresh Rate in Hertz" [ref=e2699]:
+                - heading "Display Refresh Rate in Hertz" [level=2] [ref=e2700]
+                - list "Display Refresh Rate in Hertz" [ref=e2701]:
+                  - listitem "Popular Shopping Ideas" [ref=e2702]:
+                    - link "Apply the filter 120 to narrow results" [ref=e2704] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-101017397158111%3A214852071031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=214852064031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-101017397158111_1&ds=v1%3ASiGlp26J7UIPSNopGUNSxNyZR%2Bsj840bvIyX65ZqCCs
+                      - checkbox [ref=e2707]
+                      - text: "120"
+              - group "Wireless Network Technology" [ref=e2709]:
+                - heading "Wireless Network Technology" [level=2] [ref=e2710]
+                - list "Wireless Network Technology" [ref=e2711]:
+                  - listitem "Popular Shopping Ideas" [ref=e2712]:
+                    - link "Apply the filter GSM to narrow results" [ref=e2714] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-101015498571111%3A100436155031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=100436133031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-101015498571111_1&ds=v1%3AB9%2Fz6IQEV8b%2FwvyVPp9C2AuycOweUffixSokb%2BLv5Mk
+                      - checkbox [ref=e2717]
+                      - text: GSM
+                  - listitem "Popular Shopping Ideas" [ref=e2719]:
+                    - link "Apply the filter Wi-Fi to narrow results" [ref=e2721] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-101015498571111%3A100436151031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=100436133031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-101015498571111_2&ds=v1%3AHU2ti%2FXLJOthmuOrOTxTiVr4znOVzwSxY2MIa1s4sKI
+                      - checkbox [ref=e2724]
+                      - text: Wi-Fi
+                  - listitem "Popular Shopping Ideas" [ref=e2726]:
+                    - link "Apply the filter Bluetooth to narrow results" [ref=e2728] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-101015498571111%3A207962825031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=100436133031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-101015498571111_3&ds=v1%3ACnlqlGWN5cOfyOug13WRmiojUz3h7nrCWtrl5VfX3go
+                      - checkbox [ref=e2731]
+                      - text: Bluetooth
+                  - listitem "Popular Shopping Ideas" [ref=e2733]:
+                    - link "Apply the filter LTE to narrow results" [ref=e2735] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-101015498571111%3A100436153031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=100436133031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-101015498571111_4&ds=v1%3AM9tCQRHSjLB2ouoc%2FUuUDvnI%2BG70fRoFHXVxP%2B8Oh8g
+                      - checkbox [ref=e2738]
+                      - text: LTE
+              - group "Aspect Ratio" [ref=e2740]:
+                - heading "Aspect Ratio" [level=2] [ref=e2741]
+                - list "Aspect Ratio" [ref=e2742]:
+                  - listitem "Popular Shopping Ideas" [ref=e2743]:
+                    - link "Apply the filter 16:9 to narrow results" [ref=e2745] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-101015688486111%3A204879948031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=204879945031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-101015688486111_1&ds=v1%3APJpP3AbllCmddbMjntl%2BLzIayhVKiyIbi8J%2BPNY46CM
+                      - checkbox [ref=e2748]
+                      - text: 16:9
+              - group "Battery Type" [ref=e2750]:
+                - heading "Battery Type" [level=2] [ref=e2751]
+                - list "Battery Type" [ref=e2752]:
+                  - listitem "Popular Shopping Ideas" [ref=e2753]:
+                    - link "Apply the filter Lithium-Ion to narrow results" [ref=e2755] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-101015500034111%3A100427319031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=100427310031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-101015500034111_1&ds=v1%3ARtBuhMYLxlcblyRPmd1jS2d4Opjh7LjauSyAaGaqlbM
+                      - checkbox [ref=e2758]
+                      - text: Lithium-Ion
+              - group "GenAI Model" [ref=e2760]:
+                - heading "GenAI Model" [level=2] [ref=e2761]
+                - list "GenAI Model" [ref=e2762]:
+                  - listitem "Popular Shopping Ideas" [ref=e2763]:
+                    - link "Apply the filter Galaxy AI to narrow results" [ref=e2765] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-101016978070111%3A211735166031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=211735163031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-101016978070111_1&ds=v1%3AWV4JFmUYkVgG8DhcHB1ZyTninBb3FeeRYE1DfYmnIgU
+                      - checkbox [ref=e2768]
+                      - text: Galaxy AI
+              - group "Headphones Jack" [ref=e2770]:
+                - heading "Headphones Jack" [level=2] [ref=e2771]
+                - list "Headphones Jack" [ref=e2772]:
+                  - listitem "Popular Shopping Ideas" [ref=e2773]:
+                    - link "Apply the filter 3.5 mm to narrow results" [ref=e2775] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-101015501406111%3A100427563031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=100427546031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-101015501406111_1&ds=v1%3AUrjYRecv8EhMXf%2BfFa5YaCfWkAKKAoqCNWvYqJnBsx0
+                      - checkbox [ref=e2778]
+                      - text: 3.5 mm
+              - group "Camera Modes" [ref=e2780]:
+                - heading "Camera Modes" [level=2] [ref=e2781]
+                - list "Camera Modes" [ref=e2782]:
+                  - listitem "Popular Shopping Ideas" [ref=e2783]:
+                    - link "Apply the filter Aperture Priority to narrow results" [ref=e2785] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-1002252610111%3A27316763031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=27316761031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-1002252610111_1&ds=v1%3AdOizeaHSv7oJd%2ByW2G5Hw88iS5VdK8V2w3B0VFXV29o
+                      - checkbox [ref=e2788]
+                      - text: Aperture Priority
+              - group "Included Components" [ref=e2790]:
+                - heading "Included Components" [level=2] [ref=e2791]
+                - list "Included Components" [ref=e2792]:
+                  - listitem "Popular Shopping Ideas" [ref=e2793]:
+                    - link "Apply the filter Quick Start Guide to narrow results" [ref=e2795] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-101013594324111%3A213480632031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=66008593031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-101013594324111_1&ds=v1%3ANh2%2B1HNtZUcMsRVNGbMrqwjmFvs8KG6i47%2BUsopjGZI
+                      - checkbox [ref=e2798]
+                      - text: Quick Start Guide
+                  - listitem "Popular Shopping Ideas" [ref=e2800]:
+                    - link "Apply the filter Screen Protector to narrow results" [ref=e2802] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-101013594324111%3A66008622031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=66008593031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-101013594324111_2&ds=v1%3AX2N3PdkQmGke0XBqzlINDO2uFnZFWHORCvgT5DOID08
+                      - checkbox [ref=e2805]
+                      - text: Screen Protector
+                  - listitem "Popular Shopping Ideas" [ref=e2807]:
+                    - link "Apply the filter SIM Tray Ejector to narrow results" [ref=e2809] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-101013594324111%3A66008617031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=66008593031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-101013594324111_3&ds=v1%3A0X4s0jNlzNrHFxZZdkoNO6lhgbe89B2vW4PKVvubbeg
+                      - checkbox [ref=e2812]
+                      - text: SIM Tray Ejector
+              - group "GPS Navigation" [ref=e2814]:
+                - heading "GPS Navigation" [level=2] [ref=e2815]
+                - list "GPS Navigation" [ref=e2816]:
+                  - listitem "Popular Shopping Ideas" [ref=e2817]:
+                    - link "Apply the filter False to narrow results" [ref=e2819] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-101015364874111%3A96329644031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=96329629031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-101015364874111_1&ds=v1%3AvdgqecHkBqcifLj2zt5Kp7spvGNPzsT7kCspiHEChRg
+                      - checkbox [ref=e2822]
+                      - text: "False"
+                  - listitem "Popular Shopping Ideas" [ref=e2824]:
+                    - link "Apply the filter True to narrow results" [ref=e2826] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_n_g-101015364874111%3A96329643031&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=96329629031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_n_g-101015364874111_2&ds=v1%3ARhtpcc3%2B6UZFN3VlXEX%2FhjHlcUHYjMu%2F5Swakwhf8IU
+                      - checkbox [ref=e2829]
+                      - text: "True"
+              - group "Seller" [ref=e2831]:
+                - heading "Seller" [level=2] [ref=e2832]
+                - list "Seller" [ref=e2833]:
+                  - listitem "Popular Shopping Ideas" [ref=e2834]:
+                    - link "Apply the filter AIMS International to narrow results" [ref=e2836] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_6%3AA2JEP7O2CQD4LK&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=1318474031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_6_1&ds=v1%3ATh908eq%2BHh7UBeV6BHtH5uW71ffng4rJ%2F4o2F78ihW4
+                      - checkbox [ref=e2839]
+                      - text: AIMS International
+                  - listitem "Popular Shopping Ideas" [ref=e2841]:
+                    - link "Apply the filter Clicktech Retail Private Ltd to narrow results" [ref=e2843] [cursor=pointer]:
+                      - /url: /s?k=Samsung+Galaxy+phone&rh=p_6%3AAJ6SIZC8YQDZX&dc&crid=2NUCGL5RS1PRY&qid=1777372353&rnid=1318474031&sprefix=samsung+galaxy+phone%2Caps%2C1000&ref=sr_nr_p_6_2&ds=v1%3AG3%2Fm1Y5gBxQjZAqYBrxNlEMHxp4ZYRXBy9SVxBBF9WM
+                      - checkbox [ref=e2846]
+                      - text: Clicktech Retail Private Ltd
+                  - listitem [ref=e2848]:
+                    - button "See more, Seller" [ref=e2851] [cursor=pointer]: See more
+            - generic [ref=e2856]:
+              - iframe [ref=e2857]:
+                - generic [ref=f3e4]:
+                  - generic [ref=f3e5]: Sponsored Ad. Brand logo. Product image. Destinio Waterproof Padded Gadget Organizer - Tech Pouch for USB Cable, Travel Adapter, Laptop Mobile Charger, Power Bank, Ear Phones,Hard Disk, Digital Electronic Accessories Organiser Bag (Black) 1799 Shop now
+                  - link "Click to navigate to product detail page" [ref=f3e8] [cursor=pointer]:
+                    - /url: https://aax-eu-zaz.amazon.in/x/c/RMI_hlBoLXtQqOvMnSCPn0EAAAGd06XVKQoAAAH_AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDEgICCQobXy/clv1c_ek-ggwXWLcTCjhDeOV40fqAyA0qyKZAVtO3ggC8ODN01X2kI0nzM4nLGf1VX0mhtKCOizG447kgi2W99Gy8sVR4GUkRm_yidb61h8_pi5sh0HiqNV2agDHit5MD4n1AdXD4N1wKn6L44wZVCiYLWetDNhM0cWpSq36jR95lLrnI27E2RAvjdb4juJ_LHshUPecNbNU-d-Xc2t9Sttw9Vs33aH1MDRiW1NsrkRmeSJNPP9n8WXJme-lBPG_2R6DfuN0Qn1QTPQcNbV_uM0wRpIl-VJEOPivNi16YqEpGbH3j61OFQEg61tts2kLLYJEVxGq7EVVqEhkE4WRWcsdVCAhuA_O__av3b-mE3fOC-mqjc72Rf8uvMM3gSILW6daBAhvXEMHT9fI8r71fm7JsBvli5X5SMkhjt3LUpbvnjI7pBGE-kjI6z0Z5a0lvTNH6_bQ7kaSpuPzV5OYkNrOt1wbjsl6bJsbiAHm4yAgYawLLLRRovVWb5WCT4goWFIFyWclxHo-cqtanRs2664Vk--eC_PcRc1FDpAP_NlFbc-o7Lere77EomJ18M42h1UJiC-CdGngEoNVCs2C9G55-egSxoao-LmBuJ8eh9ZyXUCByHv7uoTwIoL29Vn13JAzbRWHu0_OjWKAT_kDBfWiOznWp__V3EPx4Ya0yYaHHbR82dt0SygK3K0NDLulsUfYVwqgHA3ahMrQhkAArRXqZE7Bx0ImUqWyO4YZivDyZaaOm2xmvXGrH6ujSXRuIvTTDTmTatHsOvzHfawQaHYowubl-gZNnshKAgUAGZ6SWJZm8h88ClW5mwEt13oVX44ISr_9anw7uy7DxZI0P3RRjbw4sVF9GE67TYKIza9ODPpGcniM8aSGBV5U_Hdz_utp3dQ3s47v1K1RGpFDotgINaJFixwn-sQJawlTEKDtAbmfUzD7xZEH4Mb7dmSs9kNGtvuCG_KCy3In0IO1J6vuaAQ9vJcoJc3h1YVwnXYLsaKl11viZZenHHGfMLVFzWnEZTUi0/http://www.amazon.in/dp/B0CS36581R/ref=syn_sd_onsite_desktop_0?ie=UTF8&psc=1&pd_rd_plhdr=t&aref=DRuhIeKPDZ
+                  - generic [ref=f3e9]:
+                    - img "Brand logo" [ref=f3e13]
+                    - generic [ref=f3e16]: Stylish , Functional, Destinio all the way
+                    - img "Product image" [ref=f3e20]
+              - button "Leave feedback on Sponsored advertisement" [ref=e2859] [cursor=pointer]:
+                - generic [ref=e2860]: Sponsored
+            - generic [ref=e2865]:
+              - iframe [ref=e2866]:
+                - generic [ref=f4e4]:
+                  - generic [ref=f4e5]: Sponsored Ad. Brand logo. Product image. Destinio Nylon Tech Organizer Pouch- Waterproof Padded Electronic Gadget Bag for USB Cable,Travel Adapter, Laptop Mobile Charger, Power Bank, Ear Phones,Hard Disk, Digital Accessories Organiser(Blue) 1709 Shop now
+                  - link "Click to navigate to product detail page" [ref=f4e8] [cursor=pointer]:
+                    - /url: https://aax-eu-zaz.amazon.in/x/c/RLMXP8kPMy-kFPcxnngvSc0AAAGd06XVKAoAAAH_AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDEgICCeRBXt/clv1c_ek-ggwfWLcTCTRHeOV40fqAyA0qyKZB6QdnmcCx-puKYUr2LSlbWaAtUwFNXkm8C16MoiGINVfST_5q5xHg2cj2U2c9_8SJzOqL1rlbtDC00KrqWnUwfTG3st_zh1WMU7ZM9vAXJ5hSJCPS6xKQeK1HbttmU1vN6w2G7w_Fsokv2E8SeSYOt3fB89f_rzr3qd9iNAyHJJkJfctWttwuVM_7bHEMTeOOA0AuENJTHvcxS7Es1Y1vn4PdBd55ziHcKB5Hve8E-UZOnSkvtZfHQEy3wdEjMvwTUrLNqzsl23hjhIMehzJwPsznXNN5NsGBKhzJwxEle1FGfEzp_uMyqsdjJa1H7pZyA9Q7wXc1PKlaBpBXxCjvXf9SopT9Kfc2pdPZMD42EuD5k-xdb8Bk-CBHEPhJlAx4TUk9VVoRtD-KfFuk59UgKd7Xn_LxpoOki11rhLnaqnU30Kouh-knnbeZSYzHPm-eRh_REyXlV-yw0ritznWjRKY5-_FxZEQt9ZaAVqi4dGqtg2ckxrYhQfBuKbG_MdmpRwA3xYd7sQNT_-xOcdOcbNzwbekmF3Q667uUkNqtF_2rcyu_egzD3tVs3X7d5VDZxgf0zWD6mY1sph07ZOQFfTn_3iJTyZqPzfY05l4tjK3wpt-PN1CvOM5X8n2kR36BgHShm3-dqZr7LldeqYtipYRznSW22LxyRORUQH679WzkdcBXQMD_9UUlxNFVxbiWNad2iDssR8hOzqx1cTJQPZUQyltW4CpgSUZ9Wx5C1sWSQTdMKll6o_z82nl4yIKQ_62SYRONSA2KL2xSnzDerH8hDm_8Bu9UpiEB8kJ7faH3YLgbNg1XoNESr7ad3zIC_Tw4xxnlHy6KX_qP6rQ3y5SUAD6B8xx_AeZf9d_eOX-HJ9I_7-rLH_SakAx03qdDM-vMFtbJVMgrHmZgIbCbxU1bqAWdd3iYY_8pByVhCDr0rQbXiDYE2Qz2YpNUu9CkQLg__8G7NzmgV07fIHobqAnxMu1C1pw/http://www.amazon.in/dp/B0CFB43VGC/ref=syn_sd_onsite_desktop_0?ie=UTF8&psc=1&pd_rd_plhdr=t&aref=i6sFZgl8b4
+                  - generic [ref=f4e9]:
+                    - img "Brand logo" [ref=f4e13]
+                    - generic [ref=f4e16]: Stylish , Functional, Destinio all the way
+                    - img "Product image" [ref=f4e20]
+              - button "Leave feedback on Sponsored advertisement" [ref=e2868] [cursor=pointer]:
+                - generic [ref=e2869]: Sponsored
+  - complementary "Your recently viewed items and featured recommendations"
+  - generic [ref=e2871]:
+    - button "Back to top" [ref=e2872] [cursor=pointer]:
+      - generic [ref=e2873]: Back to top
+    - generic [ref=e2874]:
+      - generic [ref=e2875]:
+        - heading "Get to Know Us" [level=6] [ref=e2876]
+        - list [ref=e2877]:
+          - listitem [ref=e2878]:
+            - link "About Amazon" [ref=e2879] [cursor=pointer]:
+              - /url: https://www.aboutamazon.in/?utm_source=gateway&utm_medium=footer
+          - listitem [ref=e2880]:
+            - link "Careers" [ref=e2881] [cursor=pointer]:
+              - /url: https://amazon.jobs
+          - listitem [ref=e2882]:
+            - link "Press Releases" [ref=e2883] [cursor=pointer]:
+              - /url: https://press.aboutamazon.in/?utm_source=gateway&utm_medium=footer
+          - listitem [ref=e2884]:
+            - link "Amazon Science" [ref=e2885] [cursor=pointer]:
+              - /url: https://www.amazon.science
+      - generic [ref=e2887]:
+        - heading "Connect with Us" [level=6] [ref=e2888]
+        - list [ref=e2889]:
+          - listitem [ref=e2890]:
+            - link "Facebook" [ref=e2891] [cursor=pointer]:
+              - /url: https://www.facebook.com/AmazonIN
+          - listitem [ref=e2892]:
+            - link "Twitter" [ref=e2893] [cursor=pointer]:
+              - /url: https://x.com/AmazonIN
+          - listitem [ref=e2894]:
+            - link "Instagram" [ref=e2895] [cursor=pointer]:
+              - /url: https://www.instagram.com/amazondotin
+      - generic [ref=e2897]:
+        - heading "Make Money with Us" [level=6] [ref=e2898]
+        - list [ref=e2899]:
+          - listitem [ref=e2900]:
+            - link "Sell on Amazon" [ref=e2901] [cursor=pointer]:
+              - /url: /b/?node=2838698031&ld=AZINSOANavDesktopFooter_C&ref_=nav_footer_sell_C
+          - listitem [ref=e2902]:
+            - link "Sell under Amazon Accelerator" [ref=e2903] [cursor=pointer]:
+              - /url: https://accelerator.amazon.in/?ref_=map_1_b2b_GW_FT
+          - listitem [ref=e2904]:
+            - link "Protect and Build Your Brand" [ref=e2905] [cursor=pointer]:
+              - /url: https://brandservices.amazon.in/?ref=AOINABRLGNRFOOT&ld=AOINABRLGNRFOOT
+          - listitem [ref=e2906]:
+            - link "Amazon Global Selling" [ref=e2907] [cursor=pointer]:
+              - /url: https://sell.amazon.in/grow-your-business/amazon-global-selling.html?ld=AZIN_Footer_V1&ref=AZIN_Footer_V1
+          - listitem [ref=e2908]:
+            - link "Supply to Amazon" [ref=e2909] [cursor=pointer]:
+              - /url: https://supply.amazon.com/?ref_=footer_sta&lang=en-IN
+          - listitem [ref=e2910]:
+            - link "Become an Affiliate" [ref=e2911] [cursor=pointer]:
+              - /url: https://affiliate-program.amazon.in/?utm_campaign=assocshowcase&utm_medium=footer&utm_source=GW&ref_=footer_assoc
+          - listitem [ref=e2912]:
+            - link "Fulfilment by Amazon" [ref=e2913] [cursor=pointer]:
+              - /url: https://services.amazon.in/services/fulfilment-by-amazon/benefits.html/ref=az_footer_fba?ld=AWRGINFBAfooter
+          - listitem [ref=e2914]:
+            - link "Advertise Your Products" [ref=e2915] [cursor=pointer]:
+              - /url: https://advertising.amazon.in/?ref=Amz.in
+          - listitem [ref=e2916]:
+            - link "Amazon Pay on Merchants" [ref=e2917] [cursor=pointer]:
+              - /url: https://www.amazonpay.in/merchant
+      - generic [ref=e2919]:
+        - heading "Let Us Help You" [level=6] [ref=e2920]
+        - list [ref=e2921]:
+          - listitem [ref=e2922]:
+            - link "Your Account" [ref=e2923] [cursor=pointer]:
+              - /url: /gp/css/homepage.html?ref_=footer_ya
+          - listitem [ref=e2924]:
+            - link "Returns Centre" [ref=e2925] [cursor=pointer]:
+              - /url: /gp/css/returns/homepage.html?ref_=footer_hy_f_4
+          - listitem [ref=e2926]:
+            - link "Recalls and Product Safety Alerts" [ref=e2927] [cursor=pointer]:
+              - /url: https://www.amazon.in/your-product-safety-alerts?ref_=footer_bsx_ypsa
+          - listitem [ref=e2928]:
+            - link "100% Purchase Protection" [ref=e2929] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=201083470&ref_=footer_swc
+          - listitem [ref=e2930]:
+            - link "Amazon App Download" [ref=e2931] [cursor=pointer]:
+              - /url: /gp/browse.html?node=6967393031&ref_=footer_mobapp
+          - listitem [ref=e2932]:
+            - link "Help" [ref=e2933] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=200507590&ref_=footer_gw_m_b_he
+    - generic [ref=e2935]:
+      - link "Amazon India Home" [ref=e2938] [cursor=pointer]:
+        - /url: /ref=footer_logo
+      - generic [ref=e2941]:
+        - generic [ref=e2942]:
+          - link "Choose a language for shopping. Current selection is English." [ref=e2943] [cursor=pointer]:
+            - /url: /customer-preferences/edit?ie=UTF8&preferencesReturnUrl=%2F&ref_=footer_lang
+            - generic [ref=e2945]: English
+          - button "Expand to Change Language or Country" [ref=e2946] [cursor=pointer]
+        - button "Choose a country/region for shopping. The current selection is India." [ref=e2947] [cursor=pointer]:
+          - generic [ref=e2949]: India
+    - generic "More on Amazon" [ref=e2950]:
+      - generic "More on Amazon" [ref=e2951]:
+        - list [ref=e2952]:
+          - listitem [ref=e2953]:
+            - link "AbeBooks Books, art & collectibles" [ref=e2954] [cursor=pointer]:
+              - /url: https://www.abebooks.com/
+              - heading "AbeBooks" [level=5] [ref=e2955]
+              - generic [ref=e2956]:
+                - text: Books, art
+                - text: "& collectibles"
+          - listitem [ref=e2957]
+          - listitem [ref=e2958]:
+            - link "Amazon Web Services Scalable Cloud Computing Services" [ref=e2959] [cursor=pointer]:
+              - /url: https://aws.amazon.com/what-is-cloud-computing/?sc_channel=EL&sc_campaign=IN_amazonfooter
+              - heading "Amazon Web Services" [level=5] [ref=e2960]
+              - generic [ref=e2961]:
+                - text: Scalable Cloud
+                - text: Computing Services
+          - listitem [ref=e2962]
+          - listitem [ref=e2963]:
+            - link "Audible Download Audio Books" [ref=e2964] [cursor=pointer]:
+              - /url: https://www.audible.in/
+              - heading "Audible" [level=5] [ref=e2965]
+              - generic [ref=e2966]:
+                - text: Download
+                - text: Audio Books
+          - listitem [ref=e2967]
+          - listitem [ref=e2968]:
+            - link "IMDb Movies, TV & Celebrities" [ref=e2969] [cursor=pointer]:
+              - /url: https://www.imdb.com/
+              - heading "IMDb" [level=5] [ref=e2970]
+              - generic [ref=e2971]:
+                - text: Movies, TV
+                - text: "& Celebrities"
+        - list [ref=e2972]:
+          - listitem [ref=e2973]:
+            - link "Shopbop Designer Fashion Brands" [ref=e2974] [cursor=pointer]:
+              - /url: https://www.shopbop.com/
+              - heading "Shopbop" [level=5] [ref=e2975]
+              - generic [ref=e2976]:
+                - text: Designer
+                - text: Fashion Brands
+          - listitem [ref=e2977]
+          - listitem [ref=e2978]:
+            - link "Amazon Business Everything For Your Business" [ref=e2979] [cursor=pointer]:
+              - /url: /business?ref=footer_aingw
+              - heading "Amazon Business" [level=5] [ref=e2980]
+              - generic [ref=e2981]:
+                - text: Everything For
+                - text: Your Business
+          - listitem [ref=e2982]
+          - listitem [ref=e2983]:
+            - link "Amazon Prime Music 100 million songs, ad-free Over 15 million podcast episodes" [ref=e2984] [cursor=pointer]:
+              - /url: /music/prime?ref=footer_apm
+              - heading "Amazon Prime Music" [level=5] [ref=e2985]
+              - generic [ref=e2986]:
+                - text: 100 million songs, ad-free
+                - text: Over 15 million podcast episodes
+          - listitem [ref=e2987]
+          - listitem [ref=e2988]
+    - generic [ref=e2989]:
+      - list [ref=e2990]:
+        - listitem [ref=e2991]:
+          - link "Conditions of Use & Sale" [ref=e2992] [cursor=pointer]:
+            - /url: /gp/help/customer/display.html?nodeId=200545940&ref_=footer_cou
+        - listitem [ref=e2993]:
+          - link "Privacy Notice" [ref=e2994] [cursor=pointer]:
+            - /url: /gp/help/customer/display.html?nodeId=200534380&ref_=footer_privacy
+        - listitem [ref=e2995]:
+          - link "Interest-Based Ads" [ref=e2996] [cursor=pointer]:
+            - /url: /gp/help/customer/display.html?nodeId=202075050&ref_=footer_iba
+      - generic [ref=e2997]: © 1996-2026, Amazon.com, Inc. or its affiliates
+  - iframe [ref=e2999]
+```
+
+# Test source
+
+```ts
+  21  |     const el = page.locator(sel).first();
+  22  |     if (await el.isVisible({ timeout: 2000 }).catch(() => false)) {
+  23  |       await el.click().catch(() => {});
+  24  |       await delay(500);
+  25  |     }
+  26  |   }
+  27  | 
+  28  |   // --- Search ---
+  29  |   const searchBox = page.locator('#twotabsearchtextbox');
+  30  |   await searchBox.waitFor({ timeout: 20000 });
+  31  |   await searchBox.click();
+  32  |   await delay(300);
+  33  |   // Type like a human — character by character
+  34  |   await searchBox.type(searchTerm, { delay: 80 });
+  35  |   await delay(500);
+  36  |   await page.keyboard.press('Enter');
+  37  |   await page.waitForLoadState('domcontentloaded', { timeout: 30000 });
+  38  |   await delay(2000);
+  39  | 
+  40  |   // --- Find the first product link (try multiple selector patterns) ---
+  41  |   const productSelectors = [
+  42  |     'div[data-component-type="s-search-result"] h2 a.a-link-normal',
+  43  |     '[data-cy="title-recipe"] a',
+  44  |     '.s-result-item h2 a',
+  45  |     '.s-search-results .s-result-item a.a-link-normal[href*="/dp/"]',
+  46  |     'h2.a-size-mini a',
+  47  |   ];
+  48  | 
+  49  |   let clicked = false;
+  50  |   for (const sel of productSelectors) {
+  51  |     const el = page.locator(sel).first();
+  52  |     if (await el.isVisible({ timeout: 5000 }).catch(() => false)) {
+  53  |       await el.scrollIntoViewIfNeeded().catch(() => {});
+  54  |       await delay(300);
+  55  |       await el.click();
+  56  |       clicked = true;
+  57  |       break;
+  58  |     }
+  59  |   }
+  60  | 
+  61  |   if (!clicked) {
+  62  |     // Last resort: find any /dp/ link on the page
+  63  |     const dpLink = page.locator('a[href*="/dp/"]').first();
+  64  |     await dpLink.waitFor({ timeout: 10000 });
+  65  |     await dpLink.click();
+  66  |   }
+  67  | 
+  68  |   await page.waitForLoadState('domcontentloaded', { timeout: 30000 });
+  69  |   await delay(1500);
+  70  | 
+  71  |   // --- Extract title ---
+  72  |   let title = 'Title not found';
+  73  |   for (const sel of ['#productTitle', 'h1.a-size-large', 'h1 span']) {
+  74  |     const el = page.locator(sel).first();
+  75  |     if (await el.isVisible({ timeout: 5000 }).catch(() => false)) {
+  76  |       title = (await el.textContent())?.trim() ?? title;
+  77  |       break;
+  78  |     }
+  79  |   }
+  80  | 
+  81  |   // --- Extract price ---
+  82  |   let price = 'Price not found';
+  83  |   const priceSelectors = [
+  84  |     '.a-price .a-offscreen',
+  85  |     '.apexPriceToPay .a-offscreen',
+  86  |     '#corePriceDisplay_desktop_feature_div .a-offscreen',
+  87  |     '#priceblock_ourprice',
+  88  |     '#priceblock_dealprice',
+  89  |     '.a-price-whole',
+  90  |     '#price_inside_buybox',
+  91  |     '.a-color-price',
+  92  |   ];
+  93  |   for (const sel of priceSelectors) {
+  94  |     const el = page.locator(sel).first();
+  95  |     if (await el.isVisible({ timeout: 2000 }).catch(() => false)) {
+  96  |       price = (await el.textContent())?.trim() ?? price;
+  97  |       if (price && price !== 'Price not found') break;
+  98  |     }
+  99  |   }
+  100 | 
+  101 |   return { title, price };
+  102 | }
+  103 | 
+  104 | async function addToCart(page) {
+  105 |   const cartSelectors = [
+  106 |     '#add-to-cart-button',
+  107 |     'input[name="submit.add-to-cart"]',
+  108 |     'button[name="submit.add-to-cart"]',
+  109 |   ];
+  110 | 
+  111 |   let added = false;
+  112 |   for (const sel of cartSelectors) {
+  113 |     const el = page.locator(sel).first();
+  114 |     if (await el.isVisible({ timeout: 5000 }).catch(() => false)) {
+  115 |       await el.click();
+  116 |       added = true;
+  117 |       break;
+  118 |     }
+  119 |   }
+  120 | 
+> 121 |   if (!added) throw new Error('Add to cart button not found');
+      |                     ^ Error: Add to cart button not found
+  122 | 
+  123 |   await delay(2000);
+  124 | 
+  125 |   // Dismiss upsell / protection plan modals
+  126 |   for (const sel of [
+  127 |     '#attachSiNoCoverage',
+  128 |     'button[aria-label="No thanks"]',
+  129 |     '.a-button-close',
+  130 |     '#siNoCoverage',
+  131 |   ]) {
+  132 |     const el = page.locator(sel).first();
+  133 |     if (await el.isVisible({ timeout: 2000 }).catch(() => false)) {
+  134 |       await el.click().catch(() => {});
+  135 |       break;
+  136 |     }
+  137 |   }
+  138 | }
+  139 | 
+  140 | module.exports = { searchAndGetFirstProduct, addToCart };
+  141 | 
+```
