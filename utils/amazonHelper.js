@@ -7,7 +7,7 @@ const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function searchAndGetFirstProduct(page, searchTerm) {
 
-  // --- Go to Amazon with a realistic browser fingerprint ---
+  // --- Go to Amazon ---
   await page.goto('https://www.amazon.in', { waitUntil: 'domcontentloaded', timeout: 40000 });
   await delay(3000);
 
@@ -54,7 +54,7 @@ async function searchAndGetFirstProduct(page, searchTerm) {
   }
 
   if (!searchBoxFound) {
-    throw new Error('Search box #twotabsearchtextbox not found after 3 attempts. Amazon may be blocking the bot.');
+    throw new Error('Search box #twotabsearchtextbox not found after 3 attempts.');
   }
 
   await searchBox.click();
@@ -79,7 +79,7 @@ async function searchAndGetFirstProduct(page, searchTerm) {
   for (const sel of productSelectors) {
     const el = page.locator(sel).first();
     try {
-      if (await el.isVisible({ timeout: 5000 })) {
+      if (await el.isVisible({ timeout: 5000 }).catch(() => false)) {
         await el.scrollIntoViewIfNeeded().catch(() => {});
         await delay(300);
         await el.click();
@@ -106,7 +106,7 @@ async function searchAndGetFirstProduct(page, searchTerm) {
   for (const sel of ['#productTitle', 'h1.a-size-large', 'h1 span']) {
     const el = page.locator(sel).first();
     try {
-      if (await el.isVisible({ timeout: 5000 })) {
+      if (await el.isVisible({ timeout: 5000 }).catch(() => false)) {
         title = (await el.textContent())?.trim() ?? title;
         break;
       }
@@ -130,7 +130,7 @@ async function searchAndGetFirstProduct(page, searchTerm) {
   for (const sel of priceSelectors) {
     const el = page.locator(sel).first();
     try {
-      if (await el.isVisible({ timeout: 2000 })) {
+      if (await el.isVisible({ timeout: 2000 }).catch(() => false)) {
         price = (await el.textContent())?.trim() ?? price;
         if (price && price !== 'Price not found') break;
       }
@@ -143,17 +143,30 @@ async function searchAndGetFirstProduct(page, searchTerm) {
 }
 
 async function addToCart(page) {
+  // Wait for page to load
+  await page.waitForLoadState('domcontentloaded', { timeout: 30000 });
+  await delay(1500);
+
+  // Try multiple selectors for "Add to cart" button
   const cartSelectors = [
     '#add-to-cart-button',
     'input[name="submit.add-to-cart"]',
     'button[name="submit.add-to-cart"]',
+    '[data-feature-name="a-button"][data-action="a-asin-prime-subscribe"]',
+    'button:has-text("Add to cart")',
+    'button:has-text("ADD TO CART")',
+    '[aria-label*="Add to cart"]',
+    '.a-button-primary button',
+    '#a-autoid-0-announce',
   ];
 
   let added = false;
+  
   for (const sel of cartSelectors) {
-    const el = page.locator(sel).first();
     try {
-      if (await el.isVisible({ timeout: 5000 })) {
+      const el = page.locator(sel).first();
+      if (await el.isVisible({ timeout: 3000 }).catch(() => false)) {
+        console.log(`🛒 Found add-to-cart button: ${sel}`);
         await el.click();
         added = true;
         break;
@@ -163,7 +176,11 @@ async function addToCart(page) {
     }
   }
 
-  if (!added) throw new Error('Add to cart button not found');
+  if (!added) {
+    // Take a screenshot to debug
+    await page.screenshot({ path: 'test-results/add-to-cart-debug.png' }).catch(() => {});
+    throw new Error('Add to cart button not found. Check add-to-cart-debug.png');
+  }
 
   await delay(2000);
 
@@ -173,10 +190,11 @@ async function addToCart(page) {
     'button[aria-label="No thanks"]',
     '.a-button-close',
     '#siNoCoverage',
+    'button:has-text("No thanks")',
   ]) {
     const el = page.locator(sel).first();
     try {
-      if (await el.isVisible({ timeout: 2000 })) {
+      if (await el.isVisible({ timeout: 2000 }).catch(() => false)) {
         await el.click();
         break;
       }
