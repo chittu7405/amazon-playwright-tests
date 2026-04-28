@@ -104,16 +104,17 @@ async function searchAndGetFirstProduct(page, searchTerm) {
   // --- Extract title from product details page ---
   let title = 'Title not found';
   
-  // Try to find the main product title
+  // Try to find the main product title - based on the screenshot structure
   const titleSelectors = [
-    '#productTitle',                          // Main product title
-    'h1 #productTitle',                       // Title inside h1
-    'span[id="productTitle"]',                // Alternative span version
-    '[data-feature-name="title"] h1',         // Feature name version
-    '.a-size-large.product-title',            // Product title class
-    '.a-price-range h1 span',                 // In price range section
-    'h1.a-size-large span',                   // H1 with size-large
-    '.a-section h1 span:first-of-type',       // First span in h1
+    '#productTitle',                          // Standard Amazon product title
+    'h1#productTitle',                        // H1 with ID
+    'span#productTitle',                      // Span with ID
+    'h1 span',                                // Span inside H1
+    'h2[class*="a-size"] span',               // Span inside H2 with size class
+    '.a-size-large.product-title span',       // Product title span
+    '.a-spacing-none.a-color-base.a-text-normal span',  // From screenshot
+    '#feature-bullets ~ h1 span',             // H1 after feature bullets
+    '.a-section.a-spacing-small h1 span',     // H1 in spacing section
   ];
 
   for (const sel of titleSelectors) {
@@ -125,7 +126,7 @@ async function searchAndGetFirstProduct(page, searchTerm) {
         const extractedTitle = (await el.textContent())?.trim();
         
         // Filter out empty or irrelevant text
-        if (extractedTitle && extractedTitle.length > 5 && !extractedTitle.includes('Amazon')) {
+        if (extractedTitle && extractedTitle.length > 10 && !extractedTitle.startsWith('$')) {
           title = extractedTitle;
           console.log(`✅ Found title with selector: ${sel}`);
           console.log(`   Title: ${title}`);
@@ -134,6 +135,20 @@ async function searchAndGetFirstProduct(page, searchTerm) {
       }
     } catch (e) {
       // Continue to next selector
+    }
+  }
+
+  // If still not found, try getting all text from h1 and h2
+  if (title === 'Title not found') {
+    try {
+      const h1Text = await page.locator('h1').first().textContent().catch(() => null);
+      if (h1Text && h1Text.trim().length > 10) {
+        title = h1Text.trim();
+        console.log(`✅ Found title from h1 tag`);
+        console.log(`   Title: ${title}`);
+      }
+    } catch (e) {
+      // Continue
     }
   }
 
