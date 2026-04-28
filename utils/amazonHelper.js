@@ -101,29 +101,34 @@ async function searchAndGetFirstProduct(page, searchTerm) {
   await page.waitForLoadState('domcontentloaded', { timeout: 30000 });
   await delay(2000);
 
-  // --- Extract title ---
+  // --- Extract title from product details page ---
   let title = 'Title not found';
+  
+  // Try to find the main product title
   const titleSelectors = [
-    '#productTitle',
-    'h1.a-size-large',
-    'h1 span',
-    '.a-size-large.product-title',
-    '[data-feature-name="title"]',
-    'span.a-size-large',
-    '.a-price-range-quote',
-    'h1.a-size-base-plus',
-    'span[data-feature-name="title"]',
-    '.a-section h1 span',
+    '#productTitle',                          // Main product title
+    'h1 #productTitle',                       // Title inside h1
+    'span[id="productTitle"]',                // Alternative span version
+    '[data-feature-name="title"] h1',         // Feature name version
+    '.a-size-large.product-title',            // Product title class
+    '.a-price-range h1 span',                 // In price range section
+    'h1.a-size-large span',                   // H1 with size-large
+    '.a-section h1 span:first-of-type',       // First span in h1
   ];
 
   for (const sel of titleSelectors) {
-    const el = page.locator(sel).first();
     try {
-      if (await el.isVisible({ timeout: 3000 }).catch(() => false)) {
+      const el = page.locator(sel).first();
+      const isVisible = await el.isVisible({ timeout: 2000 }).catch(() => false);
+      
+      if (isVisible) {
         const extractedTitle = (await el.textContent())?.trim();
-        if (extractedTitle && extractedTitle !== '' && extractedTitle !== 'Title not found') {
+        
+        // Filter out empty or irrelevant text
+        if (extractedTitle && extractedTitle.length > 5 && !extractedTitle.includes('Amazon')) {
           title = extractedTitle;
           console.log(`✅ Found title with selector: ${sel}`);
+          console.log(`   Title: ${title}`);
           break;
         }
       }
@@ -132,43 +137,31 @@ async function searchAndGetFirstProduct(page, searchTerm) {
     }
   }
 
-  // If still not found, try getting from page title
-  if (title === 'Title not found') {
-    try {
-      const pageTitle = await page.title();
-      if (pageTitle && pageTitle.includes('Amazon')) {
-        title = pageTitle.replace(' - Amazon.in', '').replace(' - Amazon', '').trim();
-        console.log(`✅ Found title from page title: ${title}`);
-      }
-    } catch (e) {
-      // Ignore
-    }
-  }
-
   // --- Extract price ---
   let price = 'Price not found';
   const priceSelectors = [
-    '.a-price .a-offscreen',
-    '.apexPriceToPay .a-offscreen',
-    '#corePriceDisplay_desktop_feature_div .a-offscreen',
-    '#priceblock_ourprice',
-    '#priceblock_dealprice',
-    '.a-price-whole',
-    '#price_inside_buybox',
-    '.a-color-price',
-    '.a-price-range-quote',
-    '[data-a-color="price"]',
-    '.a-span12 .a-price .a-offscreen',
+    '.a-price .a-offscreen',                  // Current price
+    '.apexPriceToPay .a-offscreen',           // Apex price
+    '#corePriceDisplay_desktop_feature_div .a-offscreen',  // Core price
+    '#priceblock_ourprice',                   // Our price block
+    '#priceblock_dealprice',                  // Deal price block
+    '.a-price-whole',                         // Whole price
+    '#price_inside_buybox',                   // Buy box price
+    '[data-a-color="price"]',                 // Price color attribute
+    '.a-span12 .a-price .a-offscreen',        // Price in span
   ];
 
   for (const sel of priceSelectors) {
-    const el = page.locator(sel).first();
     try {
-      if (await el.isVisible({ timeout: 2000 }).catch(() => false)) {
+      const el = page.locator(sel).first();
+      const isVisible = await el.isVisible({ timeout: 2000 }).catch(() => false);
+      
+      if (isVisible) {
         const extractedPrice = (await el.textContent())?.trim();
-        if (extractedPrice && extractedPrice !== 'Price not found') {
+        if (extractedPrice && extractedPrice !== 'Price not found' && extractedPrice.length > 0) {
           price = extractedPrice;
           console.log(`✅ Found price with selector: ${sel}`);
+          console.log(`   Price: ${price}`);
           break;
         }
       }
