@@ -9,6 +9,10 @@ async function searchAndGetFirstProduct(page, searchTerm) {
 
   // --- Go to Amazon with a realistic browser fingerprint ---
   await page.goto('https://www.amazon.in', { waitUntil: 'domcontentloaded', timeout: 40000 });
+  await delay(3000);
+
+  // Wait for page to fully load
+  await page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});
   await delay(2000);
 
   // Dismiss popups / location / sign-in prompts
@@ -19,15 +23,40 @@ async function searchAndGetFirstProduct(page, searchTerm) {
     '#sp-cc-accept',
   ]) {
     const el = page.locator(sel).first();
-    if (await el.isVisible({ timeout: 2000 }).catch(() => false)) {
-      await el.click().catch(() => {});
-      await delay(500);
+    try {
+      if (await el.isVisible({ timeout: 2000 })) {
+        await el.click();
+        await delay(500);
+      }
+    } catch (e) {
+      // Ignore if element not found
     }
   }
 
   // --- Search ---
   const searchBox = page.locator('#twotabsearchtextbox');
-  await searchBox.waitFor({ timeout: 20000 });
+  
+  // Wait for search box with retry logic
+  let searchBoxFound = false;
+  for (let i = 0; i < 3; i++) {
+    try {
+      await searchBox.waitFor({ timeout: 15000, state: 'visible' });
+      searchBoxFound = true;
+      break;
+    } catch (e) {
+      console.log(`Search box not found, attempt ${i + 1}/3. Retrying...`);
+      if (i < 2) {
+        await delay(2000);
+        await page.reload({ waitUntil: 'domcontentloaded' });
+        await delay(2000);
+      }
+    }
+  }
+
+  if (!searchBoxFound) {
+    throw new Error('Search box #twotabsearchtextbox not found after 3 attempts. Amazon may be blocking the bot.');
+  }
+
   await searchBox.click();
   await delay(300);
   // Type like a human — character by character
@@ -49,12 +78,16 @@ async function searchAndGetFirstProduct(page, searchTerm) {
   let clicked = false;
   for (const sel of productSelectors) {
     const el = page.locator(sel).first();
-    if (await el.isVisible({ timeout: 5000 }).catch(() => false)) {
-      await el.scrollIntoViewIfNeeded().catch(() => {});
-      await delay(300);
-      await el.click();
-      clicked = true;
-      break;
+    try {
+      if (await el.isVisible({ timeout: 5000 })) {
+        await el.scrollIntoViewIfNeeded().catch(() => {});
+        await delay(300);
+        await el.click();
+        clicked = true;
+        break;
+      }
+    } catch (e) {
+      // Continue to next selector
     }
   }
 
@@ -72,9 +105,13 @@ async function searchAndGetFirstProduct(page, searchTerm) {
   let title = 'Title not found';
   for (const sel of ['#productTitle', 'h1.a-size-large', 'h1 span']) {
     const el = page.locator(sel).first();
-    if (await el.isVisible({ timeout: 5000 }).catch(() => false)) {
-      title = (await el.textContent())?.trim() ?? title;
-      break;
+    try {
+      if (await el.isVisible({ timeout: 5000 })) {
+        title = (await el.textContent())?.trim() ?? title;
+        break;
+      }
+    } catch (e) {
+      // Continue to next selector
     }
   }
 
@@ -92,9 +129,13 @@ async function searchAndGetFirstProduct(page, searchTerm) {
   ];
   for (const sel of priceSelectors) {
     const el = page.locator(sel).first();
-    if (await el.isVisible({ timeout: 2000 }).catch(() => false)) {
-      price = (await el.textContent())?.trim() ?? price;
-      if (price && price !== 'Price not found') break;
+    try {
+      if (await el.isVisible({ timeout: 2000 })) {
+        price = (await el.textContent())?.trim() ?? price;
+        if (price && price !== 'Price not found') break;
+      }
+    } catch (e) {
+      // Continue to next selector
     }
   }
 
@@ -111,10 +152,14 @@ async function addToCart(page) {
   let added = false;
   for (const sel of cartSelectors) {
     const el = page.locator(sel).first();
-    if (await el.isVisible({ timeout: 5000 }).catch(() => false)) {
-      await el.click();
-      added = true;
-      break;
+    try {
+      if (await el.isVisible({ timeout: 5000 })) {
+        await el.click();
+        added = true;
+        break;
+      }
+    } catch (e) {
+      // Continue to next selector
     }
   }
 
@@ -130,9 +175,13 @@ async function addToCart(page) {
     '#siNoCoverage',
   ]) {
     const el = page.locator(sel).first();
-    if (await el.isVisible({ timeout: 2000 }).catch(() => false)) {
-      await el.click().catch(() => {});
-      break;
+    try {
+      if (await el.isVisible({ timeout: 2000 })) {
+        await el.click();
+        break;
+      }
+    } catch (e) {
+      // Ignore
     }
   }
 }
