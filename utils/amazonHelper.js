@@ -1,198 +1,244 @@
 /**
- * utils/amazonHelper.js
- * Robust product navigation + extraction for Amazon.in
- *
- * Exports:
- * - searchAndGetFirstProduct(page, searchTerm) => { title, price, productPage }
- * - addToCart(page) => clicks add-to-cart on the supplied page
- *
- * Notes:
- * - searchAndGetFirstProduct will click the first search result,
- *   capture any popup that opens and return that page as productPage.
- * - Tests should pass the returned productPage to addToCart and close it
- *   when done (if it's a separate page).
+ * amazonHelper.js
+ * Shared utilities for Amazon test cases — with anti-bot evasion.
  */
+
 const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 
-async function _dismissPopups(page) {
-  const popups = [
+async function searchAndGetFirstProduct(page, searchTerm) {
+
+  // --- Go to Amazon ---
+  await page.goto('https://www.amazon.in', { waitUntil: 'domcontentloaded', timeout: 40000 });
+  await delay(3000);
+
+  // Wait for page to fully load
+  await page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});
+  await delay(2000);
+
+  // Dismiss popups / location / sign-in prompts
+  for (const sel of [
     'input[data-action-type="DISMISS"]',
     '#nav-flyout-ya-signin .a-button-close',
     '.a-popover-footer .a-button-primary',
     '#sp-cc-accept',
-    '.a-popover-mask .dismiss-button',
-    '[aria-label="Dismiss"]',
-  ];
-  for (const sel of popups) {
+  ]) {
+    const el = page.locator(sel).first();
     try {
-      const el = page.locator(sel).first();
-      if (await el.isVisible({ timeout: 1200 }).catch(() => false)) {
-        await el.click().catch(() => {});
-        await delay(300);
+      if (await el.isVisible({ timeout: 2000 })) {
+        await el.click();
+        await delay(500);
       }
-    } catch (e) { /* ignore */ }
+    } catch (e) {
+      // Ignore if element not found
+    }
   }
-}
 
-async function searchAndGetFirstProduct(page, searchTerm) {
-  // navigate to home
-  await page.goto('https://www.amazon.in', { waitUntil: 'domcontentloaded', timeout: 45000 });
-  await delay(2000);
-  await page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});
-  await _dismissPopups(page);
-
-  // search box
+  // --- Search ---
   const searchBox = page.locator('#twotabsearchtextbox');
-  let found = false;
+  
+  // Wait for search box with retry logic
+  let searchBoxFound = false;
   for (let i = 0; i < 3; i++) {
-    if (await searchBox.isVisible({ timeout: 8000 }).catch(() => false)) {
-      found = true;
-      break;
-    }
-    await delay(1000);
-    await page.reload({ waitUntil: 'domcontentloaded' }).catch(() => {});
-  }
-  if (!found) throw new Error('Search box not found on Amazon home');
-
-  await searchBox.click().catch(() => {});
-  await searchBox.fill('').catch(() => {});
-  await searchBox.type(searchTerm, { delay: 80 });
-  await page.keyboard.press('Enter');
-  await page.waitForLoadState('domcontentloaded', { timeout: 30000 }).catch(() => {});
-  await delay(2500);
-  await _dismissPopups(page);
-
-  // prepare for popup
-  const popupPromise = page.context().waitForEvent('page').catch(() => null);
-
-  // click first product - prefer search-result item anchors
-  try {
-    await page.locator('div[data-component-type="s-search-result"] h2 a').first().click({ timeout: 10000 });
-  } catch (e) {
-    // fallback to any product link
     try {
-      await page.locator('a[href*="/dp/"]').first().click({ timeout: 10000 });
-    } catch (e2) {
-      throw new Error('Could not click any product link on search results');
+      await searchBox.waitFor({ timeout: 15000, state: 'visible' });
+      searchBoxFound = true;
+      break;
+    } catch (e) {
+      console.log(`Search box not found, attempt ${i + 1}/3. Retrying...`);
+      if (i < 2) {
+        await delay(2000);
+        await page.reload({ waitUntil: 'domcontentloaded' });
+        await delay(2000);
+      }
     }
   }
 
-  // handle popup vs same page navigation
-  let productPage = page;
-  const popup = await popupPromise;
-  if (popup) {
-    productPage = popup;
-    await productPage.waitForLoadState('domcontentloaded', { timeout: 30000 }).catch(() => {});
-    await delay(1200);
-    await _dismissPopups(productPage);
-  } else {
-    // same page navigation
-    await page.waitForLoadState('domcontentloaded', { timeout: 30000 }).catch(() => {});
-    await delay(1200);
-    await _dismissPopups(page);
-    productPage = page;
+  if (!searchBoxFound) {
+    throw new Error('Search box #twotabsearchtextbox not found after 3 attempts.');
   }
 
-  // ensure productPage is visible
-  try { await productPage.bringToFront().catch(() => {}); } catch (e) {}
+  await searchBox.click();
+  await delay(300);
+  // Type like a human — character by character
+  await searchBox.type(searchTerm, { delay: 80 });
+  await delay(500);
+  await page.keyboard.press('Enter');
+  await page.waitForLoadState('domcontentloaded', { timeout: 30000 });
+  await delay(2000);
 
-  // --- Title extraction ---
+  // --- Find the first product link (try multiple selector patterns) ---
+  const productSelectors = [
+    'div[data-component-type="s-search-result"] h2 a.a-link-normal',
+    '[data-cy="title-recipe"] a',
+    '.s-result-item h2 a',
+    '.s-search-results .s-result-item a.a-link-normal[href*="/dp/"]',
+    'h2.a-size-mini a',
+  ];
+
+  let clicked = false;
+  for (const sel of productSelectors) {
+    const el = page.locator(sel).first();
+    try {
+      if (await el.isVisible({ timeout: 5000 }).catch(() => false)) {
+        await el.scrollIntoViewIfNeeded().catch(() => {});
+        await delay(300);
+        await el.click();
+        clicked = true;
+        break;
+      }
+    } catch (e) {
+      // Continue to next selector
+    }
+  }
+
+  if (!clicked) {
+    // Last resort: find any /dp/ link on the page
+    const dpLink = page.locator('a[href*="/dp/"]').first();
+    await dpLink.waitFor({ timeout: 10000 });
+    await dpLink.click();
+  }
+
+  await page.waitForLoadState('domcontentloaded', { timeout: 30000 });
+  await delay(2000);
+
+  // --- Extract title ---
   let title = 'Title not found';
-  try {
-    const titleEl = productPage.locator('#productTitle');
-    if (await titleEl.isVisible({ timeout: 10000 }).catch(() => false)) {
-      title = (await titleEl.textContent())?.trim() || title;
+  const titleSelectors = [
+    '#productTitle',
+    'h1.a-size-large',
+    'h1 span',
+    '.a-size-large.product-title',
+    '[data-feature-name="title"]',
+    'span.a-size-large',
+    '.a-price-range-quote',
+    'h1.a-size-base-plus',
+    'span[data-feature-name="title"]',
+    '.a-section h1 span',
+  ];
+
+  for (const sel of titleSelectors) {
+    const el = page.locator(sel).first();
+    try {
+      if (await el.isVisible({ timeout: 3000 }).catch(() => false)) {
+        const extractedTitle = (await el.textContent())?.trim();
+        if (extractedTitle && extractedTitle !== '' && extractedTitle !== 'Title not found') {
+          title = extractedTitle;
+          console.log(`✅ Found title with selector: ${sel}`);
+          break;
+        }
+      }
+    } catch (e) {
+      // Continue to next selector
     }
-  } catch (e) {
-    // ignore - title not found
   }
 
-  // --- Price extraction ---
+  // If still not found, try getting from page title
+  if (title === 'Title not found') {
+    try {
+      const pageTitle = await page.title();
+      if (pageTitle && pageTitle.includes('Amazon')) {
+        title = pageTitle.replace(' - Amazon.in', '').replace(' - Amazon', '').trim();
+        console.log(`✅ Found title from page title: ${title}`);
+      }
+    } catch (e) {
+      // Ignore
+    }
+  }
+
+  // --- Extract price ---
   let price = 'Price not found';
-  const priceCandidates = [
+  const priceSelectors = [
     '.a-price .a-offscreen',
     '.apexPriceToPay .a-offscreen',
     '#corePriceDisplay_desktop_feature_div .a-offscreen',
-    '#corePrice_desktop .a-offscreen',
     '#priceblock_ourprice',
     '#priceblock_dealprice',
-    '#priceblock_saleprice',
+    '.a-price-whole',
     '#price_inside_buybox',
-    '[data-a-color="price"] .a-offscreen',
+    '.a-color-price',
+    '.a-price-range-quote',
+    '[data-a-color="price"]',
+    '.a-span12 .a-price .a-offscreen',
   ];
 
-  // wait up to ~12s for any price to appear (poll loop)
-  const start = Date.now();
-  while (Date.now() - start < 12000 && price === 'Price not found') {
-    for (const sel of priceCandidates) {
-      try {
-        const el = productPage.locator(sel).first();
-        if (await el.isVisible({ timeout: 1000 }).catch(() => false)) {
-          const txt = (await el.textContent())?.trim();
-          if (txt && txt.length > 0) {
-            price = txt;
-            break;
-          }
+  for (const sel of priceSelectors) {
+    const el = page.locator(sel).first();
+    try {
+      if (await el.isVisible({ timeout: 2000 }).catch(() => false)) {
+        const extractedPrice = (await el.textContent())?.trim();
+        if (extractedPrice && extractedPrice !== 'Price not found') {
+          price = extractedPrice;
+          console.log(`✅ Found price with selector: ${sel}`);
+          break;
         }
-      } catch (e) { /* continue */ }
+      }
+    } catch (e) {
+      // Continue to next selector
     }
-    if (price === 'Price not found') await delay(800);
   }
 
-  return { title, price, productPage };
+  return { title, price };
 }
 
 async function addToCart(page) {
-  // page should be the product detail page (may be popup)
-  await page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});
-  await delay(700);
+  // Wait for page to load
+  await page.waitForLoadState('domcontentloaded', { timeout: 30000 });
+  await delay(1500);
 
+  // Try multiple selectors for "Add to cart" button
   const cartSelectors = [
     '#add-to-cart-button',
-    '#buybox .a-button-input', // fallback
     'input[name="submit.add-to-cart"]',
     'button[name="submit.add-to-cart"]',
+    '[data-feature-name="a-button"][data-action="a-asin-prime-subscribe"]',
     'button:has-text("Add to cart")',
     'button:has-text("ADD TO CART")',
-    '[aria-label*="Add to Cart"]',
-    '[aria-labelledby*="add-to-cart-button"]',
+    '[aria-label*="Add to cart"]',
+    '.a-button-primary button',
+    '#a-autoid-0-announce',
   ];
 
   let added = false;
+  
   for (const sel of cartSelectors) {
     try {
       const el = page.locator(sel).first();
-      if (await el.isVisible({ timeout: 1500 }).catch(() => false)) {
-        await el.click().catch(() => {});
+      if (await el.isVisible({ timeout: 3000 }).catch(() => false)) {
+        console.log(`🛒 Found add-to-cart button: ${sel}`);
+        await el.click();
         added = true;
         break;
       }
-    } catch (e) { /* continue */ }
+    } catch (e) {
+      // Continue to next selector
+    }
   }
 
   if (!added) {
+    // Take a screenshot to debug
     await page.screenshot({ path: 'test-results/add-to-cart-debug.png' }).catch(() => {});
-    throw new Error('Add to cart button not found on product page');
+    throw new Error('Add to cart button not found. Check add-to-cart-debug.png');
   }
 
-  await delay(1200);
+  await delay(2000);
 
-  // dismiss any post-add dialogs
-  const dismissors = [
+  // Dismiss upsell / protection plan modals
+  for (const sel of [
     '#attachSiNoCoverage',
     'button[aria-label="No thanks"]',
     '.a-button-close',
     '#siNoCoverage',
     'button:has-text("No thanks")',
-  ];
-  for (const sel of dismissors) {
+  ]) {
+    const el = page.locator(sel).first();
     try {
-      const el = page.locator(sel).first();
-      if (await el.isVisible({ timeout: 1200 }).catch(() => false)) {
-        await el.click().catch(() => {});
+      if (await el.isVisible({ timeout: 2000 }).catch(() => false)) {
+        await el.click();
         break;
       }
-    } catch (e) { /* ignore */ }
+    } catch (e) {
+      // Ignore
+    }
   }
 }
 
