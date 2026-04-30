@@ -1,4 +1,4 @@
-/**
+/*
  * utils/amazonHelper.js
  * Robust product navigation + extraction for Amazon.in
  *
